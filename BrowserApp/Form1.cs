@@ -139,6 +139,14 @@ namespace BrowserApp
                 return;
             }
         }
-        
+
+        private void openItem_Click(object sender, EventArgs e)
+        {
+            getOpenFileName();
+            if (!fileMenu.Equals(""))
+            {
+                loadFile();
+            }
+        }
     }
 }

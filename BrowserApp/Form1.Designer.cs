@@ -30,8 +30,8 @@
         {
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.statusBarText = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ファイルFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.開くToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.openItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -62,24 +62,26 @@
             this.statusBarText.Name = "statusBarText";
             this.statusBarText.Size = new System.Drawing.Size(0, 17);
             // 
-            // ファイルFToolStripMenuItem
+            // fileMenu
             // 
-            this.ファイルFToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.開くToolStripMenuItem});
-            this.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem";
-            this.ファイルFToolStripMenuItem.Size = new System.Drawing.Size(85, 22);
-            this.ファイルFToolStripMenuItem.Text = "ファイル(&F)";
+            this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openItem});
+            this.fileMenu.Name = "fileMenu";
+            this.fileMenu.Size = new System.Drawing.Size(85, 22);
+            this.fileMenu.Text = "ファイル(&F)";
             // 
-            // 開くToolStripMenuItem
+            // openItem
             // 
-            this.開くToolStripMenuItem.Name = "開くToolStripMenuItem";
-            this.開くToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.開くToolStripMenuItem.Text = "開く";
+            this.openItem.Name = "openItem";
+            this.openItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openItem.Size = new System.Drawing.Size(152, 22);
+            this.openItem.Text = "開く";
+            this.openItem.Click += new System.EventHandler(this.openItem_Click);
             // 
             // menuBar
             // 
             this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ファイルFToolStripMenuItem});
+            this.fileMenu});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
             this.menuBar.Size = new System.Drawing.Size(913, 26);
@@ -186,8 +188,8 @@
         #endregion
         private System.Windows.Forms.StatusStrip statusBar;
         private System.Windows.Forms.ToolStripStatusLabel statusBarText;
-        private System.Windows.Forms.ToolStripMenuItem ファイルFToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 開くToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileMenu;
+        private System.Windows.Forms.ToolStripMenuItem openItem;
         private System.Windows.Forms.MenuStrip menuBar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.WebBrowser browserControl;
