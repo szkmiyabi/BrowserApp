@@ -175,5 +175,20 @@ namespace BrowserApp
         {
             doBrowseByCombo();
         }
+
+        private void nextItem_Click(object sender, EventArgs e)
+        {
+            doBrowserNext();
+        }
+
+        private void prevItem_Click(object sender, EventArgs e)
+        {
+            doBrowserPrev();
+        }
+
+        private void reloadItem_Click(object sender, EventArgs e)
+        {
+            doReload();
+        }
     }
 }

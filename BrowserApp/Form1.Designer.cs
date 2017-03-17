@@ -41,6 +41,10 @@
             this.prevButton = new System.Windows.Forms.Button();
             this.nextButton = new System.Windows.Forms.Button();
             this.reloadButton = new System.Windows.Forms.Button();
+            this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.nextItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prevItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reloadItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -80,8 +84,10 @@
             // 
             // menuBar
             // 
+            this.menuBar.BackColor = System.Drawing.SystemColors.Control;
             this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileMenu});
+            this.fileMenu,
+            this.viewMenu});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
             this.menuBar.Size = new System.Drawing.Size(913, 26);
@@ -119,6 +125,7 @@
             this.browserControl.Name = "browserControl";
             this.browserControl.Size = new System.Drawing.Size(913, 352);
             this.browserControl.TabIndex = 1;
+            this.browserControl.WebBrowserShortcutsEnabled = false;
             // 
             // urlCombo
             // 
@@ -166,6 +173,40 @@
             this.reloadButton.UseVisualStyleBackColor = true;
             this.reloadButton.Click += new System.EventHandler(this.reloadButton_Click);
             // 
+            // viewMenu
+            // 
+            this.viewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nextItem,
+            this.prevItem,
+            this.reloadItem});
+            this.viewMenu.Name = "viewMenu";
+            this.viewMenu.Size = new System.Drawing.Size(62, 22);
+            this.viewMenu.Text = "表示(&V)";
+            // 
+            // nextItem
+            // 
+            this.nextItem.Name = "nextItem";
+            this.nextItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.nextItem.Size = new System.Drawing.Size(152, 22);
+            this.nextItem.Text = "進む";
+            this.nextItem.Click += new System.EventHandler(this.nextItem_Click);
+            // 
+            // prevItem
+            // 
+            this.prevItem.Name = "prevItem";
+            this.prevItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.prevItem.Size = new System.Drawing.Size(152, 22);
+            this.prevItem.Text = "戻る";
+            this.prevItem.Click += new System.EventHandler(this.prevItem_Click);
+            // 
+            // reloadItem
+            // 
+            this.reloadItem.Name = "reloadItem";
+            this.reloadItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.reloadItem.Size = new System.Drawing.Size(152, 22);
+            this.reloadItem.Text = "更新";
+            this.reloadItem.Click += new System.EventHandler(this.reloadItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -203,6 +244,10 @@
         private System.Windows.Forms.Button prevButton;
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Button reloadButton;
+        private System.Windows.Forms.ToolStripMenuItem viewMenu;
+        private System.Windows.Forms.ToolStripMenuItem nextItem;
+        private System.Windows.Forms.ToolStripMenuItem prevItem;
+        private System.Windows.Forms.ToolStripMenuItem reloadItem;
     }
 }
 
