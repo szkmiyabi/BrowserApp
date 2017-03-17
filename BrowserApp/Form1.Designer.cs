@@ -127,6 +127,7 @@
             this.urlCombo.Name = "urlCombo";
             this.urlCombo.Size = new System.Drawing.Size(83, 20);
             this.urlCombo.TabIndex = 0;
+            this.urlCombo.SelectedIndexChanged += new System.EventHandler(this.urlCombo_SelectedIndexChanged);
             // 
             // urlText
             // 
@@ -143,6 +144,7 @@
             this.prevButton.TabIndex = 2;
             this.prevButton.Text = "戻る";
             this.prevButton.UseVisualStyleBackColor = true;
+            this.prevButton.Click += new System.EventHandler(this.prevButton_Click);
             // 
             // nextButton
             // 
@@ -152,6 +154,7 @@
             this.nextButton.TabIndex = 3;
             this.nextButton.Text = "進む";
             this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
             // reloadButton
             // 
@@ -161,6 +164,7 @@
             this.reloadButton.TabIndex = 4;
             this.reloadButton.Text = "更新";
             this.reloadButton.UseVisualStyleBackColor = true;
+            this.reloadButton.Click += new System.EventHandler(this.reloadButton_Click);
             // 
             // Form1
             // 

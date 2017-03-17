@@ -21,6 +21,13 @@ namespace BrowserApp
         public Form1()
         {
             InitializeComponent();
+            appInit();
+        }
+
+        //初期化
+        private void appInit()
+        {
+            statusBarText.Text = "ファイルを選択してください";
         }
 
         //ファイル選択ダイアログ
@@ -147,6 +154,26 @@ namespace BrowserApp
             {
                 loadFile();
             }
+        }
+
+        private void prevButton_Click(object sender, EventArgs e)
+        {
+            doBrowserPrev();
+        }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            doBrowserNext();
+        }
+
+        private void reloadButton_Click(object sender, EventArgs e)
+        {
+            doReload();
+        }
+
+        private void urlCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            doBrowseByCombo();
         }
     }
 }
