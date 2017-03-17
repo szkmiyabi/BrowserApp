@@ -44,6 +44,7 @@ namespace BrowserApp
             }
             string html = File.getTextFileText(filename);
             urlArray = HtmlUtil.urlListDatasFromHtml(html);
+            endOpen();
         }
 
         //ファイルを開いた後の処理
