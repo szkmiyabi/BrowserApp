@@ -30,6 +30,21 @@ namespace BrowserApp
             //IE11モード有効
             initRegistry();
             statusBarText.Text = "ファイルを選択してください";
+            imgButtonInit();
+
+        }
+
+        //イメージボタン初期化
+        private void imgButtonInit()
+        {
+            Bitmap ieImg = getImageFromResource("ie32.png");
+            Bitmap ffImg = getImageFromResource("ff32.png");
+            Bitmap gcImg = getImageFromResource("gc32.png");
+            Bitmap cfxImg = getImageFromResource("cfx32.png");
+            ieButton.Image = ieImg;
+            ffButton.Image = ffImg;
+            gcButton.Image = gcImg;
+            cfxButton.Image = cfxImg;
 
         }
 

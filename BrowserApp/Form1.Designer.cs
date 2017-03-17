@@ -45,6 +45,10 @@
             this.nextItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prevItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reloadItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ieButton = new System.Windows.Forms.Button();
+            this.ffButton = new System.Windows.Forms.Button();
+            this.gcButton = new System.Windows.Forms.Button();
+            this.cfxButton = new System.Windows.Forms.Button();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -57,7 +61,7 @@
             this.statusBarText});
             this.statusBar.Location = new System.Drawing.Point(0, 409);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(913, 22);
+            this.statusBar.Size = new System.Drawing.Size(964, 22);
             this.statusBar.TabIndex = 2;
             this.statusBar.Text = "statusStrip1";
             // 
@@ -90,7 +94,7 @@
             this.viewMenu});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
-            this.menuBar.Size = new System.Drawing.Size(913, 26);
+            this.menuBar.Size = new System.Drawing.Size(964, 26);
             this.menuBar.TabIndex = 3;
             this.menuBar.Text = "menuStrip1";
             // 
@@ -101,36 +105,42 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(913, 383);
+            this.panel1.Size = new System.Drawing.Size(964, 383);
             this.panel1.TabIndex = 4;
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.urlCombo);
             this.flowLayoutPanel1.Controls.Add(this.urlText);
             this.flowLayoutPanel1.Controls.Add(this.prevButton);
             this.flowLayoutPanel1.Controls.Add(this.nextButton);
             this.flowLayoutPanel1.Controls.Add(this.reloadButton);
+            this.flowLayoutPanel1.Controls.Add(this.ieButton);
+            this.flowLayoutPanel1.Controls.Add(this.ffButton);
+            this.flowLayoutPanel1.Controls.Add(this.gcButton);
+            this.flowLayoutPanel1.Controls.Add(this.cfxButton);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(913, 31);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(964, 46);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // browserControl
             // 
             this.browserControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.browserControl.Location = new System.Drawing.Point(0, 31);
+            this.browserControl.Location = new System.Drawing.Point(0, 46);
             this.browserControl.MinimumSize = new System.Drawing.Size(20, 20);
             this.browserControl.Name = "browserControl";
-            this.browserControl.Size = new System.Drawing.Size(913, 352);
+            this.browserControl.Size = new System.Drawing.Size(964, 337);
             this.browserControl.TabIndex = 1;
             this.browserControl.WebBrowserShortcutsEnabled = false;
             // 
             // urlCombo
             // 
+            this.urlCombo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.urlCombo.FormattingEnabled = true;
-            this.urlCombo.Location = new System.Drawing.Point(3, 3);
+            this.urlCombo.Location = new System.Drawing.Point(3, 13);
             this.urlCombo.Name = "urlCombo";
             this.urlCombo.Size = new System.Drawing.Size(83, 20);
             this.urlCombo.TabIndex = 0;
@@ -138,14 +148,16 @@
             // 
             // urlText
             // 
-            this.urlText.Location = new System.Drawing.Point(92, 3);
+            this.urlText.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.urlText.Location = new System.Drawing.Point(92, 13);
             this.urlText.Name = "urlText";
             this.urlText.Size = new System.Drawing.Size(495, 19);
             this.urlText.TabIndex = 1;
             // 
             // prevButton
             // 
-            this.prevButton.Location = new System.Drawing.Point(593, 3);
+            this.prevButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.prevButton.Location = new System.Drawing.Point(593, 11);
             this.prevButton.Name = "prevButton";
             this.prevButton.Size = new System.Drawing.Size(38, 23);
             this.prevButton.TabIndex = 2;
@@ -155,7 +167,8 @@
             // 
             // nextButton
             // 
-            this.nextButton.Location = new System.Drawing.Point(637, 3);
+            this.nextButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nextButton.Location = new System.Drawing.Point(637, 11);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(35, 23);
             this.nextButton.TabIndex = 3;
@@ -165,7 +178,8 @@
             // 
             // reloadButton
             // 
-            this.reloadButton.Location = new System.Drawing.Point(678, 3);
+            this.reloadButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.reloadButton.Location = new System.Drawing.Point(678, 11);
             this.reloadButton.Name = "reloadButton";
             this.reloadButton.Size = new System.Drawing.Size(38, 23);
             this.reloadButton.TabIndex = 4;
@@ -207,11 +221,46 @@
             this.reloadItem.Text = "更新";
             this.reloadItem.Click += new System.EventHandler(this.reloadItem_Click);
             // 
+            // ieButton
+            // 
+            this.ieButton.Location = new System.Drawing.Point(722, 3);
+            this.ieButton.Name = "ieButton";
+            this.ieButton.Size = new System.Drawing.Size(40, 40);
+            this.ieButton.TabIndex = 5;
+            this.ieButton.UseVisualStyleBackColor = true;
+            // 
+            // ffButton
+            // 
+            this.ffButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ffButton.Location = new System.Drawing.Point(768, 3);
+            this.ffButton.Name = "ffButton";
+            this.ffButton.Size = new System.Drawing.Size(40, 40);
+            this.ffButton.TabIndex = 6;
+            this.ffButton.UseVisualStyleBackColor = true;
+            // 
+            // gcButton
+            // 
+            this.gcButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.gcButton.Location = new System.Drawing.Point(814, 3);
+            this.gcButton.Name = "gcButton";
+            this.gcButton.Size = new System.Drawing.Size(40, 40);
+            this.gcButton.TabIndex = 7;
+            this.gcButton.UseVisualStyleBackColor = true;
+            // 
+            // cfxButton
+            // 
+            this.cfxButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cfxButton.Location = new System.Drawing.Point(860, 3);
+            this.cfxButton.Name = "cfxButton";
+            this.cfxButton.Size = new System.Drawing.Size(40, 40);
+            this.cfxButton.TabIndex = 8;
+            this.cfxButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 431);
+            this.ClientSize = new System.Drawing.Size(964, 431);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.menuBar);
@@ -223,6 +272,7 @@
             this.menuBar.ResumeLayout(false);
             this.menuBar.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -248,6 +298,10 @@
         private System.Windows.Forms.ToolStripMenuItem nextItem;
         private System.Windows.Forms.ToolStripMenuItem prevItem;
         private System.Windows.Forms.ToolStripMenuItem reloadItem;
+        private System.Windows.Forms.Button ieButton;
+        private System.Windows.Forms.Button ffButton;
+        private System.Windows.Forms.Button gcButton;
+        private System.Windows.Forms.Button cfxButton;
     }
 }
 

@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.IO;
+using System.Reflection;
+using System.Drawing;
+
 namespace BrowserApp
 {
     partial class Form1
@@ -18,6 +22,15 @@ namespace BrowserApp
         {
             regkey.SetValue(process_name, 11001, Microsoft.Win32.RegistryValueKind.DWord);
             regkey.SetValue(process_dbg_name, 11001, Microsoft.Win32.RegistryValueKind.DWord);
+        }
+
+        //imageリソースを取得
+        private Bitmap getImageFromResource(string imgname)
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Stream stream = assembly.GetManifestResourceStream("BrowserApp.resources." + imgname);
+            Bitmap bmp = new Bitmap(stream);
+            return bmp;
         }
     }
 }
