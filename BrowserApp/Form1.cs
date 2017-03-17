@@ -27,7 +27,10 @@ namespace BrowserApp
         //初期化
         private void appInit()
         {
+            //IE11モード有効
+            initRegistry();
             statusBarText.Text = "ファイルを選択してください";
+
         }
 
         //ファイル選択ダイアログ
