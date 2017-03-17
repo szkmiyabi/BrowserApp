@@ -8,13 +8,136 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Collections;
+
 namespace BrowserApp
 {
     public partial class Form1 : Form
     {
+        private string filename;
+        private ArrayList urlArray;
+        private int arrIndex;
+
         public Form1()
         {
             InitializeComponent();
         }
+
+        //ファイル選択ダイアログ
+        private void getOpenFileName()
+        {
+            OpenFileDialog f = new OpenFileDialog();
+            f.Filter = "HTMLファイル(*.html;*.htm)|*.html;*.htm|すべてのファイル(*.*)|*.*";
+            if(f.ShowDialog() == DialogResult.OK)
+            {
+                filename = f.FileName;
+            }
+        }
+
+        //ファイルをロード
+        private void loadFile()
+        {
+            if(urlArray != null)
+            {
+                urlArray = new ArrayList();
+                urlCombo.Items.Clear();
+            }
+            string html = File.getTextFileText(filename);
+            urlArray = HtmlUtil.urlListDatasFromHtml(html);
+        }
+
+        //ファイルを開いた後の処理
+        private void endOpen()
+        {
+            if(urlArray != null)
+            {
+                arrIndex = 0;
+                statusBarText.Text = filename;
+                //コンボボックスの生成
+                for(int i=0; i<urlArray.Count; i++)
+                {
+                    string[] inrow = (string[])urlArray[i];
+                    urlCombo.Items.Add(inrow[0].ToString());
+                }
+                //初期値の設定
+                string[] row = (string[])urlArray[0];
+                urlText.Text = row[1].ToString();
+                urlCombo.SelectedIndex = 0;
+                browserControl.Navigate(urlText.Text);
+            }
+        }
+
+        //更新
+        private void doReload()
+        {
+            string[] row = (string[])urlArray[arrIndex];
+            string urlNo = row[0].ToString();
+            string urlStr = row[1].ToString();
+            urlText.Text = urlStr;
+            browserControl.Navigate(urlStr);
+        }
+
+        //前のURL
+        private void doBrowserPrev()
+        {
+            if (urlArray != null)
+            {
+                if (arrIndex == 0)
+                {
+                    return;
+                }
+                arrIndex--;
+                string[] row = (string[])urlArray[arrIndex];
+                string urlNo = row[0].ToString();
+                string urlStr = row[1].ToString();
+                urlText.Text = urlStr;
+                urlCombo.SelectedIndex = arrIndex;
+                browserControl.Navigate(urlStr);
+            }
+        }
+
+        //次のURL
+        private void doBrowserNext()
+        {
+            if(urlArray != null)
+            {
+                if(arrIndex == (urlArray.Count - 1))
+                {
+                    return;
+                }
+                arrIndex++;
+                string[] row = (string[])urlArray[arrIndex];
+                string urlNo = row[0].ToString();
+                string urlStr = row[1].ToString();
+                urlText.Text = urlStr;
+                urlCombo.SelectedIndex = arrIndex;
+                browserControl.Navigate(urlStr);
+            }
+        }
+
+        //comboで指定したURL
+        private void doBrowseByCombo()
+        {
+            try
+            {
+                string keyVal = "";
+                keyVal = urlCombo.SelectedItem.ToString();
+                int pos = urlCombo.SelectedIndex;
+                if(urlArray != null)
+                {
+                    string[] row = (string[])urlArray[pos];
+                    string urlNo = row[0].ToString();
+                    string urlStr = row[1].ToString();
+                    urlText.Text = urlStr;
+                    browserControl.Navigate(urlStr);
+                    arrIndex = pos;
+                }
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
+        }
+        
     }
 }

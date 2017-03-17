@@ -35,7 +35,7 @@
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.browser = new System.Windows.Forms.WebBrowser();
+            this.browserControl = new System.Windows.Forms.WebBrowser();
             this.urlCombo = new System.Windows.Forms.ComboBox();
             this.urlText = new System.Windows.Forms.TextBox();
             this.prevButton = new System.Windows.Forms.Button();
@@ -88,7 +88,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.browser);
+            this.panel1.Controls.Add(this.browserControl);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 26);
@@ -109,14 +109,14 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(913, 31);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // browser
+            // browserControl
             // 
-            this.browser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.browser.Location = new System.Drawing.Point(0, 31);
-            this.browser.MinimumSize = new System.Drawing.Size(20, 20);
-            this.browser.Name = "browser";
-            this.browser.Size = new System.Drawing.Size(913, 352);
-            this.browser.TabIndex = 1;
+            this.browserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.browserControl.Location = new System.Drawing.Point(0, 31);
+            this.browserControl.MinimumSize = new System.Drawing.Size(20, 20);
+            this.browserControl.Name = "browserControl";
+            this.browserControl.Size = new System.Drawing.Size(913, 352);
+            this.browserControl.TabIndex = 1;
             // 
             // urlCombo
             // 
@@ -190,7 +190,7 @@
         private System.Windows.Forms.ToolStripMenuItem 開くToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuBar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.WebBrowser browser;
+        private System.Windows.Forms.WebBrowser browserControl;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ComboBox urlCombo;
         private System.Windows.Forms.TextBox urlText;
