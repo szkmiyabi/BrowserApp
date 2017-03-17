@@ -125,6 +125,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(964, 46);
             this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.WrapContents = false;
             // 
             // browserControl
             // 
@@ -228,6 +229,7 @@
             this.ieButton.Size = new System.Drawing.Size(40, 40);
             this.ieButton.TabIndex = 5;
             this.ieButton.UseVisualStyleBackColor = true;
+            this.ieButton.Click += new System.EventHandler(this.ieButton_Click);
             // 
             // ffButton
             // 
@@ -237,6 +239,7 @@
             this.ffButton.Size = new System.Drawing.Size(40, 40);
             this.ffButton.TabIndex = 6;
             this.ffButton.UseVisualStyleBackColor = true;
+            this.ffButton.Click += new System.EventHandler(this.ffButton_Click);
             // 
             // gcButton
             // 
@@ -246,6 +249,7 @@
             this.gcButton.Size = new System.Drawing.Size(40, 40);
             this.gcButton.TabIndex = 7;
             this.gcButton.UseVisualStyleBackColor = true;
+            this.gcButton.Click += new System.EventHandler(this.gcButton_Click);
             // 
             // cfxButton
             // 
@@ -255,6 +259,7 @@
             this.cfxButton.Size = new System.Drawing.Size(40, 40);
             this.cfxButton.TabIndex = 8;
             this.cfxButton.UseVisualStyleBackColor = true;
+            this.cfxButton.Click += new System.EventHandler(this.cfxButton_Click);
             // 
             // Form1
             // 

@@ -165,6 +165,90 @@ namespace BrowserApp
             }
         }
 
+        //IEでURLを開く
+        private void browseByIE()
+        {
+            try
+            {
+                string burl = urlText.Text;
+                string iepath = "";
+                    iepath = @"C:\Program Files\Internet Explorer\iexplore.exe";
+                System.Diagnostics.Process.Start(iepath, " " + burl);
+            }
+            catch(Exception ex)
+            {
+            }
+        }
+
+        //FirefoxでURLを開く
+        private void browseByFirefox()
+        {
+            try
+            {
+                string burl = urlText.Text;
+                string ffpath = "";
+                if(getOSBitType().Equals("32"))
+                {
+                    ffpath = @"C:\Program Files\Mozilla Firefox\firefox.exe";
+                }
+                else if(getOSBitType().Equals("64"))
+                {
+                    ffpath = @"C:\Program Files(x86)\Mozilla Firefox\firefox.exe";
+                }
+                System.Diagnostics.Process.Start(ffpath, "-new-tab " + burl);
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        //CyberfoxでURLを開く
+        private void browseByCyberfox()
+        {
+            try
+            {
+                string burl = urlText.Text;
+                string cfxpath = "";
+                if (getOSBitType().Equals("32"))
+                {
+                    cfxpath = @"C:\Program Files\Cyberfox\Cyberfox.exe";
+                }
+                else if (getOSBitType().Equals("64"))
+                {
+                    cfxpath = @"C:\Program Files(x86)\Cyberfox\Cyberfox.exe";
+                }
+                System.Diagnostics.Process.Start(cfxpath, "-new-tab " + burl);
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        //ChromeでURLを開く
+        private void browseByChrome()
+        {
+            try
+            {
+                string burl = urlText.Text;
+                string usrPath = getUserHomePath();
+                string gcpath = "";
+                string appPath = "";
+                if (getOSVersion().Equals("upper-xp"))
+                {
+                    gcpath = @"AppData\Local\Google\Chrome\Application\chrome.exe";
+                }
+                else if(getOSVersion().Equals("under-xp"))
+                {
+                    gcpath = @"Local Settings\Application Data\Google\Chrome\Application\chrome.exe";
+                }
+                appPath = usrPath + @"\" + gcpath;
+                System.Diagnostics.Process.Start(appPath, " " + burl);
+            }
+            catch(Exception ex)
+            {
+            }
+        }
+
         private void openItem_Click(object sender, EventArgs e)
         {
             getOpenFileName();
@@ -207,6 +291,26 @@ namespace BrowserApp
         private void reloadItem_Click(object sender, EventArgs e)
         {
             doReload();
+        }
+
+        private void ieButton_Click(object sender, EventArgs e)
+        {
+            browseByIE();
+        }
+
+        private void ffButton_Click(object sender, EventArgs e)
+        {
+            browseByFirefox();
+        }
+
+        private void cfxButton_Click(object sender, EventArgs e)
+        {
+            browseByCyberfox();
+        }
+
+        private void gcButton_Click(object sender, EventArgs e)
+        {
+            browseByChrome();
         }
     }
 }
