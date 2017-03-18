@@ -33,22 +33,27 @@
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.openItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar = new System.Windows.Forms.MenuStrip();
+            this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.nextItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prevItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reloadItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.browserControl = new System.Windows.Forms.WebBrowser();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.urlCombo = new System.Windows.Forms.ComboBox();
             this.urlText = new System.Windows.Forms.TextBox();
             this.prevButton = new System.Windows.Forms.Button();
             this.nextButton = new System.Windows.Forms.Button();
             this.reloadButton = new System.Windows.Forms.Button();
-            this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.nextItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prevItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reloadItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ieButton = new System.Windows.Forms.Button();
             this.ffButton = new System.Windows.Forms.Button();
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
+            this.browseMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.ieItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.firefoxItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chromeItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cyberfoxItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -82,7 +87,7 @@
             // 
             this.openItem.Name = "openItem";
             this.openItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openItem.Size = new System.Drawing.Size(152, 22);
+            this.openItem.Size = new System.Drawing.Size(148, 22);
             this.openItem.Text = "開く";
             this.openItem.Click += new System.EventHandler(this.openItem_Click);
             // 
@@ -91,12 +96,47 @@
             this.menuBar.BackColor = System.Drawing.SystemColors.Control;
             this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileMenu,
-            this.viewMenu});
+            this.viewMenu,
+            this.browseMenu});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
             this.menuBar.Size = new System.Drawing.Size(964, 26);
             this.menuBar.TabIndex = 3;
             this.menuBar.Text = "menuStrip1";
+            // 
+            // viewMenu
+            // 
+            this.viewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nextItem,
+            this.prevItem,
+            this.reloadItem});
+            this.viewMenu.Name = "viewMenu";
+            this.viewMenu.Size = new System.Drawing.Size(62, 22);
+            this.viewMenu.Text = "表示(&V)";
+            // 
+            // nextItem
+            // 
+            this.nextItem.Name = "nextItem";
+            this.nextItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.nextItem.Size = new System.Drawing.Size(148, 22);
+            this.nextItem.Text = "進む";
+            this.nextItem.Click += new System.EventHandler(this.nextItem_Click);
+            // 
+            // prevItem
+            // 
+            this.prevItem.Name = "prevItem";
+            this.prevItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.prevItem.Size = new System.Drawing.Size(148, 22);
+            this.prevItem.Text = "戻る";
+            this.prevItem.Click += new System.EventHandler(this.prevItem_Click);
+            // 
+            // reloadItem
+            // 
+            this.reloadItem.Name = "reloadItem";
+            this.reloadItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.reloadItem.Size = new System.Drawing.Size(148, 22);
+            this.reloadItem.Text = "更新";
+            this.reloadItem.Click += new System.EventHandler(this.reloadItem_Click);
             // 
             // panel1
             // 
@@ -107,6 +147,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(964, 383);
             this.panel1.TabIndex = 4;
+            // 
+            // browserControl
+            // 
+            this.browserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.browserControl.Location = new System.Drawing.Point(0, 46);
+            this.browserControl.MinimumSize = new System.Drawing.Size(20, 20);
+            this.browserControl.Name = "browserControl";
+            this.browserControl.Size = new System.Drawing.Size(964, 337);
+            this.browserControl.TabIndex = 1;
+            this.browserControl.WebBrowserShortcutsEnabled = false;
             // 
             // flowLayoutPanel1
             // 
@@ -126,16 +176,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(964, 46);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.WrapContents = false;
-            // 
-            // browserControl
-            // 
-            this.browserControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.browserControl.Location = new System.Drawing.Point(0, 46);
-            this.browserControl.MinimumSize = new System.Drawing.Size(20, 20);
-            this.browserControl.Name = "browserControl";
-            this.browserControl.Size = new System.Drawing.Size(964, 337);
-            this.browserControl.TabIndex = 1;
-            this.browserControl.WebBrowserShortcutsEnabled = false;
             // 
             // urlCombo
             // 
@@ -188,40 +228,6 @@
             this.reloadButton.UseVisualStyleBackColor = true;
             this.reloadButton.Click += new System.EventHandler(this.reloadButton_Click);
             // 
-            // viewMenu
-            // 
-            this.viewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nextItem,
-            this.prevItem,
-            this.reloadItem});
-            this.viewMenu.Name = "viewMenu";
-            this.viewMenu.Size = new System.Drawing.Size(62, 22);
-            this.viewMenu.Text = "表示(&V)";
-            // 
-            // nextItem
-            // 
-            this.nextItem.Name = "nextItem";
-            this.nextItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nextItem.Size = new System.Drawing.Size(152, 22);
-            this.nextItem.Text = "進む";
-            this.nextItem.Click += new System.EventHandler(this.nextItem_Click);
-            // 
-            // prevItem
-            // 
-            this.prevItem.Name = "prevItem";
-            this.prevItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.prevItem.Size = new System.Drawing.Size(152, 22);
-            this.prevItem.Text = "戻る";
-            this.prevItem.Click += new System.EventHandler(this.prevItem_Click);
-            // 
-            // reloadItem
-            // 
-            this.reloadItem.Name = "reloadItem";
-            this.reloadItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.reloadItem.Size = new System.Drawing.Size(152, 22);
-            this.reloadItem.Text = "更新";
-            this.reloadItem.Click += new System.EventHandler(this.reloadItem_Click);
-            // 
             // ieButton
             // 
             this.ieButton.Location = new System.Drawing.Point(722, 3);
@@ -260,6 +266,49 @@
             this.cfxButton.TabIndex = 8;
             this.cfxButton.UseVisualStyleBackColor = true;
             this.cfxButton.Click += new System.EventHandler(this.cfxButton_Click);
+            // 
+            // browseMenu
+            // 
+            this.browseMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ieItem,
+            this.firefoxItem,
+            this.chromeItem,
+            this.cyberfoxItem});
+            this.browseMenu.Name = "browseMenu";
+            this.browseMenu.Size = new System.Drawing.Size(86, 22);
+            this.browseMenu.Text = "ブラウズ(&B)";
+            // 
+            // ieItem
+            // 
+            this.ieItem.Name = "ieItem";
+            this.ieItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
+            this.ieItem.Size = new System.Drawing.Size(210, 22);
+            this.ieItem.Text = "IEで開く";
+            this.ieItem.Click += new System.EventHandler(this.ieItem_Click);
+            // 
+            // firefoxItem
+            // 
+            this.firefoxItem.Name = "firefoxItem";
+            this.firefoxItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
+            this.firefoxItem.Size = new System.Drawing.Size(210, 22);
+            this.firefoxItem.Text = "Firefoxで開く";
+            this.firefoxItem.Click += new System.EventHandler(this.firefoxItem_Click);
+            // 
+            // chromeItem
+            // 
+            this.chromeItem.Name = "chromeItem";
+            this.chromeItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
+            this.chromeItem.Size = new System.Drawing.Size(210, 22);
+            this.chromeItem.Text = "Chromeで開く";
+            this.chromeItem.Click += new System.EventHandler(this.chromeItem_Click);
+            // 
+            // cyberfoxItem
+            // 
+            this.cyberfoxItem.Name = "cyberfoxItem";
+            this.cyberfoxItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D4)));
+            this.cyberfoxItem.Size = new System.Drawing.Size(210, 22);
+            this.cyberfoxItem.Text = "Cyberfoxで開く";
+            this.cyberfoxItem.Click += new System.EventHandler(this.cyberfoxItem_Click);
             // 
             // Form1
             // 
@@ -307,6 +356,11 @@
         private System.Windows.Forms.Button ffButton;
         private System.Windows.Forms.Button gcButton;
         private System.Windows.Forms.Button cfxButton;
+        private System.Windows.Forms.ToolStripMenuItem browseMenu;
+        private System.Windows.Forms.ToolStripMenuItem ieItem;
+        private System.Windows.Forms.ToolStripMenuItem firefoxItem;
+        private System.Windows.Forms.ToolStripMenuItem chromeItem;
+        private System.Windows.Forms.ToolStripMenuItem cyberfoxItem;
     }
 }
 

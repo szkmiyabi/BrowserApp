@@ -312,5 +312,25 @@ namespace BrowserApp
         {
             browseByChrome();
         }
+
+        private void ieItem_Click(object sender, EventArgs e)
+        {
+            browseByIE();
+        }
+
+        private void firefoxItem_Click(object sender, EventArgs e)
+        {
+            browseByFirefox();
+        }
+
+        private void chromeItem_Click(object sender, EventArgs e)
+        {
+            browseByChrome();
+        }
+
+        private void cyberfoxItem_Click(object sender, EventArgs e)
+        {
+            browseByCyberfox();
+        }
     }
 }
