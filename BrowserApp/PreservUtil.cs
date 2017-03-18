@@ -37,9 +37,7 @@ namespace BrowserApp
         public void tag_list()
         {
             string[] tags = { "ul", "ol", "dl", "dt", "dd" };
-            int idx = tags.Length;
-
-            for(int i=0; i<idx; i++)
+            for(int i=0; i<tags.Length; i++)
             {
                 string val = tags[i].ToString();
                 _tag_list_func(val);
@@ -71,6 +69,7 @@ namespace BrowserApp
                 i++;
             }
         }
+
 
         //要素名ラベルを表示
         private void add_label(HtmlElement obj, int cnt)
