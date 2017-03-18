@@ -33,6 +33,32 @@ namespace BrowserApp
 
         }
 
+        //リンク画像を枠で囲う
+        public void tag_link_img(Boolean alt_attr)
+        {
+            HtmlElementCollection ats = d.GetElementsByTagName("a");
+            int i = 0;
+            foreach(HtmlElement a in ats)
+            {
+                HtmlElementCollection img = a.GetElementsByTagName("img");
+                if(img.Count > 0 && alt_attr)
+                {
+                    a.Style = "position:relative";
+                    add_label(a, i);
+                }
+                foreach(HtmlElement imgtag in img)
+                {
+                    imgtag.Style = "border:2px dotted red;";
+                    if (alt_attr)
+                    {
+                        HtmlElement span = d.GetElementById("bkm-a-span-" + i);
+                        span.InnerHtml = imgtag.GetAttribute("alt");
+                    }
+                }
+                i++;
+            }
+        }
+
         //リストを枠で囲う
         public void tag_list()
         {

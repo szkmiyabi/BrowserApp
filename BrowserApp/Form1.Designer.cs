@@ -339,6 +339,7 @@
             this.linkImageItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D6)));
             this.linkImageItem.Size = new System.Drawing.Size(242, 22);
             this.linkImageItem.Text = "リンク画像を枠で表示";
+            this.linkImageItem.Click += new System.EventHandler(this.linkImageItem_Click);
             // 
             // listItem
             // 
