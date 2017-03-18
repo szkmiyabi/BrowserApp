@@ -332,5 +332,10 @@ namespace BrowserApp
         {
             browseByCyberfox();
         }
+
+        private void paragraphItem_Click(object sender, EventArgs e)
+        {
+            JavascriptUtil.js_test(ref browserControl);
+        }
     }
 }

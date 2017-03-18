@@ -54,6 +54,8 @@
             this.firefoxItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chromeItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cyberfoxItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.preservMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.paragraphItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -97,7 +99,8 @@
             this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileMenu,
             this.viewMenu,
-            this.browseMenu});
+            this.browseMenu,
+            this.preservMenu});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
             this.menuBar.Size = new System.Drawing.Size(964, 26);
@@ -310,6 +313,21 @@
             this.cyberfoxItem.Text = "Cyberfoxで開く";
             this.cyberfoxItem.Click += new System.EventHandler(this.cyberfoxItem_Click);
             // 
+            // preservMenu
+            // 
+            this.preservMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.paragraphItem});
+            this.preservMenu.Name = "preservMenu";
+            this.preservMenu.Size = new System.Drawing.Size(134, 22);
+            this.preservMenu.Text = "シュミレーション(&S)";
+            // 
+            // paragraphItem
+            // 
+            this.paragraphItem.Name = "paragraphItem";
+            this.paragraphItem.Size = new System.Drawing.Size(160, 22);
+            this.paragraphItem.Text = "段落を枠で表示";
+            this.paragraphItem.Click += new System.EventHandler(this.paragraphItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -341,7 +359,6 @@
         private System.Windows.Forms.ToolStripMenuItem openItem;
         private System.Windows.Forms.MenuStrip menuBar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.WebBrowser browserControl;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ComboBox urlCombo;
         private System.Windows.Forms.TextBox urlText;
@@ -361,6 +378,9 @@
         private System.Windows.Forms.ToolStripMenuItem firefoxItem;
         private System.Windows.Forms.ToolStripMenuItem chromeItem;
         private System.Windows.Forms.ToolStripMenuItem cyberfoxItem;
+        private System.Windows.Forms.ToolStripMenuItem preservMenu;
+        private System.Windows.Forms.ToolStripMenuItem paragraphItem;
+        public System.Windows.Forms.WebBrowser browserControl;
     }
 }
 

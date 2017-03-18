@@ -61,6 +61,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HtmlUtil.cs" />
+    <Compile Include="JavascriptUtil.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
