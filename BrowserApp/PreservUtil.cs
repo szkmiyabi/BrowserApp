@@ -96,6 +96,50 @@ namespace BrowserApp
             }
         }
 
+        //セマンティック要素を枠で囲う
+        public void tag_semantic()
+        {
+            string[] tags = { "strong", "em" };
+            for(int i=0; i<tags.Length; i++)
+            {
+                string val = tags[i].ToString();
+                _tag_semantic_func(val);
+            }
+        }
+        private void _tag_semantic_func(string tag)
+        {
+            HtmlElementCollection ts = d.GetElementsByTagName(tag);
+            int i = 0;
+            foreach(HtmlElement t in ts)
+            {
+                t.Style = "border:2px dotted red; position: relative;";
+                add_label(t, i);
+                i++;
+            }
+        }
+
+        //見出し要素を枠で囲う
+        public void tag_heading()
+        {
+            string[] tags = { "h1", "h2", "h3", "h4", "h5", "h6" };
+            for(int i=0; i<tags.Length; i++)
+            {
+                string val = tags[i].ToString();
+                _tag_semantic_func(val);
+            }
+        }
+        private void _tag_heading_func(string tag)
+        {
+            HtmlElementCollection ts = d.GetElementsByTagName(tag);
+            int i = 0;
+            foreach(HtmlElement t in ts)
+            {
+                t.Style = "border:2px dotted red; position: relative;";
+                add_label(t, i);
+                i++;
+            }
+        }
+
 
         //要素名ラベルを表示
         private void add_label(HtmlElement obj, int cnt)

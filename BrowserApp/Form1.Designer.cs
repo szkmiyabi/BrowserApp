@@ -37,6 +37,15 @@
             this.nextItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prevItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reloadItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.browseMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.ieItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.firefoxItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chromeItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cyberfoxItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.preservMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.paragraphItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.linkImageItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.browserControl = new System.Windows.Forms.WebBrowser();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -49,15 +58,8 @@
             this.ffButton = new System.Windows.Forms.Button();
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
-            this.browseMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.ieItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.firefoxItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chromeItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cyberfoxItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.preservMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.paragraphItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.linkImageItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.semanticItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.headingItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -142,6 +144,85 @@
             this.reloadItem.Size = new System.Drawing.Size(148, 22);
             this.reloadItem.Text = "更新";
             this.reloadItem.Click += new System.EventHandler(this.reloadItem_Click);
+            // 
+            // browseMenu
+            // 
+            this.browseMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ieItem,
+            this.firefoxItem,
+            this.chromeItem,
+            this.cyberfoxItem});
+            this.browseMenu.Name = "browseMenu";
+            this.browseMenu.Size = new System.Drawing.Size(86, 22);
+            this.browseMenu.Text = "ブラウズ(&B)";
+            // 
+            // ieItem
+            // 
+            this.ieItem.Name = "ieItem";
+            this.ieItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
+            this.ieItem.Size = new System.Drawing.Size(210, 22);
+            this.ieItem.Text = "IEで開く";
+            this.ieItem.Click += new System.EventHandler(this.ieItem_Click);
+            // 
+            // firefoxItem
+            // 
+            this.firefoxItem.Name = "firefoxItem";
+            this.firefoxItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
+            this.firefoxItem.Size = new System.Drawing.Size(210, 22);
+            this.firefoxItem.Text = "Firefoxで開く";
+            this.firefoxItem.Click += new System.EventHandler(this.firefoxItem_Click);
+            // 
+            // chromeItem
+            // 
+            this.chromeItem.Name = "chromeItem";
+            this.chromeItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
+            this.chromeItem.Size = new System.Drawing.Size(210, 22);
+            this.chromeItem.Text = "Chromeで開く";
+            this.chromeItem.Click += new System.EventHandler(this.chromeItem_Click);
+            // 
+            // cyberfoxItem
+            // 
+            this.cyberfoxItem.Name = "cyberfoxItem";
+            this.cyberfoxItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D4)));
+            this.cyberfoxItem.Size = new System.Drawing.Size(210, 22);
+            this.cyberfoxItem.Text = "Cyberfoxで開く";
+            this.cyberfoxItem.Click += new System.EventHandler(this.cyberfoxItem_Click);
+            // 
+            // preservMenu
+            // 
+            this.preservMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.paragraphItem,
+            this.linkImageItem,
+            this.listItem,
+            this.semanticItem,
+            this.headingItem});
+            this.preservMenu.Name = "preservMenu";
+            this.preservMenu.Size = new System.Drawing.Size(134, 22);
+            this.preservMenu.Text = "シュミレーション(&S)";
+            // 
+            // paragraphItem
+            // 
+            this.paragraphItem.Name = "paragraphItem";
+            this.paragraphItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D5)));
+            this.paragraphItem.Size = new System.Drawing.Size(290, 22);
+            this.paragraphItem.Text = "段落を枠で表示";
+            this.paragraphItem.Click += new System.EventHandler(this.paragraphItem_Click);
+            // 
+            // linkImageItem
+            // 
+            this.linkImageItem.Name = "linkImageItem";
+            this.linkImageItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D6)));
+            this.linkImageItem.Size = new System.Drawing.Size(290, 22);
+            this.linkImageItem.Text = "リンク画像を枠で表示";
+            this.linkImageItem.Click += new System.EventHandler(this.linkImageItem_Click);
+            // 
+            // listItem
+            // 
+            this.listItem.Name = "listItem";
+            this.listItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D7)));
+            this.listItem.Size = new System.Drawing.Size(290, 22);
+            this.listItem.Text = "リスト要素を枠で表示";
+            this.listItem.Click += new System.EventHandler(this.listItem_Click);
             // 
             // panel1
             // 
@@ -272,82 +353,21 @@
             this.cfxButton.UseVisualStyleBackColor = true;
             this.cfxButton.Click += new System.EventHandler(this.cfxButton_Click);
             // 
-            // browseMenu
+            // semanticItem
             // 
-            this.browseMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ieItem,
-            this.firefoxItem,
-            this.chromeItem,
-            this.cyberfoxItem});
-            this.browseMenu.Name = "browseMenu";
-            this.browseMenu.Size = new System.Drawing.Size(86, 22);
-            this.browseMenu.Text = "ブラウズ(&B)";
+            this.semanticItem.Name = "semanticItem";
+            this.semanticItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D8)));
+            this.semanticItem.Size = new System.Drawing.Size(290, 22);
+            this.semanticItem.Text = "セマンティック要素を枠で表示";
+            this.semanticItem.Click += new System.EventHandler(this.semanticItem_Click);
             // 
-            // ieItem
+            // headingItem
             // 
-            this.ieItem.Name = "ieItem";
-            this.ieItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
-            this.ieItem.Size = new System.Drawing.Size(210, 22);
-            this.ieItem.Text = "IEで開く";
-            this.ieItem.Click += new System.EventHandler(this.ieItem_Click);
-            // 
-            // firefoxItem
-            // 
-            this.firefoxItem.Name = "firefoxItem";
-            this.firefoxItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
-            this.firefoxItem.Size = new System.Drawing.Size(210, 22);
-            this.firefoxItem.Text = "Firefoxで開く";
-            this.firefoxItem.Click += new System.EventHandler(this.firefoxItem_Click);
-            // 
-            // chromeItem
-            // 
-            this.chromeItem.Name = "chromeItem";
-            this.chromeItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
-            this.chromeItem.Size = new System.Drawing.Size(210, 22);
-            this.chromeItem.Text = "Chromeで開く";
-            this.chromeItem.Click += new System.EventHandler(this.chromeItem_Click);
-            // 
-            // cyberfoxItem
-            // 
-            this.cyberfoxItem.Name = "cyberfoxItem";
-            this.cyberfoxItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D4)));
-            this.cyberfoxItem.Size = new System.Drawing.Size(210, 22);
-            this.cyberfoxItem.Text = "Cyberfoxで開く";
-            this.cyberfoxItem.Click += new System.EventHandler(this.cyberfoxItem_Click);
-            // 
-            // preservMenu
-            // 
-            this.preservMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.paragraphItem,
-            this.linkImageItem,
-            this.listItem});
-            this.preservMenu.Name = "preservMenu";
-            this.preservMenu.Size = new System.Drawing.Size(134, 22);
-            this.preservMenu.Text = "シュミレーション(&S)";
-            // 
-            // paragraphItem
-            // 
-            this.paragraphItem.Name = "paragraphItem";
-            this.paragraphItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D5)));
-            this.paragraphItem.Size = new System.Drawing.Size(242, 22);
-            this.paragraphItem.Text = "段落を枠で表示";
-            this.paragraphItem.Click += new System.EventHandler(this.paragraphItem_Click);
-            // 
-            // linkImageItem
-            // 
-            this.linkImageItem.Name = "linkImageItem";
-            this.linkImageItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D6)));
-            this.linkImageItem.Size = new System.Drawing.Size(242, 22);
-            this.linkImageItem.Text = "リンク画像を枠で表示";
-            this.linkImageItem.Click += new System.EventHandler(this.linkImageItem_Click);
-            // 
-            // listItem
-            // 
-            this.listItem.Name = "listItem";
-            this.listItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D7)));
-            this.listItem.Size = new System.Drawing.Size(242, 22);
-            this.listItem.Text = "リスト要素を枠で表示";
-            this.listItem.Click += new System.EventHandler(this.listItem_Click);
+            this.headingItem.Name = "headingItem";
+            this.headingItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D9)));
+            this.headingItem.Size = new System.Drawing.Size(290, 22);
+            this.headingItem.Text = "見出し要素を枠で表示";
+            this.headingItem.Click += new System.EventHandler(this.headingItem_Click);
             // 
             // Form1
             // 
@@ -404,6 +424,8 @@
         public System.Windows.Forms.WebBrowser browserControl;
         private System.Windows.Forms.ToolStripMenuItem linkImageItem;
         private System.Windows.Forms.ToolStripMenuItem listItem;
+        private System.Windows.Forms.ToolStripMenuItem semanticItem;
+        private System.Windows.Forms.ToolStripMenuItem headingItem;
     }
 }
 

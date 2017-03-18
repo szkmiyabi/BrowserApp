@@ -350,5 +350,17 @@ namespace BrowserApp
             PreservUtil pu = new PreservUtil(ref browserControl);
             pu.tag_link_img(false);
         }
+
+        private void semanticItem_Click(object sender, EventArgs e)
+        {
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.tag_semantic();
+        }
+
+        private void headingItem_Click(object sender, EventArgs e)
+        {
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.tag_heading();
+        }
     }
 }
