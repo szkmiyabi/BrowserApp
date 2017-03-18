@@ -60,6 +60,8 @@
             this.cfxButton = new System.Windows.Forms.Button();
             this.semanticItem = new System.Windows.Forms.ToolStripMenuItem();
             this.headingItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -93,8 +95,8 @@
             // 
             this.openItem.Name = "openItem";
             this.openItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openItem.Size = new System.Drawing.Size(148, 22);
-            this.openItem.Text = "開く";
+            this.openItem.Size = new System.Drawing.Size(167, 22);
+            this.openItem.Text = "開く(&O)";
             this.openItem.Click += new System.EventHandler(this.openItem_Click);
             // 
             // menuBar
@@ -125,24 +127,24 @@
             // 
             this.nextItem.Name = "nextItem";
             this.nextItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nextItem.Size = new System.Drawing.Size(148, 22);
-            this.nextItem.Text = "進む";
+            this.nextItem.Size = new System.Drawing.Size(167, 22);
+            this.nextItem.Text = "進む(&N)";
             this.nextItem.Click += new System.EventHandler(this.nextItem_Click);
             // 
             // prevItem
             // 
             this.prevItem.Name = "prevItem";
             this.prevItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.prevItem.Size = new System.Drawing.Size(148, 22);
-            this.prevItem.Text = "戻る";
+            this.prevItem.Size = new System.Drawing.Size(167, 22);
+            this.prevItem.Text = "戻る(&P)";
             this.prevItem.Click += new System.EventHandler(this.prevItem_Click);
             // 
             // reloadItem
             // 
             this.reloadItem.Name = "reloadItem";
             this.reloadItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.reloadItem.Size = new System.Drawing.Size(148, 22);
-            this.reloadItem.Text = "更新";
+            this.reloadItem.Size = new System.Drawing.Size(167, 22);
+            this.reloadItem.Text = "更新(&R)";
             this.reloadItem.Click += new System.EventHandler(this.reloadItem_Click);
             // 
             // browseMenu
@@ -160,32 +162,32 @@
             // 
             this.ieItem.Name = "ieItem";
             this.ieItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
-            this.ieItem.Size = new System.Drawing.Size(210, 22);
-            this.ieItem.Text = "IEで開く";
+            this.ieItem.Size = new System.Drawing.Size(227, 22);
+            this.ieItem.Text = "IEで開く(&1)";
             this.ieItem.Click += new System.EventHandler(this.ieItem_Click);
             // 
             // firefoxItem
             // 
             this.firefoxItem.Name = "firefoxItem";
             this.firefoxItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
-            this.firefoxItem.Size = new System.Drawing.Size(210, 22);
-            this.firefoxItem.Text = "Firefoxで開く";
+            this.firefoxItem.Size = new System.Drawing.Size(227, 22);
+            this.firefoxItem.Text = "Firefoxで開く(&2)";
             this.firefoxItem.Click += new System.EventHandler(this.firefoxItem_Click);
             // 
             // chromeItem
             // 
             this.chromeItem.Name = "chromeItem";
             this.chromeItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
-            this.chromeItem.Size = new System.Drawing.Size(210, 22);
-            this.chromeItem.Text = "Chromeで開く";
+            this.chromeItem.Size = new System.Drawing.Size(227, 22);
+            this.chromeItem.Text = "Chromeで開く(&3)";
             this.chromeItem.Click += new System.EventHandler(this.chromeItem_Click);
             // 
             // cyberfoxItem
             // 
             this.cyberfoxItem.Name = "cyberfoxItem";
             this.cyberfoxItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D4)));
-            this.cyberfoxItem.Size = new System.Drawing.Size(210, 22);
-            this.cyberfoxItem.Text = "Cyberfoxで開く";
+            this.cyberfoxItem.Size = new System.Drawing.Size(227, 22);
+            this.cyberfoxItem.Text = "Cyberfoxで開く(&4)";
             this.cyberfoxItem.Click += new System.EventHandler(this.cyberfoxItem_Click);
             // 
             // preservMenu
@@ -195,7 +197,9 @@
             this.linkImageItem,
             this.listItem,
             this.semanticItem,
-            this.headingItem});
+            this.headingItem,
+            this.labelItem,
+            this.tableItem});
             this.preservMenu.Name = "preservMenu";
             this.preservMenu.Size = new System.Drawing.Size(134, 22);
             this.preservMenu.Text = "シュミレーション(&S)";
@@ -204,24 +208,24 @@
             // 
             this.paragraphItem.Name = "paragraphItem";
             this.paragraphItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D5)));
-            this.paragraphItem.Size = new System.Drawing.Size(290, 22);
-            this.paragraphItem.Text = "段落を枠で表示";
+            this.paragraphItem.Size = new System.Drawing.Size(330, 22);
+            this.paragraphItem.Text = "段落を枠で表示(&A)";
             this.paragraphItem.Click += new System.EventHandler(this.paragraphItem_Click);
             // 
             // linkImageItem
             // 
             this.linkImageItem.Name = "linkImageItem";
             this.linkImageItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D6)));
-            this.linkImageItem.Size = new System.Drawing.Size(290, 22);
-            this.linkImageItem.Text = "リンク画像を枠で表示";
+            this.linkImageItem.Size = new System.Drawing.Size(330, 22);
+            this.linkImageItem.Text = "リンク画像を枠で表示(&B)";
             this.linkImageItem.Click += new System.EventHandler(this.linkImageItem_Click);
             // 
             // listItem
             // 
             this.listItem.Name = "listItem";
             this.listItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D7)));
-            this.listItem.Size = new System.Drawing.Size(290, 22);
-            this.listItem.Text = "リスト要素を枠で表示";
+            this.listItem.Size = new System.Drawing.Size(330, 22);
+            this.listItem.Text = "リスト要素を枠で表示(&C)";
             this.listItem.Click += new System.EventHandler(this.listItem_Click);
             // 
             // panel1
@@ -241,7 +245,7 @@
             this.browserControl.MinimumSize = new System.Drawing.Size(20, 20);
             this.browserControl.Name = "browserControl";
             this.browserControl.Size = new System.Drawing.Size(964, 337);
-            this.browserControl.TabIndex = 1;
+            this.browserControl.TabIndex = 10;
             this.browserControl.WebBrowserShortcutsEnabled = false;
             // 
             // flowLayoutPanel1
@@ -270,7 +274,7 @@
             this.urlCombo.Location = new System.Drawing.Point(3, 13);
             this.urlCombo.Name = "urlCombo";
             this.urlCombo.Size = new System.Drawing.Size(83, 20);
-            this.urlCombo.TabIndex = 0;
+            this.urlCombo.TabIndex = 1;
             this.urlCombo.SelectedIndexChanged += new System.EventHandler(this.urlCombo_SelectedIndexChanged);
             // 
             // urlText
@@ -279,7 +283,7 @@
             this.urlText.Location = new System.Drawing.Point(92, 13);
             this.urlText.Name = "urlText";
             this.urlText.Size = new System.Drawing.Size(495, 19);
-            this.urlText.TabIndex = 1;
+            this.urlText.TabIndex = 2;
             // 
             // prevButton
             // 
@@ -287,7 +291,7 @@
             this.prevButton.Location = new System.Drawing.Point(593, 11);
             this.prevButton.Name = "prevButton";
             this.prevButton.Size = new System.Drawing.Size(38, 23);
-            this.prevButton.TabIndex = 2;
+            this.prevButton.TabIndex = 3;
             this.prevButton.Text = "戻る";
             this.prevButton.UseVisualStyleBackColor = true;
             this.prevButton.Click += new System.EventHandler(this.prevButton_Click);
@@ -298,7 +302,7 @@
             this.nextButton.Location = new System.Drawing.Point(637, 11);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(35, 23);
-            this.nextButton.TabIndex = 3;
+            this.nextButton.TabIndex = 4;
             this.nextButton.Text = "進む";
             this.nextButton.UseVisualStyleBackColor = true;
             this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
@@ -309,7 +313,7 @@
             this.reloadButton.Location = new System.Drawing.Point(678, 11);
             this.reloadButton.Name = "reloadButton";
             this.reloadButton.Size = new System.Drawing.Size(38, 23);
-            this.reloadButton.TabIndex = 4;
+            this.reloadButton.TabIndex = 5;
             this.reloadButton.Text = "更新";
             this.reloadButton.UseVisualStyleBackColor = true;
             this.reloadButton.Click += new System.EventHandler(this.reloadButton_Click);
@@ -319,7 +323,7 @@
             this.ieButton.Location = new System.Drawing.Point(722, 3);
             this.ieButton.Name = "ieButton";
             this.ieButton.Size = new System.Drawing.Size(40, 40);
-            this.ieButton.TabIndex = 5;
+            this.ieButton.TabIndex = 6;
             this.ieButton.UseVisualStyleBackColor = true;
             this.ieButton.Click += new System.EventHandler(this.ieButton_Click);
             // 
@@ -329,7 +333,7 @@
             this.ffButton.Location = new System.Drawing.Point(768, 3);
             this.ffButton.Name = "ffButton";
             this.ffButton.Size = new System.Drawing.Size(40, 40);
-            this.ffButton.TabIndex = 6;
+            this.ffButton.TabIndex = 7;
             this.ffButton.UseVisualStyleBackColor = true;
             this.ffButton.Click += new System.EventHandler(this.ffButton_Click);
             // 
@@ -339,7 +343,7 @@
             this.gcButton.Location = new System.Drawing.Point(814, 3);
             this.gcButton.Name = "gcButton";
             this.gcButton.Size = new System.Drawing.Size(40, 40);
-            this.gcButton.TabIndex = 7;
+            this.gcButton.TabIndex = 8;
             this.gcButton.UseVisualStyleBackColor = true;
             this.gcButton.Click += new System.EventHandler(this.gcButton_Click);
             // 
@@ -349,7 +353,7 @@
             this.cfxButton.Location = new System.Drawing.Point(860, 3);
             this.cfxButton.Name = "cfxButton";
             this.cfxButton.Size = new System.Drawing.Size(40, 40);
-            this.cfxButton.TabIndex = 8;
+            this.cfxButton.TabIndex = 9;
             this.cfxButton.UseVisualStyleBackColor = true;
             this.cfxButton.Click += new System.EventHandler(this.cfxButton_Click);
             // 
@@ -357,17 +361,32 @@
             // 
             this.semanticItem.Name = "semanticItem";
             this.semanticItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D8)));
-            this.semanticItem.Size = new System.Drawing.Size(290, 22);
-            this.semanticItem.Text = "セマンティック要素を枠で表示";
+            this.semanticItem.Size = new System.Drawing.Size(330, 22);
+            this.semanticItem.Text = "セマンティック要素を枠で表示(&D)";
             this.semanticItem.Click += new System.EventHandler(this.semanticItem_Click);
             // 
             // headingItem
             // 
             this.headingItem.Name = "headingItem";
             this.headingItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D9)));
-            this.headingItem.Size = new System.Drawing.Size(290, 22);
-            this.headingItem.Text = "見出し要素を枠で表示";
+            this.headingItem.Size = new System.Drawing.Size(330, 22);
+            this.headingItem.Text = "見出し要素を枠で表示(&E)";
             this.headingItem.Click += new System.EventHandler(this.headingItem_Click);
+            // 
+            // labelItem
+            // 
+            this.labelItem.Name = "labelItem";
+            this.labelItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Oemcomma)));
+            this.labelItem.Size = new System.Drawing.Size(330, 22);
+            this.labelItem.Text = "ラベル要素を枠で表示(&F)";
+            // 
+            // tableItem
+            // 
+            this.tableItem.Name = "tableItem";
+            this.tableItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.OemPeriod)));
+            this.tableItem.Size = new System.Drawing.Size(330, 22);
+            this.tableItem.Text = "テーブル要素を枠で表示(&G)";
+            this.tableItem.Click += new System.EventHandler(this.tableItem_Click);
             // 
             // Form1
             // 
@@ -377,6 +396,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.menuBar);
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuBar;
             this.Name = "Form1";
             this.Text = "BrowserApp";
@@ -426,6 +446,8 @@
         private System.Windows.Forms.ToolStripMenuItem listItem;
         private System.Windows.Forms.ToolStripMenuItem semanticItem;
         private System.Windows.Forms.ToolStripMenuItem headingItem;
+        private System.Windows.Forms.ToolStripMenuItem labelItem;
+        private System.Windows.Forms.ToolStripMenuItem tableItem;
     }
 }
 

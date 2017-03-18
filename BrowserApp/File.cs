@@ -11,10 +11,10 @@ namespace BrowserApp
     class File
     {
         //HTMLファイルをロード
-        public static string getTextFileText(string filepath)
+        public static string getTextFileContent(string filepath)
         {
             string body = "";
-            if(!filepath.Equals(""))
+            if(filepath != null)
             {
                 StreamReader sr = new StreamReader(
                     filepath,

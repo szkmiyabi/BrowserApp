@@ -140,6 +140,80 @@ namespace BrowserApp
             }
         }
 
+        //テーブル要素を枠で囲う
+        public void tag_table()
+        {
+            _tag_table_table();
+            _tag_table_caption();
+            _tag_table_th();
+        }
+        private void _tag_table_table()
+        {
+            HtmlElementCollection tbls = d.GetElementsByTagName("table");
+            int i = 0;
+            foreach(HtmlElement tbl in tbls)
+            {
+                tbl.Style = "border:2px dotted red; position: relative;";
+                add_label(tbl, i);
+                i++;
+            }
+            i = 0;
+            foreach(HtmlElement tbl in tbls)
+            {
+                string smry = tbl.GetAttribute("summary");
+                HtmlElement span = d.GetElementById("bkm-table-span-" + i);
+                string now_label_text = span.InnerHtml;
+                string new_label_text = (smry == null) ? now_label_text : now_label_text + ", summary:" + smry;
+                span.InnerHtml = new_label_text;
+                string old_css_text = span.Style;
+                string new_css_text = old_css_text.Replace("top: 2px;", "top: -20px;");
+                span.Style = new_css_text;
+                i++;
+            }
+        }
+        private void _tag_table_caption()
+        {
+            HtmlElementCollection cps = d.GetElementsByTagName("caption");
+            int i = 0;
+            foreach(HtmlElement cp in cps)
+            {
+                cp.Style = "border:2px dotted red; position: relative;";
+                add_label(cp, i);
+                i++;
+            }
+            i = 0;
+            foreach(HtmlElement cp in cps)
+            {
+                HtmlElement span = d.GetElementById("bkm-caption-span-" + i);
+                string old_css_text = span.Style;
+                string new_css_text = old_css_text.Replace("top: 2px;", "top: -20px;");
+                new_css_text = new_css_text.Replace("left: 2px;", "right: 2px;");
+                span.Style = new_css_text;
+                i++;
+            }
+        }
+        private void _tag_table_th()
+        {
+            HtmlElementCollection ths = d.GetElementsByTagName("th");
+            int i = 0;
+            foreach(HtmlElement th in ths)
+            {
+                th.Style = "border:2px dotted red; position: relative;";
+                add_label(th, i);
+                i++;
+            }
+            i = 0;
+            foreach(HtmlElement th in ths)
+            {
+                string scope = th.GetAttribute("scope");
+                HtmlElement span = d.GetElementById("bkm-th-span-" + i);
+                string now_label_text = span.InnerHtml;
+                string new_label_text = (scope == null) ? now_label_text : now_label_text + ", scope:" + scope;
+                span.InnerHtml = new_label_text;
+                i++;
+            }
+        }
+
 
         //要素名ラベルを表示
         private void add_label(HtmlElement obj, int cnt)

@@ -67,7 +67,7 @@ namespace BrowserApp
                 urlArray = new ArrayList();
                 urlCombo.Items.Clear();
             }
-            string html = File.getTextFileText(filename);
+            string html = File.getTextFileContent(filename);
             urlArray = HtmlUtil.urlListDatasFromHtml(html);
             endOpen();
         }
@@ -252,7 +252,7 @@ namespace BrowserApp
         private void openItem_Click(object sender, EventArgs e)
         {
             getOpenFileName();
-            if (!fileMenu.Equals(""))
+            if (filename != null)
             {
                 loadFile();
             }
@@ -361,6 +361,12 @@ namespace BrowserApp
         {
             PreservUtil pu = new PreservUtil(ref browserControl);
             pu.tag_heading();
+        }
+
+        private void tableItem_Click(object sender, EventArgs e)
+        {
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.tag_table();
         }
     }
 }
