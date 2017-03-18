@@ -338,5 +338,11 @@ namespace BrowserApp
             PreservUtil pu = new PreservUtil(ref browserControl);
             pu.tag_paragraph();
         }
+
+        private void listItem_Click(object sender, EventArgs e)
+        {
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.tag_list();
+        }
     }
 }

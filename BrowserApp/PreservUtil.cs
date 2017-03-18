@@ -32,6 +32,44 @@ namespace BrowserApp
 
         }
 
+        //リストを枠で囲う
+        public void tag_list()
+        {
+            string[] tags = { "ul", "ol", "dl", "dt", "dd" };
+            int idx = tags.Length;
+
+            for(int i=0; i<idx; i++)
+            {
+                string val = tags[i].ToString();
+                _tag_list_func(val);
+            }
+
+        }
+        private void _tag_list_func(string tag)
+        {
+            HtmlElementCollection ts = d.GetElementsByTagName(tag);
+            int i = 0;
+            foreach(HtmlElement t in ts)
+            {
+                t.Style = "border:2px dotted red; position: relative;";
+                add_label(t, i);
+                if(tag.Equals("dt"))
+                {
+                    HtmlElement span = d.GetElementById("bkm-dt-span-" + i);
+                    string old_css_text = span.Style;
+                    string new_css_text = old_css_text.Replace("left:2px;", "left:20px;");
+                    span.Style = new_css_text;
+                }
+                else if (tag.Equals("dd"))
+                {
+                    HtmlElement span = d.GetElementById("bkm-dd-span-" + i);
+                    string old_css_text = span.Style;
+                    string new_css_text = old_css_text.Replace("left:2px;", "left:20px;");
+                    span.Style = new_css_text;
+                }
+            }
+        }
+
         //要素名ラベルを表示
         private void add_label(HtmlElement obj, int cnt)
         {

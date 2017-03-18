@@ -56,6 +56,8 @@
             this.cyberfoxItem = new System.Windows.Forms.ToolStripMenuItem();
             this.preservMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.paragraphItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.linkImageItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -316,7 +318,9 @@
             // preservMenu
             // 
             this.preservMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.paragraphItem});
+            this.paragraphItem,
+            this.linkImageItem,
+            this.listItem});
             this.preservMenu.Name = "preservMenu";
             this.preservMenu.Size = new System.Drawing.Size(134, 22);
             this.preservMenu.Text = "シュミレーション(&S)";
@@ -324,9 +328,25 @@
             // paragraphItem
             // 
             this.paragraphItem.Name = "paragraphItem";
-            this.paragraphItem.Size = new System.Drawing.Size(160, 22);
+            this.paragraphItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D5)));
+            this.paragraphItem.Size = new System.Drawing.Size(242, 22);
             this.paragraphItem.Text = "段落を枠で表示";
             this.paragraphItem.Click += new System.EventHandler(this.paragraphItem_Click);
+            // 
+            // linkImageItem
+            // 
+            this.linkImageItem.Name = "linkImageItem";
+            this.linkImageItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D6)));
+            this.linkImageItem.Size = new System.Drawing.Size(242, 22);
+            this.linkImageItem.Text = "リンク画像を枠で表示";
+            // 
+            // listItem
+            // 
+            this.listItem.Name = "listItem";
+            this.listItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D7)));
+            this.listItem.Size = new System.Drawing.Size(242, 22);
+            this.listItem.Text = "リスト要素を枠で表示";
+            this.listItem.Click += new System.EventHandler(this.listItem_Click);
             // 
             // Form1
             // 
@@ -381,6 +401,8 @@
         private System.Windows.Forms.ToolStripMenuItem preservMenu;
         private System.Windows.Forms.ToolStripMenuItem paragraphItem;
         public System.Windows.Forms.WebBrowser browserControl;
+        private System.Windows.Forms.ToolStripMenuItem linkImageItem;
+        private System.Windows.Forms.ToolStripMenuItem listItem;
     }
 }
 
