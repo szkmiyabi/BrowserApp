@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace BrowserApp
 {
@@ -57,16 +58,17 @@ namespace BrowserApp
                 {
                     HtmlElement span = d.GetElementById("bkm-dt-span-" + i);
                     string old_css_text = span.Style;
-                    string new_css_text = old_css_text.Replace("left:2px;", "left:20px;");
+                    string new_css_text = old_css_text.Replace("left: 2px;", "left: 20px;");
                     span.Style = new_css_text;
                 }
                 else if (tag.Equals("dd"))
                 {
                     HtmlElement span = d.GetElementById("bkm-dd-span-" + i);
                     string old_css_text = span.Style;
-                    string new_css_text = old_css_text.Replace("left:2px;", "left:20px;");
+                    string new_css_text = old_css_text.Replace("left: 2px;", "left: 20px;");
                     span.Style = new_css_text;
                 }
+                i++;
             }
         }
 
