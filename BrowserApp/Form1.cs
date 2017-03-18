@@ -335,7 +335,8 @@ namespace BrowserApp
 
         private void paragraphItem_Click(object sender, EventArgs e)
         {
-            JavascriptUtil.js_test(ref browserControl);
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.tag_paragraph();
         }
     }
 }
