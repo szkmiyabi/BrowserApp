@@ -50,6 +50,9 @@
             this.headingItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.w3cItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cssCutItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altattrItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.browserControl = new System.Windows.Forms.WebBrowser();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -62,10 +65,8 @@
             this.ffButton = new System.Windows.Forms.Button();
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
-            this.w3cItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cssCutItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altattrItem = new System.Windows.Forms.ToolStripMenuItem();
             this.w3cButton = new System.Windows.Forms.Button();
+            this.settingsItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -90,7 +91,8 @@
             // fileMenu
             // 
             this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openItem});
+            this.openItem,
+            this.settingsItem});
             this.fileMenu.Name = "fileMenu";
             this.fileMenu.Size = new System.Drawing.Size(85, 22);
             this.fileMenu.Text = "ファイル(&F)";
@@ -99,7 +101,7 @@
             // 
             this.openItem.Name = "openItem";
             this.openItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openItem.Size = new System.Drawing.Size(167, 22);
+            this.openItem.Size = new System.Drawing.Size(189, 22);
             this.openItem.Text = "開く(&O)";
             this.openItem.Click += new System.EventHandler(this.openItem_Click);
             // 
@@ -267,6 +269,30 @@
             this.tableItem.Text = "テーブル要素を枠で表示(&G)";
             this.tableItem.Click += new System.EventHandler(this.tableItem_Click);
             // 
+            // w3cItem
+            // 
+            this.w3cItem.Name = "w3cItem";
+            this.w3cItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.w3cItem.Size = new System.Drawing.Size(330, 22);
+            this.w3cItem.Text = "W3Cバリデートを実行(&W)";
+            this.w3cItem.Click += new System.EventHandler(this.w3cItem_Click);
+            // 
+            // cssCutItem
+            // 
+            this.cssCutItem.Name = "cssCutItem";
+            this.cssCutItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Oemtilde)));
+            this.cssCutItem.Size = new System.Drawing.Size(330, 22);
+            this.cssCutItem.Text = "CSSカットを実行(&/)";
+            this.cssCutItem.Click += new System.EventHandler(this.cssCutItem_Click);
+            // 
+            // altattrItem
+            // 
+            this.altattrItem.Name = "altattrItem";
+            this.altattrItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.OemBackslash)));
+            this.altattrItem.Size = new System.Drawing.Size(330, 22);
+            this.altattrItem.Text = "alt属性値を表示(&@)";
+            this.altattrItem.Click += new System.EventHandler(this.altattrItem_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.browserControl);
@@ -398,30 +424,6 @@
             this.cfxButton.UseVisualStyleBackColor = true;
             this.cfxButton.Click += new System.EventHandler(this.cfxButton_Click);
             // 
-            // w3cItem
-            // 
-            this.w3cItem.Name = "w3cItem";
-            this.w3cItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.w3cItem.Size = new System.Drawing.Size(330, 22);
-            this.w3cItem.Text = "W3Cバリデートを実行(&W)";
-            this.w3cItem.Click += new System.EventHandler(this.w3cItem_Click);
-            // 
-            // cssCutItem
-            // 
-            this.cssCutItem.Name = "cssCutItem";
-            this.cssCutItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Oemtilde)));
-            this.cssCutItem.Size = new System.Drawing.Size(330, 22);
-            this.cssCutItem.Text = "CSSカットを実行(&/)";
-            this.cssCutItem.Click += new System.EventHandler(this.cssCutItem_Click);
-            // 
-            // altattrItem
-            // 
-            this.altattrItem.Name = "altattrItem";
-            this.altattrItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.OemBackslash)));
-            this.altattrItem.Size = new System.Drawing.Size(330, 22);
-            this.altattrItem.Text = "alt属性値を表示(&@)";
-            this.altattrItem.Click += new System.EventHandler(this.altattrItem_Click);
-            // 
             // w3cButton
             // 
             this.w3cButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -431,6 +433,14 @@
             this.w3cButton.TabIndex = 10;
             this.w3cButton.UseVisualStyleBackColor = true;
             this.w3cButton.Click += new System.EventHandler(this.w3cButton_Click);
+            // 
+            // settingsItem
+            // 
+            this.settingsItem.Name = "settingsItem";
+            this.settingsItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.settingsItem.Size = new System.Drawing.Size(189, 22);
+            this.settingsItem.Text = "環境設定(&S)";
+            this.settingsItem.Click += new System.EventHandler(this.settingsItem_Click);
             // 
             // Form1
             // 
@@ -496,6 +506,7 @@
         private System.Windows.Forms.ToolStripMenuItem cssCutItem;
         private System.Windows.Forms.ToolStripMenuItem altattrItem;
         private System.Windows.Forms.Button w3cButton;
+        private System.Windows.Forms.ToolStripMenuItem settingsItem;
     }
 }
 

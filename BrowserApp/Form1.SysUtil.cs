@@ -64,5 +64,14 @@ namespace BrowserApp
         {
             return System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
         }
+
+        //設定ダイアログを表示
+        private void showSettingDiag()
+        {
+            SettingDialog sd = new SettingDialog();
+            sd.ShowDialog(this);
+            sd.Dispose();
+        }
+
     }
 }

@@ -10,3 +10,4 @@ C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.P
 C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.csproj.GenerateResource.Cache
 C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.exe
 C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.pdb
+C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.SettingDialog.resources

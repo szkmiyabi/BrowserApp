@@ -404,5 +404,10 @@ namespace BrowserApp
             PreservUtil pu = new PreservUtil(ref browserControl);
             pu.w3c_report(burl);
         }
+
+        private void settingsItem_Click(object sender, EventArgs e)
+        {
+            showSettingDiag();
+        }
     }
 }
