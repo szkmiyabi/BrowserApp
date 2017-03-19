@@ -62,6 +62,7 @@
             this.ffButton = new System.Windows.Forms.Button();
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
+            this.w3cItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -199,7 +200,8 @@
             this.semanticItem,
             this.headingItem,
             this.labelItem,
-            this.tableItem});
+            this.tableItem,
+            this.w3cItem});
             this.preservMenu.Name = "preservMenu";
             this.preservMenu.Size = new System.Drawing.Size(134, 22);
             this.preservMenu.Text = "シュミレーション(&S)";
@@ -389,6 +391,14 @@
             this.cfxButton.UseVisualStyleBackColor = true;
             this.cfxButton.Click += new System.EventHandler(this.cfxButton_Click);
             // 
+            // w3cItem
+            // 
+            this.w3cItem.Name = "w3cItem";
+            this.w3cItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.w3cItem.Size = new System.Drawing.Size(330, 22);
+            this.w3cItem.Text = "W3Cバリデートを実行(&W)";
+            this.w3cItem.Click += new System.EventHandler(this.w3cItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -423,7 +433,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ComboBox urlCombo;
-        private System.Windows.Forms.TextBox urlText;
         private System.Windows.Forms.Button prevButton;
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Button reloadButton;
@@ -449,6 +458,8 @@
         private System.Windows.Forms.ToolStripMenuItem headingItem;
         private System.Windows.Forms.ToolStripMenuItem labelItem;
         private System.Windows.Forms.ToolStripMenuItem tableItem;
+        private System.Windows.Forms.TextBox urlText;
+        private System.Windows.Forms.ToolStripMenuItem w3cItem;
     }
 }
 

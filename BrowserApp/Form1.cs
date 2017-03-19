@@ -374,5 +374,12 @@ namespace BrowserApp
             PreservUtil pu = new PreservUtil(ref browserControl);
             pu.tag_label();
         }
+
+        private void w3cItem_Click(object sender, EventArgs e)
+        {
+            string burl = urlText.Text;
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.w3c_report(burl);
+        }
     }
 }

@@ -12,11 +12,13 @@ namespace BrowserApp
 {
     class PreservUtil
     {
+        private WebBrowser b;
         private HtmlDocument d;
 
         //コンストラクタ
         public PreservUtil(ref WebBrowser b)
         {
+            this.b = b;
             this.d = b.Document;
         }
 
@@ -340,6 +342,16 @@ namespace BrowserApp
                 sl.InsertAdjacentElement(HtmlElementInsertionOrientation.AfterEnd, span);
                 i++;
             }
+        }
+
+        //W3Cバリデートを実行
+        public void w3c_report(string burl)
+        {
+            string wurl = "http://validator.w3.org/check?uri=";
+            wurl += burl;
+            wurl += "&charset=%28detect+automatically%29&doctype=Inline&ss=1&group=1&verbose=1";
+            wurl += "&user-agent=W3C_Validator%2F1.3+http%3A%2F%2Fvalidator.w3.org%2Fservices";
+            b.Navigate(wurl);
         }
 
 
