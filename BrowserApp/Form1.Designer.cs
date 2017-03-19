@@ -46,6 +46,10 @@
             this.paragraphItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linkImageItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.semanticItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.headingItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.browserControl = new System.Windows.Forms.WebBrowser();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -58,10 +62,6 @@
             this.ffButton = new System.Windows.Forms.Button();
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
-            this.semanticItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.headingItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -228,6 +228,38 @@
             this.listItem.Text = "リスト要素を枠で表示(&C)";
             this.listItem.Click += new System.EventHandler(this.listItem_Click);
             // 
+            // semanticItem
+            // 
+            this.semanticItem.Name = "semanticItem";
+            this.semanticItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D8)));
+            this.semanticItem.Size = new System.Drawing.Size(330, 22);
+            this.semanticItem.Text = "セマンティック要素を枠で表示(&D)";
+            this.semanticItem.Click += new System.EventHandler(this.semanticItem_Click);
+            // 
+            // headingItem
+            // 
+            this.headingItem.Name = "headingItem";
+            this.headingItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D9)));
+            this.headingItem.Size = new System.Drawing.Size(330, 22);
+            this.headingItem.Text = "見出し要素を枠で表示(&E)";
+            this.headingItem.Click += new System.EventHandler(this.headingItem_Click);
+            // 
+            // labelItem
+            // 
+            this.labelItem.Name = "labelItem";
+            this.labelItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Oemcomma)));
+            this.labelItem.Size = new System.Drawing.Size(330, 22);
+            this.labelItem.Text = "ラベル要素を枠で表示(&F)";
+            this.labelItem.Click += new System.EventHandler(this.labelItem_Click);
+            // 
+            // tableItem
+            // 
+            this.tableItem.Name = "tableItem";
+            this.tableItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.OemPeriod)));
+            this.tableItem.Size = new System.Drawing.Size(330, 22);
+            this.tableItem.Text = "テーブル要素を枠で表示(&G)";
+            this.tableItem.Click += new System.EventHandler(this.tableItem_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.browserControl);
@@ -356,37 +388,6 @@
             this.cfxButton.TabIndex = 9;
             this.cfxButton.UseVisualStyleBackColor = true;
             this.cfxButton.Click += new System.EventHandler(this.cfxButton_Click);
-            // 
-            // semanticItem
-            // 
-            this.semanticItem.Name = "semanticItem";
-            this.semanticItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D8)));
-            this.semanticItem.Size = new System.Drawing.Size(330, 22);
-            this.semanticItem.Text = "セマンティック要素を枠で表示(&D)";
-            this.semanticItem.Click += new System.EventHandler(this.semanticItem_Click);
-            // 
-            // headingItem
-            // 
-            this.headingItem.Name = "headingItem";
-            this.headingItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D9)));
-            this.headingItem.Size = new System.Drawing.Size(330, 22);
-            this.headingItem.Text = "見出し要素を枠で表示(&E)";
-            this.headingItem.Click += new System.EventHandler(this.headingItem_Click);
-            // 
-            // labelItem
-            // 
-            this.labelItem.Name = "labelItem";
-            this.labelItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Oemcomma)));
-            this.labelItem.Size = new System.Drawing.Size(330, 22);
-            this.labelItem.Text = "ラベル要素を枠で表示(&F)";
-            // 
-            // tableItem
-            // 
-            this.tableItem.Name = "tableItem";
-            this.tableItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.OemPeriod)));
-            this.tableItem.Size = new System.Drawing.Size(330, 22);
-            this.tableItem.Text = "テーブル要素を枠で表示(&G)";
-            this.tableItem.Click += new System.EventHandler(this.tableItem_Click);
             // 
             // Form1
             // 

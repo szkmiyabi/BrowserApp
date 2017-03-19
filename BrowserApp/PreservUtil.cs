@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace BrowserApp
 {
@@ -210,6 +211,133 @@ namespace BrowserApp
                 string now_label_text = span.InnerHtml;
                 string new_label_text = (scope == null) ? now_label_text : now_label_text + ", scope:" + scope;
                 span.InnerHtml = new_label_text;
+                i++;
+            }
+        }
+
+        //ラベル要素を枠で表示する
+        public void tag_label()
+        {
+            _tag_label_label();
+            _tag_label_input();
+            _tag_label_textarea();
+            _tag_label_select();
+        }
+        private string _tag_label_forattr_regx_srch(string tag_html)
+        {
+            Regex pt = new Regex(@"for=""(.+?)\""");
+            MatchCollection mt = pt.Matches(tag_html);
+            if (mt.Count > 0)
+            {
+                Match m = mt[0];
+                return m.Groups[1].Value;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        private void _tag_label_label()
+        {
+            HtmlElementCollection lbs = d.GetElementsByTagName("label");
+            int i = 0;
+            foreach(HtmlElement lb in lbs)
+            {
+                lb.Style = "border:2px dotted red; position: relative;";
+                add_label(lb, i);
+                i++;
+            }
+            i = 0;
+            foreach (HtmlElement lb in lbs)
+            {
+                //string forattr = lb.GetAttribute("for");
+                string label_html = lb.OuterHtml;
+                string forattr = _tag_label_forattr_regx_srch(label_html);
+                HtmlElement span = d.GetElementById("bkm-label-span-" + i);
+                string now_css_text = span.Style;
+                string new_css_text = now_css_text + "display:block; width: 200px;";
+                span.Style = new_css_text;
+                string now_label_text = span.InnerHtml;
+                string new_label_text = (forattr == null) ? now_label_text : now_label_text + ", for:" + forattr;
+                span.InnerHtml = new_label_text;
+                i++;
+            }
+        }
+        private void _tag_label_input()
+        {
+            HtmlElementCollection ips = d.GetElementsByTagName("input");
+            int i = 0;
+            foreach(HtmlElement ip in ips)
+            {
+                string typeattr = ip.GetAttribute("type");
+                if(typeattr == "text" || typeattr == "radio" || typeattr == "check")
+                {
+                    ip.Style = "border:2px dotted red; position: relative;";
+                }
+                i++;
+            }
+            i = 0;
+            foreach(HtmlElement ip in ips)
+            {
+                string typeattr = ip.GetAttribute("type");
+                if(typeattr == "text")
+                {
+                    string id = ip.Id;
+                    string now_label_text = ip.GetAttribute("value");
+                    string new_label_text = (id == null) ? now_label_text : now_label_text + "id:" + id;
+                    ip.SetAttribute("value", new_label_text);
+                }
+                else if(typeattr == "radio" || typeattr == "check")
+                {
+                    string id = ip.Id;
+                    string label_text = (id == null) ? "" : "id:" + id;
+                    HtmlElement span = d.CreateElement("span");
+                    string css_text = "color:#000;font-size:90%;opacity:0.8;border:1px solid red;padding:1px;background:yellow;";
+                    span.InnerHtml = label_text;
+                    span.Style = css_text;
+                    ip.InsertAdjacentElement(HtmlElementInsertionOrientation.AfterEnd, span);
+                }
+                i++;
+            }
+        }
+        private void _tag_label_textarea()
+        {
+            HtmlElementCollection tas = d.GetElementsByTagName("textarea");
+            int i = 0;
+            foreach(HtmlElement ta in tas)
+            {
+                ta.Style = "border:2px dotted red; position: relative;";
+                i++;
+            }
+            i = 0;
+            foreach (HtmlElement ta in tas)
+            {
+                string id = ta.Id;
+                string now_label_text = ta.GetAttribute("value");
+                string new_label_text = (id == null) ? now_label_text : now_label_text + "id:" + id;
+                ta.SetAttribute("value", new_label_text);
+                i++;
+            }
+        }
+        private void _tag_label_select()
+        {
+            HtmlElementCollection sls = d.GetElementsByTagName("select");
+            int i = 0;
+            foreach(HtmlElement sl in sls)
+            {
+                sl.Style = "border:2px dotted red; position: relative;";
+                i++;
+            }
+            i = 0;
+            foreach(HtmlElement sl in sls)
+            {
+                string id = sl.Id;
+                string label_text = (id == null) ? "" : "id:" + id;
+                HtmlElement span = d.CreateElement("span");
+                string css_text = "color:#000;font-size:90%;opacity:0.8;border:1px solid red;padding:1px;background:yellow;";
+                span.InnerHtml = label_text;
+                span.Style = css_text;
+                sl.InsertAdjacentElement(HtmlElementInsertionOrientation.AfterEnd, span);
                 i++;
             }
         }
