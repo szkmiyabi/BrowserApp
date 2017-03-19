@@ -348,7 +348,7 @@ namespace BrowserApp
         private void linkImageItem_Click(object sender, EventArgs e)
         {
             PreservUtil pu = new PreservUtil(ref browserControl);
-            pu.tag_link_img(false);
+            pu.tag_link_img(true);
         }
 
         private void semanticItem_Click(object sender, EventArgs e)

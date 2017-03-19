@@ -38,26 +38,28 @@ namespace BrowserApp
         }
 
         //リンク画像を枠で囲う
-        public void tag_link_img(Boolean alt_attr)
+        public void tag_link_img(Boolean alt_flg)
         {
             HtmlElementCollection ats = d.GetElementsByTagName("a");
             int i = 0;
             foreach(HtmlElement a in ats)
             {
                 HtmlElementCollection img = a.GetElementsByTagName("img");
-                if(img.Count > 0 && alt_attr)
-                {
-                    a.Style = "position:relative";
-                    add_label(a, i);
-                }
+                int j = 0;
                 foreach(HtmlElement imgtag in img)
                 {
                     imgtag.Style = "border:2px dotted red;";
-                    if (alt_attr)
+                    if (alt_flg)
                     {
-                        HtmlElement span = d.GetElementById("bkm-a-span-" + i);
-                        span.InnerHtml = imgtag.GetAttribute("alt");
+                        HtmlElement span = d.CreateElement("span");
+                        span.Id = "bkm-link-img-span-" + i + "-" + j;
+                        string alt_val = imgtag.GetAttribute("alt");
+                        string html_str = "alt: " + alt_val;
+                        span.InnerHtml = html_str;
+                        span.Style = "color:#fff;font-size:12px;padding:1px;background:#BF0000;";
+                        imgtag.InsertAdjacentElement(HtmlElementInsertionOrientation.BeforeBegin, span);
                     }
+                    j++;
                 }
                 i++;
             }
