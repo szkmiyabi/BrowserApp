@@ -80,38 +80,6 @@ namespace BrowserApp
 
         }
 
-        //OSビット数判定
-        private string getOSBitType()
-        {
-            if (Environment.Is64BitOperatingSystem) return "64";
-            else return "32";
-        }
-
-        //OSバージョン判定
-        private string getOSVersion()
-        {
-            System.OperatingSystem os = System.Environment.OSVersion;
-            string flag = "";
-            if(os.Platform == PlatformID.Win32NT)
-            {
-                if(os.Version.Major < 6)
-                {
-                    flag = "under-xp";
-                }
-                else
-                {
-                    flag =  "upper-xp";
-                }
-            }
-            return flag;
-        }
-
-        //ユーザのホームフォルダパス
-        private string getUserHomePath()
-        {
-            return System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        }
-
         //設定ダイアログを表示
         private void showSettingDiag()
         {
