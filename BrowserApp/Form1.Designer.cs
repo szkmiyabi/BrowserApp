@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.statusBarText = new System.Windows.Forms.ToolStripStatusLabel();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.openItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.nextItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +68,6 @@
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
             this.w3cButton = new System.Windows.Forms.Button();
-            this.settingsItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -104,6 +105,14 @@
             this.openItem.Size = new System.Drawing.Size(189, 22);
             this.openItem.Text = "開く(&O)";
             this.openItem.Click += new System.EventHandler(this.openItem_Click);
+            // 
+            // settingsItem
+            // 
+            this.settingsItem.Name = "settingsItem";
+            this.settingsItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.settingsItem.Size = new System.Drawing.Size(189, 22);
+            this.settingsItem.Text = "環境設定(&S)";
+            this.settingsItem.Click += new System.EventHandler(this.settingsItem_Click);
             // 
             // menuBar
             // 
@@ -434,14 +443,6 @@
             this.w3cButton.UseVisualStyleBackColor = true;
             this.w3cButton.Click += new System.EventHandler(this.w3cButton_Click);
             // 
-            // settingsItem
-            // 
-            this.settingsItem.Name = "settingsItem";
-            this.settingsItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.settingsItem.Size = new System.Drawing.Size(189, 22);
-            this.settingsItem.Text = "環境設定(&S)";
-            this.settingsItem.Click += new System.EventHandler(this.settingsItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -450,6 +451,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.menuBar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuBar;
             this.Name = "Form1";

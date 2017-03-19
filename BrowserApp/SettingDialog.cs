@@ -118,77 +118,41 @@ namespace BrowserApp
         //IE起動パスを取得
         private void iePathDefaultLoad()
         {
-            string iepath = @"C:\Program Files\Internet Explorer\iexplore.exe";
-            iePathText.Text = iepath;
+            string iepath = "";
+            string iepath1 = @"C:\Program Files\Internet Explorer\iexplore.exe";
+            string iepath2 = @"C:\Program Files (x86)\Internet Explorer\iexplore.exe";
+            if (System.IO.File.Exists(iepath1)) iepath = iepath1;
+            else if (System.IO.File.Exists(iepath2)) iepath = iepath2;
+            if (iepath == "") MessageBox.Show("取得できません");
+            else iePathText.Text = iepath;
         }
 
         //Firefox起動パスを取得
         private void ffPathDefaultLoad()
         {
             string ffpath = "";
-            if (getOSBitType().Equals("32"))
-            {
-                ffpath = @"C:\Program Files\Mozilla Firefox\firefox.exe";
-            }
-            else if (getOSBitType().Equals("64"))
-            {
-                ffpath = @"C:\Program Files(x86)\Mozilla Firefox\firefox.exe";
-            }
-            ffPathText.Text = ffpath;
+            string ffpath1 = @"C:\Program Files\Mozilla Firefox\firefox.exe";
+            string ffpath2 = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
+            if (System.IO.File.Exists(ffpath1)) ffpath = ffpath1;
+            else if (System.IO.File.Exists(ffpath2)) ffpath = ffpath2;
+            if (ffpath == "") MessageBox.Show("取得できません");
+            else ffPathText.Text = ffpath;
         }
 
         //Chrome起動パスを取得
         private void gcPathDefaultLoad()
         {
-            string gc_default_path = "";
             string gcpath = "";
-            string appPath = "";
-            if (getOSBitType().Equals("32"))
-            {
-                gc_default_path = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
-            }
-            else if (getOSBitType().Equals("64"))
-            {
-                gc_default_path = @"C:\Program Files(x86)\Google\Chrome\Application\chrome.exe";
-            }
-
-            if (System.IO.File.Exists(gc_default_path))
-            {
-                gcpath = gc_default_path;
-                gcPathText.Text = gcpath;
-            }
-            else
-            {
-                string usrPath = getUserHomePath();
-                if (getOSVersion().Equals("upper-xp"))
-                {
-                    gcpath = @"AppData\Local\Google\Chrome\Application\chrome.exe";
-                }
-                else if (getOSVersion().Equals("under-xp"))
-                {
-                    gcpath = @"Local Settings\Application Data\Google\Chrome\Application\chrome.exe";
-                }
-                appPath = usrPath + @"\" + gcpath;
-                gcPathText.Text = appPath;
-            }
-
+            string gcpath1 = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
+            string gcpath2 = @"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe";
+            string gcpath3 = getUserHomePath() + @"\Local Settings\Application Data\Google\Chrome\Application\chrome.exe";
+            if (System.IO.File.Exists(gcpath1)) gcpath = gcpath1;
+            else if (System.IO.File.Exists(gcpath2)) gcpath = gcpath2;
+            else if (System.IO.File.Exists(gcpath3)) gcpath = gcpath3;
+            if (gcpath == "") MessageBox.Show("取得できません");
+            else gcPathText.Text = gcpath;
+            
         }
-
-        //他のブラウザ起動パスを取得
-        private void etcBrowserPathDefaultLoad()
-        {
-            string cfxpath = "";
-            if (getOSBitType().Equals("32"))
-            {
-                cfxpath = @"C:\Program Files\Cyberfox\Cyberfox.exe";
-            }
-            else if (getOSBitType().Equals("64"))
-            {
-                cfxpath = @"C:\Program Files(x86)\Cyberfox\Cyberfox.exe";
-            }
-            etcBrowserText.Text = cfxpath;
-        }
-
 
         //OSビット数判定
         private string getOSBitType()
