@@ -390,7 +390,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button diagOKButton;
         private System.Windows.Forms.Button diagCancelButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -416,5 +415,6 @@
         private System.Windows.Forms.Label imgAltFnameLabel;
         private System.Windows.Forms.CheckBox imgFnameCheck;
         private System.Windows.Forms.Button deleteSettingBtn;
+        public System.Windows.Forms.Button diagOKButton;
     }
 }

@@ -33,6 +33,8 @@ namespace BrowserApp
             statusBarText.Text = "ファイルを選択してください";
             //イメージボタン初期化
             imgButtonInit();
+            //環境設定をロード
+            loadAppSettings();
 
         }
 
@@ -175,9 +177,7 @@ namespace BrowserApp
             try
             {
                 string burl = urlText.Text;
-                string iepath = "";
-                    iepath = @"C:\Program Files\Internet Explorer\iexplore.exe";
-                System.Diagnostics.Process.Start(iepath, " " + burl);
+                System.Diagnostics.Process.Start(iePath, " " + burl);
             }
             catch(Exception ex)
             {
@@ -190,16 +190,7 @@ namespace BrowserApp
             try
             {
                 string burl = urlText.Text;
-                string ffpath = "";
-                if(getOSBitType().Equals("32"))
-                {
-                    ffpath = @"C:\Program Files\Mozilla Firefox\firefox.exe";
-                }
-                else if(getOSBitType().Equals("64"))
-                {
-                    ffpath = @"C:\Program Files(x86)\Mozilla Firefox\firefox.exe";
-                }
-                System.Diagnostics.Process.Start(ffpath, "-new-tab " + burl);
+                System.Diagnostics.Process.Start(ffPath, "-new-tab " + burl);
             }
             catch (Exception ex)
             {
@@ -212,16 +203,7 @@ namespace BrowserApp
             try
             {
                 string burl = urlText.Text;
-                string cfxpath = "";
-                if (getOSBitType().Equals("32"))
-                {
-                    cfxpath = @"C:\Program Files\Cyberfox\Cyberfox.exe";
-                }
-                else if (getOSBitType().Equals("64"))
-                {
-                    cfxpath = @"C:\Program Files(x86)\Cyberfox\Cyberfox.exe";
-                }
-                System.Diagnostics.Process.Start(cfxpath, "-new-tab " + burl);
+                System.Diagnostics.Process.Start(etcBrowserPath, "-new-tab " + burl);
             }
             catch (Exception ex)
             {
@@ -234,19 +216,7 @@ namespace BrowserApp
             try
             {
                 string burl = urlText.Text;
-                string usrPath = getUserHomePath();
-                string gcpath = "";
-                string appPath = "";
-                if (getOSVersion().Equals("upper-xp"))
-                {
-                    gcpath = @"AppData\Local\Google\Chrome\Application\chrome.exe";
-                }
-                else if(getOSVersion().Equals("under-xp"))
-                {
-                    gcpath = @"Local Settings\Application Data\Google\Chrome\Application\chrome.exe";
-                }
-                appPath = usrPath + @"\" + gcpath;
-                System.Diagnostics.Process.Start(appPath, " " + burl);
+                System.Diagnostics.Process.Start(gcPath, " " + burl);
             }
             catch(Exception ex)
             {
@@ -352,7 +322,10 @@ namespace BrowserApp
         private void linkImageItem_Click(object sender, EventArgs e)
         {
             PreservUtil pu = new PreservUtil(ref browserControl);
-            pu.tag_link_img(true);
+            Boolean flag;
+            if (pu_tag_link_img_alt_flag == "yes") flag = true;
+            else flag = false;
+            pu.tag_link_img(flag);
         }
 
         private void semanticItem_Click(object sender, EventArgs e)
@@ -395,7 +368,10 @@ namespace BrowserApp
         private void altattrItem_Click(object sender, EventArgs e)
         {
             PreservUtil pu = new PreservUtil(ref browserControl);
-            pu.tag_img_alt_fname(true, true);
+            Boolean flag;
+            if (pu_tag_img_fname_flag == "yes") flag = true;
+            else flag = false;
+            pu.tag_img_alt_fname(true, flag);
         }
 
         private void w3cButton_Click(object sender, EventArgs e)
