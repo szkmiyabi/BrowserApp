@@ -387,5 +387,11 @@ namespace BrowserApp
             PreservUtil pu = new PreservUtil(ref browserControl);
             pu.css_cut();
         }
+
+        private void altattrItem_Click(object sender, EventArgs e)
+        {
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.tag_img_alt_fname(true, true);
+        }
     }
 }

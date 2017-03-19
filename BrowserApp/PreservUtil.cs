@@ -399,6 +399,54 @@ namespace BrowserApp
             }
         }
 
+        //alt属性値と画像名を明示
+        public void tag_img_alt_fname(Boolean alt_flg, Boolean fname_flg)
+        {
+            HtmlElementCollection img = d.GetElementsByTagName("img");
+            int i = 0;
+            foreach(HtmlElement imgtag in img)
+            {
+                imgtag.Style = "border:1px solid red;";
+                HtmlElement span = d.CreateElement("span");
+                span.Id = "bkm-img-span-" + i;
+                string src_val = imgtag.GetAttribute("src");
+                string fname = _get_img_fname(src_val);
+                string alt_val = imgtag.GetAttribute("alt");
+                string html_str = "";
+                if (alt_flg)
+                {
+                    html_str += "alt: " + alt_val;
+                }
+                if (fname_flg)
+                {
+                    if (html_str != "")
+                    {
+                        html_str += ", filename: " + fname;
+                    }
+                    else
+                    {
+                        html_str += "filename: " + fname;
+                    }
+                }
+                span.InnerHtml = html_str;
+                span.Style = "color:#fff;font-size:12px;padding:1px;background:#BF0000;";
+                imgtag.InsertAdjacentElement(HtmlElementInsertionOrientation.BeforeBegin, span);
+                i++;
+            }
+        }
+        private string _get_img_fname(string str)
+        {
+            string ret = "";
+            Regex pt = new Regex(@"(.+)\/(.+\.)(JPG|jpg|GIF|gif|PNG|png|BMP|bmp)$");
+            MatchCollection mc = pt.Matches(str);
+            if(mc.Count > 0)
+            {
+                Match mt = mc[0];
+                ret = mt.Groups[2].Value + mt.Groups[3].Value;
+            }
+            return ret;
+        }
+
 
         //要素名ラベルを表示
         private void add_label(HtmlElement obj, int cnt)
@@ -407,7 +455,7 @@ namespace BrowserApp
             string tag_name = obj.TagName;
             tag_name = tag_name.ToLower();
             string span_id = "bkm-" + tag_name + "-span-" + cnt;
-            string css_txt = "color:#000;font-size:90%;opacity:0.8;display:block;border:1px solid red;padding:1px;background:yellow;position:absolute;top:2px;left:2px;";
+            string css_txt = "color:#000;font-size:12px;opacity:0.8;display:block;border:1px solid red;padding:1px;background:yellow;position:absolute;top:2px;left:2px;";
             span.InnerHtml = "&lt;" + tag_name + "&gt;";
             span.Id = span_id;
             span.Style = css_txt;
