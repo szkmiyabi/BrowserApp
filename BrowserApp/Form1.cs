@@ -29,7 +29,9 @@ namespace BrowserApp
         {
             //IE11モード有効
             initRegistry();
+            //statusbar初期化
             statusBarText.Text = "ファイルを選択してください";
+            //イメージボタン初期化
             imgButtonInit();
 
         }
@@ -41,10 +43,12 @@ namespace BrowserApp
             Bitmap ffImg = getImageFromResource("ff32.png");
             Bitmap gcImg = getImageFromResource("gc32.png");
             Bitmap cfxImg = getImageFromResource("cfx32.png");
+            Bitmap w3cImg = getImageFromResource("w3c32.png");
             ieButton.Image = ieImg;
             ffButton.Image = ffImg;
             gcButton.Image = gcImg;
             cfxButton.Image = cfxImg;
+            w3cButton.Image = w3cImg;
 
         }
 
@@ -392,6 +396,13 @@ namespace BrowserApp
         {
             PreservUtil pu = new PreservUtil(ref browserControl);
             pu.tag_img_alt_fname(true, true);
+        }
+
+        private void w3cButton_Click(object sender, EventArgs e)
+        {
+            string burl = urlText.Text;
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.w3c_report(burl);
         }
     }
 }

@@ -65,6 +65,7 @@
             this.w3cItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cssCutItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altattrItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.w3cButton = new System.Windows.Forms.Button();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -77,7 +78,7 @@
             this.statusBarText});
             this.statusBar.Location = new System.Drawing.Point(0, 409);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(964, 22);
+            this.statusBar.Size = new System.Drawing.Size(989, 22);
             this.statusBar.TabIndex = 2;
             this.statusBar.Text = "statusStrip1";
             // 
@@ -112,7 +113,7 @@
             this.preservMenu});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
-            this.menuBar.Size = new System.Drawing.Size(964, 26);
+            this.menuBar.Size = new System.Drawing.Size(989, 26);
             this.menuBar.TabIndex = 3;
             this.menuBar.Text = "menuStrip1";
             // 
@@ -273,7 +274,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(964, 383);
+            this.panel1.Size = new System.Drawing.Size(989, 383);
             this.panel1.TabIndex = 4;
             // 
             // browserControl
@@ -282,7 +283,7 @@
             this.browserControl.Location = new System.Drawing.Point(0, 46);
             this.browserControl.MinimumSize = new System.Drawing.Size(20, 20);
             this.browserControl.Name = "browserControl";
-            this.browserControl.Size = new System.Drawing.Size(964, 337);
+            this.browserControl.Size = new System.Drawing.Size(989, 337);
             this.browserControl.TabIndex = 10;
             this.browserControl.WebBrowserShortcutsEnabled = false;
             // 
@@ -298,10 +299,11 @@
             this.flowLayoutPanel1.Controls.Add(this.ffButton);
             this.flowLayoutPanel1.Controls.Add(this.gcButton);
             this.flowLayoutPanel1.Controls.Add(this.cfxButton);
+            this.flowLayoutPanel1.Controls.Add(this.w3cButton);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(964, 46);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(989, 46);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -358,6 +360,7 @@
             // 
             // ieButton
             // 
+            this.ieButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ieButton.Location = new System.Drawing.Point(722, 3);
             this.ieButton.Name = "ieButton";
             this.ieButton.Size = new System.Drawing.Size(40, 40);
@@ -419,11 +422,21 @@
             this.altattrItem.Text = "alt属性値を表示(&@)";
             this.altattrItem.Click += new System.EventHandler(this.altattrItem_Click);
             // 
+            // w3cButton
+            // 
+            this.w3cButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.w3cButton.Location = new System.Drawing.Point(906, 3);
+            this.w3cButton.Name = "w3cButton";
+            this.w3cButton.Size = new System.Drawing.Size(60, 40);
+            this.w3cButton.TabIndex = 10;
+            this.w3cButton.UseVisualStyleBackColor = true;
+            this.w3cButton.Click += new System.EventHandler(this.w3cButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 431);
+            this.ClientSize = new System.Drawing.Size(989, 431);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.menuBar);
@@ -482,6 +495,7 @@
         private System.Windows.Forms.ToolStripMenuItem w3cItem;
         private System.Windows.Forms.ToolStripMenuItem cssCutItem;
         private System.Windows.Forms.ToolStripMenuItem altattrItem;
+        private System.Windows.Forms.Button w3cButton;
     }
 }
 
