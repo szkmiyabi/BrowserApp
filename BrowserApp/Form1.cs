@@ -381,5 +381,11 @@ namespace BrowserApp
             PreservUtil pu = new PreservUtil(ref browserControl);
             pu.w3c_report(burl);
         }
+
+        private void cssCutItem_Click(object sender, EventArgs e)
+        {
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.css_cut();
+        }
     }
 }

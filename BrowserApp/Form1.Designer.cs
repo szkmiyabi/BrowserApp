@@ -63,6 +63,7 @@
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
             this.w3cItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cssCutItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -201,7 +202,8 @@
             this.headingItem,
             this.labelItem,
             this.tableItem,
-            this.w3cItem});
+            this.w3cItem,
+            this.cssCutItem});
             this.preservMenu.Name = "preservMenu";
             this.preservMenu.Size = new System.Drawing.Size(134, 22);
             this.preservMenu.Text = "シュミレーション(&S)";
@@ -399,6 +401,14 @@
             this.w3cItem.Text = "W3Cバリデートを実行(&W)";
             this.w3cItem.Click += new System.EventHandler(this.w3cItem_Click);
             // 
+            // cssCutItem
+            // 
+            this.cssCutItem.Name = "cssCutItem";
+            this.cssCutItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Oemtilde)));
+            this.cssCutItem.Size = new System.Drawing.Size(330, 22);
+            this.cssCutItem.Text = "CSSカットを実行(&/)";
+            this.cssCutItem.Click += new System.EventHandler(this.cssCutItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -460,6 +470,7 @@
         private System.Windows.Forms.ToolStripMenuItem tableItem;
         private System.Windows.Forms.TextBox urlText;
         private System.Windows.Forms.ToolStripMenuItem w3cItem;
+        private System.Windows.Forms.ToolStripMenuItem cssCutItem;
     }
 }
 

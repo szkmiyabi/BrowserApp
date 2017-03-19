@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using System.Collections;
 
 namespace BrowserApp
 {
@@ -352,6 +353,50 @@ namespace BrowserApp
             wurl += "&charset=%28detect+automatically%29&doctype=Inline&ss=1&group=1&verbose=1";
             wurl += "&user-agent=W3C_Validator%2F1.3+http%3A%2F%2Fvalidator.w3.org%2Fservices";
             b.Navigate(wurl);
+        }
+
+        //CSSカットを実行
+        public void css_cut()
+        {
+            ArrayList delarr = new ArrayList();
+            HtmlElementCollection links = d.GetElementsByTagName("link");
+            foreach(HtmlElement link in links)
+            {
+                string href = link.GetAttribute("href");
+                if (_is_css_file(href)) delarr.Add(href);
+            }
+            foreach(string line in delarr)
+            {
+                _delete_link(line);
+            }
+            HtmlElementCollection tags = d.GetElementsByTagName("*");
+            foreach(HtmlElement tag in tags)
+            {
+                string style = tag.Style;
+                if (style != null || style != "") tag.Style = null;
+            }
+            HtmlElementCollection styles = d.GetElementsByTagName("style");
+            foreach(HtmlElement style in styles)
+            {
+                style.InnerText = null;
+            }
+        }
+        private Boolean _is_css_file(string href)
+        {
+            Regex pt = new Regex(@".+\.css");
+            Match mt = pt.Match(href);
+            if (mt.Success) return true;
+            else return false;
+            
+        }
+        private void _delete_link(string href)
+        {
+            HtmlElementCollection lks = d.GetElementsByTagName("link");
+            foreach(HtmlElement lk in lks)
+            {
+                string val = lk.GetAttribute("href");
+                if (val == href) lk.OuterHtml = "";
+            }
         }
 
 
