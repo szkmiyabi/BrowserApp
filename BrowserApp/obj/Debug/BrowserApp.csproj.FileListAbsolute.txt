@@ -11,3 +11,16 @@ C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.c
 C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.exe
 C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.pdb
 C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.SettingDialog.resources
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\bin\Debug\BrowserApp.exe.config
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\bin\Debug\BrowserApp.exe
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\bin\Debug\BrowserApp.pdb
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\bin\Debug\HtmlAgilityPack.dll
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\bin\Debug\HtmlAgilityPack.xml
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.csprojResolveAssemblyReference.cache
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.Form1.resources
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.Properties.Resources.resources
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.SettingDialog.resources
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.csproj.GenerateResource.Cache
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.exe
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.pdb
