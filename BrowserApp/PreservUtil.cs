@@ -347,6 +347,18 @@ namespace BrowserApp
             }
         }
 
+        //br要素を枠で囲う
+        public void tag_br()
+        {
+            HtmlElementCollection brs = d.GetElementsByTagName("br");
+            int i = 0;
+            foreach(HtmlElement br in brs)
+            {
+                br.Style = "border:2px dotted red;position: relative;";
+                i++;
+            }
+        }
+
         //W3Cバリデートを実行
         public void w3c_report(string burl)
         {
