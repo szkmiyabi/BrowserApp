@@ -385,5 +385,11 @@ namespace BrowserApp
         {
             showSettingDiag();
         }
+
+        private void brItem_Click(object sender, EventArgs e)
+        {
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.tag_br();
+        }
     }
 }
