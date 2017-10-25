@@ -145,24 +145,24 @@
             // 
             this.nextItem.Name = "nextItem";
             this.nextItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nextItem.Size = new System.Drawing.Size(155, 22);
-            this.nextItem.Text = "進む(&N)";
+            this.nextItem.Size = new System.Drawing.Size(154, 22);
+            this.nextItem.Text = "進む(&A)";
             this.nextItem.Click += new System.EventHandler(this.nextItem_Click);
             // 
             // prevItem
             // 
             this.prevItem.Name = "prevItem";
             this.prevItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.prevItem.Size = new System.Drawing.Size(155, 22);
-            this.prevItem.Text = "戻る(&P)";
+            this.prevItem.Size = new System.Drawing.Size(154, 22);
+            this.prevItem.Text = "戻る(&S)";
             this.prevItem.Click += new System.EventHandler(this.prevItem_Click);
             // 
             // reloadItem
             // 
             this.reloadItem.Name = "reloadItem";
             this.reloadItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.reloadItem.Size = new System.Drawing.Size(155, 22);
-            this.reloadItem.Text = "更新(&R)";
+            this.reloadItem.Size = new System.Drawing.Size(154, 22);
+            this.reloadItem.Text = "更新(&Z)";
             this.reloadItem.Click += new System.EventHandler(this.reloadItem_Click);
             // 
             // browseMenu
