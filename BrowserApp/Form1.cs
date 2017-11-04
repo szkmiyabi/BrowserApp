@@ -58,7 +58,7 @@ namespace BrowserApp
         private void getOpenFileName()
         {
             OpenFileDialog f = new OpenFileDialog();
-            f.Filter = "HTMLファイル(*.html;*.htm)|*.html;*.htm|すべてのファイル(*.*)|*.*";
+            f.Filter = "すべてのファイル(*.*)|*.*|HTMLファイル(*.html;*.htm)|*.html;*.htm|テキストファイル(*.txt)|*.txt";
             if(f.ShowDialog() == DialogResult.OK)
             {
                 filename = f.FileName;
@@ -73,8 +73,23 @@ namespace BrowserApp
                 urlArray = new ArrayList();
                 urlCombo.Items.Clear();
             }
-            string html = File.getTextFileContent(filename);
-            urlArray = HtmlUtil.urlListDatasFromHtml(html);
+            string buff = File.getTextFileContent(filename);
+            string ext = File.getFileExtension(filename);
+
+            if(ext.Equals(".html"))
+            {
+                if(File.isReportPage(buff) && !File.isResultPage(buff))
+                {
+                    urlArray = File.urlListDatasFromReportPage(buff);
+                } else if(File.isResultPage(buff) && !File.isReportPage(buff))
+                {
+                    urlArray = File.urlListDatasFromResultPage(buff);
+                }
+            }
+            else if(ext.Equals(".txt"))
+            {
+                urlArray = File.urlListDatasFromTextFile(buff);
+            }
             endOpen();
         }
 
