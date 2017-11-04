@@ -68,29 +68,47 @@ namespace BrowserApp
         //ファイルをロード
         private void loadFile()
         {
-            if(urlArray != null)
+            try
             {
-                urlArray = new ArrayList();
-                urlCombo.Items.Clear();
-            }
-            string buff = File.getTextFileContent(filename);
-            string ext = File.getFileExtension(filename);
 
-            if(ext.Equals(".html"))
-            {
-                if(File.isReportPage(buff) && !File.isResultPage(buff))
+                if (urlArray != null)
                 {
-                    urlArray = File.urlListDatasFromReportPage(buff);
-                } else if(File.isResultPage(buff) && !File.isReportPage(buff))
-                {
-                    urlArray = File.urlListDatasFromResultPage(buff);
+                    urlArray = new ArrayList();
+                    urlCombo.Items.Clear();
                 }
+
+                string buff = File.getTextFileContent(filename);
+                string ext = File.getFileExtension(filename);
+
+                if (ext.Equals(".html") || ext.Equals(".htm"))
+                {
+                    if (File.isReportPage(buff) && !File.isResultPage(buff))
+                    {
+                        urlArray = File.urlListDatasFromReportPage(buff);
+                    }
+                    else if (File.isResultPage(buff) && !File.isReportPage(buff))
+                    {
+                        urlArray = File.urlListDatasFromResultPage(buff);
+                    }
+                }
+                else if (ext.Equals(".txt") || ext.Equals(".csv") || ext.Equals(".tsv"))
+                {
+                    urlArray = File.urlListDatasFromTextFile(buff);
+                }
+                else
+                {
+                    MessageBox.Show("サポートされないファイルを開こうとしました。処理をキャンセルします！");
+                    return;
+                }
+
+                endOpen();
+
             }
-            else if(ext.Equals(".txt"))
+            catch (Exception ex)
             {
-                urlArray = File.urlListDatasFromTextFile(buff);
+                MessageBox.Show("処理エラーです。ファイルの内容に問題がないか確認してください！");
             }
-            endOpen();
+
         }
 
         //ファイルを開いた後の処理
