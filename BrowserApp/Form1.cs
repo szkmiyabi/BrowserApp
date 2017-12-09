@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace BrowserApp
 {
@@ -135,6 +136,8 @@ namespace BrowserApp
         //更新
         private void doReload()
         {
+            if (urlArray == null) return;
+
             string[] row = (string[])urlArray[arrIndex];
             string urlNo = row[0].ToString();
             string urlStr = row[1].ToString();
@@ -202,6 +205,70 @@ namespace BrowserApp
             {
                 return;
             }
+        }
+
+        //URL欄で指定したURL
+        private void doBrowseByUrlText()
+        {
+            try
+            {
+                string urlStr = urlText.Text;
+                Regex pt = new Regex(@"http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?");
+                Match mt = pt.Match(urlStr);
+                if(mt.Success)
+                {
+                    browserControl.Navigate(urlStr);
+                }
+                else
+                {
+                    return;
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                return;
+            }
+        }
+
+        //urlコンボに入力したURL
+        private void doSearchByUrlCombo()
+        {
+            string key = urlCombo.Text;
+            int saveArrIndex = 0;
+            int match_cnt = 0;
+
+            //コンボ入力値で配列検索
+            for(int i=0; i<urlArray.Count; i++)
+            {
+                string[] inrow = (string[])urlArray[i];
+                string urlNo = inrow[0].ToString();
+                string urlStr = inrow[1].ToString();
+                if(urlNo.Equals(key))
+                {
+                    saveArrIndex = i;
+                    match_cnt++;
+                    break;
+                }
+            }
+
+            if (match_cnt < 1) return;
+
+            urlCombo.Items.Clear();
+
+            //コンボボックスの再作成
+            for (int i = 0; i < urlArray.Count; i++)
+            {
+                string[] inrow = (string[])urlArray[i];
+                urlCombo.Items.Add(inrow[0].ToString());
+            }
+
+            //検索結果のURLを選択
+            string[] row = (string[])urlArray[saveArrIndex];
+            urlText.Text = row[1].ToString();
+            urlCombo.SelectedIndex = saveArrIndex;
+            browserControl.Navigate(urlText.Text);
+
         }
 
         //IEでURLを開く
@@ -423,6 +490,31 @@ namespace BrowserApp
         {
             PreservUtil pu = new PreservUtil(ref browserControl);
             pu.tag_br();
+        }
+
+        private void urlText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                doBrowseByUrlText();
+            }
+        }
+
+        private void browserControl_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            urlText.Text = browserControl.Url.ToString();
+        }
+
+        private void urlCombo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (urlArray == null) return;
+
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                doSearchByUrlCombo();
+            }
         }
     }
 }

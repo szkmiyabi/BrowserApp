@@ -333,6 +333,7 @@
             this.browserControl.Size = new System.Drawing.Size(989, 339);
             this.browserControl.TabIndex = 10;
             this.browserControl.WebBrowserShortcutsEnabled = false;
+            this.browserControl.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.browserControl_Navigated);
             // 
             // flowLayoutPanel1
             // 
@@ -363,6 +364,7 @@
             this.urlCombo.Size = new System.Drawing.Size(83, 20);
             this.urlCombo.TabIndex = 1;
             this.urlCombo.SelectedIndexChanged += new System.EventHandler(this.urlCombo_SelectedIndexChanged);
+            this.urlCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.urlCombo_KeyPress);
             // 
             // urlText
             // 
@@ -371,6 +373,7 @@
             this.urlText.Name = "urlText";
             this.urlText.Size = new System.Drawing.Size(495, 19);
             this.urlText.TabIndex = 2;
+            this.urlText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.urlText_KeyPress);
             // 
             // prevButton
             // 
