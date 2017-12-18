@@ -61,6 +61,8 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.urlCombo = new System.Windows.Forms.ComboBox();
             this.urlText = new System.Windows.Forms.TextBox();
+            this.bsPrevButton = new System.Windows.Forms.Button();
+            this.bsNextButton = new System.Windows.Forms.Button();
             this.prevButton = new System.Windows.Forms.Button();
             this.nextButton = new System.Windows.Forms.Button();
             this.reloadButton = new System.Windows.Forms.Button();
@@ -82,7 +84,7 @@
             this.statusBarText});
             this.statusBar.Location = new System.Drawing.Point(0, 409);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(989, 22);
+            this.statusBar.Size = new System.Drawing.Size(1098, 22);
             this.statusBar.TabIndex = 2;
             this.statusBar.Text = "statusStrip1";
             // 
@@ -127,7 +129,7 @@
             this.preservMenu});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
-            this.menuBar.Size = new System.Drawing.Size(989, 24);
+            this.menuBar.Size = new System.Drawing.Size(1098, 24);
             this.menuBar.TabIndex = 3;
             this.menuBar.Text = "menuStrip1";
             // 
@@ -321,7 +323,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(989, 385);
+            this.panel1.Size = new System.Drawing.Size(1098, 385);
             this.panel1.TabIndex = 4;
             // 
             // browserControl
@@ -330,7 +332,7 @@
             this.browserControl.Location = new System.Drawing.Point(0, 46);
             this.browserControl.MinimumSize = new System.Drawing.Size(20, 20);
             this.browserControl.Name = "browserControl";
-            this.browserControl.Size = new System.Drawing.Size(989, 339);
+            this.browserControl.Size = new System.Drawing.Size(1098, 339);
             this.browserControl.TabIndex = 10;
             this.browserControl.WebBrowserShortcutsEnabled = false;
             this.browserControl.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.browserControl_Navigated);
@@ -340,6 +342,8 @@
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.urlCombo);
             this.flowLayoutPanel1.Controls.Add(this.urlText);
+            this.flowLayoutPanel1.Controls.Add(this.bsPrevButton);
+            this.flowLayoutPanel1.Controls.Add(this.bsNextButton);
             this.flowLayoutPanel1.Controls.Add(this.prevButton);
             this.flowLayoutPanel1.Controls.Add(this.nextButton);
             this.flowLayoutPanel1.Controls.Add(this.reloadButton);
@@ -351,7 +355,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(989, 46);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1098, 46);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -375,10 +379,28 @@
             this.urlText.TabIndex = 2;
             this.urlText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.urlText_KeyPress);
             // 
+            // bsPrevButton
+            // 
+            this.bsPrevButton.Location = new System.Drawing.Point(593, 3);
+            this.bsPrevButton.Name = "bsPrevButton";
+            this.bsPrevButton.Size = new System.Drawing.Size(40, 40);
+            this.bsPrevButton.TabIndex = 13;
+            this.bsPrevButton.UseVisualStyleBackColor = true;
+            this.bsPrevButton.Click += new System.EventHandler(this.bsPrevButton_Click);
+            // 
+            // bsNextButton
+            // 
+            this.bsNextButton.Location = new System.Drawing.Point(639, 3);
+            this.bsNextButton.Name = "bsNextButton";
+            this.bsNextButton.Size = new System.Drawing.Size(40, 40);
+            this.bsNextButton.TabIndex = 12;
+            this.bsNextButton.UseVisualStyleBackColor = true;
+            this.bsNextButton.Click += new System.EventHandler(this.bsNextButton_Click);
+            // 
             // prevButton
             // 
             this.prevButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.prevButton.Location = new System.Drawing.Point(593, 11);
+            this.prevButton.Location = new System.Drawing.Point(685, 11);
             this.prevButton.Name = "prevButton";
             this.prevButton.Size = new System.Drawing.Size(38, 23);
             this.prevButton.TabIndex = 3;
@@ -389,7 +411,7 @@
             // nextButton
             // 
             this.nextButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nextButton.Location = new System.Drawing.Point(637, 11);
+            this.nextButton.Location = new System.Drawing.Point(729, 11);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(35, 23);
             this.nextButton.TabIndex = 4;
@@ -400,7 +422,7 @@
             // reloadButton
             // 
             this.reloadButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.reloadButton.Location = new System.Drawing.Point(678, 11);
+            this.reloadButton.Location = new System.Drawing.Point(770, 11);
             this.reloadButton.Name = "reloadButton";
             this.reloadButton.Size = new System.Drawing.Size(38, 23);
             this.reloadButton.TabIndex = 5;
@@ -411,7 +433,7 @@
             // ieButton
             // 
             this.ieButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ieButton.Location = new System.Drawing.Point(722, 3);
+            this.ieButton.Location = new System.Drawing.Point(814, 3);
             this.ieButton.Name = "ieButton";
             this.ieButton.Size = new System.Drawing.Size(40, 40);
             this.ieButton.TabIndex = 6;
@@ -421,7 +443,7 @@
             // ffButton
             // 
             this.ffButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ffButton.Location = new System.Drawing.Point(768, 3);
+            this.ffButton.Location = new System.Drawing.Point(860, 3);
             this.ffButton.Name = "ffButton";
             this.ffButton.Size = new System.Drawing.Size(40, 40);
             this.ffButton.TabIndex = 7;
@@ -431,7 +453,7 @@
             // gcButton
             // 
             this.gcButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.gcButton.Location = new System.Drawing.Point(814, 3);
+            this.gcButton.Location = new System.Drawing.Point(906, 3);
             this.gcButton.Name = "gcButton";
             this.gcButton.Size = new System.Drawing.Size(40, 40);
             this.gcButton.TabIndex = 8;
@@ -441,7 +463,7 @@
             // cfxButton
             // 
             this.cfxButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cfxButton.Location = new System.Drawing.Point(860, 3);
+            this.cfxButton.Location = new System.Drawing.Point(952, 3);
             this.cfxButton.Name = "cfxButton";
             this.cfxButton.Size = new System.Drawing.Size(40, 40);
             this.cfxButton.TabIndex = 9;
@@ -451,7 +473,7 @@
             // w3cButton
             // 
             this.w3cButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.w3cButton.Location = new System.Drawing.Point(906, 3);
+            this.w3cButton.Location = new System.Drawing.Point(998, 3);
             this.w3cButton.Name = "w3cButton";
             this.w3cButton.Size = new System.Drawing.Size(60, 40);
             this.w3cButton.TabIndex = 10;
@@ -462,7 +484,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 431);
+            this.ClientSize = new System.Drawing.Size(1098, 431);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.menuBar);
@@ -525,6 +547,8 @@
         private System.Windows.Forms.Button w3cButton;
         private System.Windows.Forms.ToolStripMenuItem settingsItem;
         private System.Windows.Forms.ToolStripMenuItem brItem;
+        private System.Windows.Forms.Button bsNextButton;
+        private System.Windows.Forms.Button bsPrevButton;
     }
 }
 

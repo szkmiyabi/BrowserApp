@@ -42,11 +42,20 @@ namespace BrowserApp
         //イメージボタン初期化
         private void imgButtonInit()
         {
+
+            Bitmap prevImg = getImageFromResource("bpreview30.png");
+            Bitmap nextImg = getImageFromResource("bnext30.png");
+
             Bitmap ieImg = getImageFromResource("ie32.png");
             Bitmap ffImg = getImageFromResource("ff32.png");
             Bitmap gcImg = getImageFromResource("gc32.png");
             Bitmap cfxImg = getImageFromResource("cfx32.png");
             Bitmap w3cImg = getImageFromResource("w3c32.png");
+
+
+            bsPrevButton.Image = prevImg;
+            bsNextButton.Image = nextImg;
+
             ieButton.Image = ieImg;
             ffButton.Image = ffImg;
             gcButton.Image = gcImg;
@@ -516,5 +525,27 @@ namespace BrowserApp
                 doSearchByUrlCombo();
             }
         }
+
+        private void bsPrevButton_Click(object sender, EventArgs e)
+        {
+            browserControl.GoBack();
+        }
+
+        private void browserControl_CanGoBackChanged(object sender, EventArgs e)
+        {
+            bsPrevButton.Enabled = browserControl.CanGoBack;
+        }
+
+        private void bsNextButton_Click(object sender, EventArgs e)
+        {
+            browserControl.GoForward();
+        }
+
+        private void browserControl_CanGoForwardChanged(object sendar, EventArgs e)
+        {
+            bsNextButton.Enabled = browserControl.CanGoForward;
+        }
+
+
     }
 }
