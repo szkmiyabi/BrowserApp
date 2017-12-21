@@ -36,9 +36,11 @@
             this.settingsItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.nextItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prevItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reloadItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nextUrlItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prevUrlItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reloadUrlItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nextBrowseItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prevBrowseItem = new System.Windows.Forms.ToolStripMenuItem();
             this.browseMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ieItem = new System.Windows.Forms.ToolStripMenuItem();
             this.firefoxItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,7 +84,7 @@
             this.statusBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusBarText});
-            this.statusBar.Location = new System.Drawing.Point(0, 409);
+            this.statusBar.Location = new System.Drawing.Point(0, 499);
             this.statusBar.Name = "statusBar";
             this.statusBar.Size = new System.Drawing.Size(1098, 22);
             this.statusBar.TabIndex = 2;
@@ -136,36 +138,52 @@
             // viewMenu
             // 
             this.viewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nextItem,
-            this.prevItem,
-            this.reloadItem});
+            this.nextUrlItem,
+            this.prevUrlItem,
+            this.reloadUrlItem,
+            this.nextBrowseItem,
+            this.prevBrowseItem});
             this.viewMenu.Name = "viewMenu";
             this.viewMenu.Size = new System.Drawing.Size(58, 20);
             this.viewMenu.Text = "表示(&V)";
             // 
-            // nextItem
+            // nextUrlItem
             // 
-            this.nextItem.Name = "nextItem";
-            this.nextItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nextItem.Size = new System.Drawing.Size(154, 22);
-            this.nextItem.Text = "進む(&A)";
-            this.nextItem.Click += new System.EventHandler(this.nextItem_Click);
+            this.nextUrlItem.Name = "nextUrlItem";
+            this.nextUrlItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.nextUrlItem.Size = new System.Drawing.Size(175, 22);
+            this.nextUrlItem.Text = "次のURL(&A)";
+            this.nextUrlItem.Click += new System.EventHandler(this.nextUrlItem_Click);
             // 
-            // prevItem
+            // prevUrlItem
             // 
-            this.prevItem.Name = "prevItem";
-            this.prevItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.prevItem.Size = new System.Drawing.Size(154, 22);
-            this.prevItem.Text = "戻る(&S)";
-            this.prevItem.Click += new System.EventHandler(this.prevItem_Click);
+            this.prevUrlItem.Name = "prevUrlItem";
+            this.prevUrlItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.prevUrlItem.Size = new System.Drawing.Size(175, 22);
+            this.prevUrlItem.Text = "前のURL(&S)";
+            this.prevUrlItem.Click += new System.EventHandler(this.prevUrlItem_Click);
             // 
-            // reloadItem
+            // reloadUrlItem
             // 
-            this.reloadItem.Name = "reloadItem";
-            this.reloadItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.reloadItem.Size = new System.Drawing.Size(154, 22);
-            this.reloadItem.Text = "更新(&Z)";
-            this.reloadItem.Click += new System.EventHandler(this.reloadItem_Click);
+            this.reloadUrlItem.Name = "reloadUrlItem";
+            this.reloadUrlItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.reloadUrlItem.Size = new System.Drawing.Size(175, 22);
+            this.reloadUrlItem.Text = "更新(&Z)";
+            this.reloadUrlItem.Click += new System.EventHandler(this.reloadUrlItem_Click);
+            // 
+            // nextBrowseItem
+            // 
+            this.nextBrowseItem.Name = "nextBrowseItem";
+            this.nextBrowseItem.Size = new System.Drawing.Size(175, 22);
+            this.nextBrowseItem.Text = "進む(&N)";
+            this.nextBrowseItem.Click += new System.EventHandler(this.nextBrowseItem_Click);
+            // 
+            // prevBrowseItem
+            // 
+            this.prevBrowseItem.Name = "prevBrowseItem";
+            this.prevBrowseItem.Size = new System.Drawing.Size(175, 22);
+            this.prevBrowseItem.Text = "戻る(&B)";
+            this.prevBrowseItem.Click += new System.EventHandler(this.prevBrowseItem_Click);
             // 
             // browseMenu
             // 
@@ -323,7 +341,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1098, 385);
+            this.panel1.Size = new System.Drawing.Size(1098, 475);
             this.panel1.TabIndex = 4;
             // 
             // browserControl
@@ -332,8 +350,8 @@
             this.browserControl.Location = new System.Drawing.Point(0, 46);
             this.browserControl.MinimumSize = new System.Drawing.Size(20, 20);
             this.browserControl.Name = "browserControl";
-            this.browserControl.Size = new System.Drawing.Size(1098, 339);
-            this.browserControl.TabIndex = 10;
+            this.browserControl.Size = new System.Drawing.Size(1098, 429);
+            this.browserControl.TabIndex = 13;
             this.browserControl.WebBrowserShortcutsEnabled = false;
             this.browserControl.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.browserControl_Navigated);
             // 
@@ -384,7 +402,7 @@
             this.bsPrevButton.Location = new System.Drawing.Point(593, 3);
             this.bsPrevButton.Name = "bsPrevButton";
             this.bsPrevButton.Size = new System.Drawing.Size(40, 40);
-            this.bsPrevButton.TabIndex = 13;
+            this.bsPrevButton.TabIndex = 3;
             this.bsPrevButton.UseVisualStyleBackColor = true;
             this.bsPrevButton.Click += new System.EventHandler(this.bsPrevButton_Click);
             // 
@@ -393,90 +411,87 @@
             this.bsNextButton.Location = new System.Drawing.Point(639, 3);
             this.bsNextButton.Name = "bsNextButton";
             this.bsNextButton.Size = new System.Drawing.Size(40, 40);
-            this.bsNextButton.TabIndex = 12;
+            this.bsNextButton.TabIndex = 4;
             this.bsNextButton.UseVisualStyleBackColor = true;
             this.bsNextButton.Click += new System.EventHandler(this.bsNextButton_Click);
             // 
             // prevButton
             // 
             this.prevButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.prevButton.Location = new System.Drawing.Point(685, 11);
+            this.prevButton.Location = new System.Drawing.Point(685, 3);
             this.prevButton.Name = "prevButton";
-            this.prevButton.Size = new System.Drawing.Size(38, 23);
-            this.prevButton.TabIndex = 3;
-            this.prevButton.Text = "戻る";
+            this.prevButton.Size = new System.Drawing.Size(40, 40);
+            this.prevButton.TabIndex = 5;
             this.prevButton.UseVisualStyleBackColor = true;
             this.prevButton.Click += new System.EventHandler(this.prevButton_Click);
             // 
             // nextButton
             // 
             this.nextButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nextButton.Location = new System.Drawing.Point(729, 11);
+            this.nextButton.Location = new System.Drawing.Point(731, 3);
             this.nextButton.Name = "nextButton";
-            this.nextButton.Size = new System.Drawing.Size(35, 23);
-            this.nextButton.TabIndex = 4;
-            this.nextButton.Text = "進む";
+            this.nextButton.Size = new System.Drawing.Size(40, 40);
+            this.nextButton.TabIndex = 6;
             this.nextButton.UseVisualStyleBackColor = true;
             this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
             // reloadButton
             // 
             this.reloadButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.reloadButton.Location = new System.Drawing.Point(770, 11);
+            this.reloadButton.Location = new System.Drawing.Point(777, 3);
             this.reloadButton.Name = "reloadButton";
-            this.reloadButton.Size = new System.Drawing.Size(38, 23);
-            this.reloadButton.TabIndex = 5;
-            this.reloadButton.Text = "更新";
+            this.reloadButton.Size = new System.Drawing.Size(40, 40);
+            this.reloadButton.TabIndex = 7;
             this.reloadButton.UseVisualStyleBackColor = true;
             this.reloadButton.Click += new System.EventHandler(this.reloadButton_Click);
             // 
             // ieButton
             // 
             this.ieButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ieButton.Location = new System.Drawing.Point(814, 3);
+            this.ieButton.Location = new System.Drawing.Point(823, 3);
             this.ieButton.Name = "ieButton";
             this.ieButton.Size = new System.Drawing.Size(40, 40);
-            this.ieButton.TabIndex = 6;
+            this.ieButton.TabIndex = 8;
             this.ieButton.UseVisualStyleBackColor = true;
             this.ieButton.Click += new System.EventHandler(this.ieButton_Click);
             // 
             // ffButton
             // 
             this.ffButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ffButton.Location = new System.Drawing.Point(860, 3);
+            this.ffButton.Location = new System.Drawing.Point(869, 3);
             this.ffButton.Name = "ffButton";
             this.ffButton.Size = new System.Drawing.Size(40, 40);
-            this.ffButton.TabIndex = 7;
+            this.ffButton.TabIndex = 9;
             this.ffButton.UseVisualStyleBackColor = true;
             this.ffButton.Click += new System.EventHandler(this.ffButton_Click);
             // 
             // gcButton
             // 
             this.gcButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.gcButton.Location = new System.Drawing.Point(906, 3);
+            this.gcButton.Location = new System.Drawing.Point(915, 3);
             this.gcButton.Name = "gcButton";
             this.gcButton.Size = new System.Drawing.Size(40, 40);
-            this.gcButton.TabIndex = 8;
+            this.gcButton.TabIndex = 10;
             this.gcButton.UseVisualStyleBackColor = true;
             this.gcButton.Click += new System.EventHandler(this.gcButton_Click);
             // 
             // cfxButton
             // 
             this.cfxButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cfxButton.Location = new System.Drawing.Point(952, 3);
+            this.cfxButton.Location = new System.Drawing.Point(961, 3);
             this.cfxButton.Name = "cfxButton";
             this.cfxButton.Size = new System.Drawing.Size(40, 40);
-            this.cfxButton.TabIndex = 9;
+            this.cfxButton.TabIndex = 11;
             this.cfxButton.UseVisualStyleBackColor = true;
             this.cfxButton.Click += new System.EventHandler(this.cfxButton_Click);
             // 
             // w3cButton
             // 
             this.w3cButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.w3cButton.Location = new System.Drawing.Point(998, 3);
+            this.w3cButton.Location = new System.Drawing.Point(1007, 3);
             this.w3cButton.Name = "w3cButton";
             this.w3cButton.Size = new System.Drawing.Size(60, 40);
-            this.w3cButton.TabIndex = 10;
+            this.w3cButton.TabIndex = 12;
             this.w3cButton.UseVisualStyleBackColor = true;
             this.w3cButton.Click += new System.EventHandler(this.w3cButton_Click);
             // 
@@ -484,7 +499,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1098, 431);
+            this.ClientSize = new System.Drawing.Size(1098, 521);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.menuBar);
@@ -519,9 +534,9 @@
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Button reloadButton;
         private System.Windows.Forms.ToolStripMenuItem viewMenu;
-        private System.Windows.Forms.ToolStripMenuItem nextItem;
-        private System.Windows.Forms.ToolStripMenuItem prevItem;
-        private System.Windows.Forms.ToolStripMenuItem reloadItem;
+        private System.Windows.Forms.ToolStripMenuItem nextUrlItem;
+        private System.Windows.Forms.ToolStripMenuItem prevUrlItem;
+        private System.Windows.Forms.ToolStripMenuItem reloadUrlItem;
         private System.Windows.Forms.Button ieButton;
         private System.Windows.Forms.Button ffButton;
         private System.Windows.Forms.Button gcButton;
@@ -549,6 +564,8 @@
         private System.Windows.Forms.ToolStripMenuItem brItem;
         private System.Windows.Forms.Button bsNextButton;
         private System.Windows.Forms.Button bsPrevButton;
+        private System.Windows.Forms.ToolStripMenuItem nextBrowseItem;
+        private System.Windows.Forms.ToolStripMenuItem prevBrowseItem;
     }
 }
 

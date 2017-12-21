@@ -46,6 +46,11 @@ namespace BrowserApp
             Bitmap prevImg = getImageFromResource("bpreview30.png");
             Bitmap nextImg = getImageFromResource("bnext30.png");
 
+            Bitmap prevBtnImg = getImageFromResource("prevbutton30.png");
+            Bitmap nextBtnImg = getImageFromResource("nextbutton30.png");
+            Bitmap reloadBtnImg = getImageFromResource("reloadbutton30.png");
+
+
             Bitmap ieImg = getImageFromResource("ie32.png");
             Bitmap ffImg = getImageFromResource("ff32.png");
             Bitmap gcImg = getImageFromResource("gc32.png");
@@ -55,6 +60,10 @@ namespace BrowserApp
 
             bsPrevButton.Image = prevImg;
             bsNextButton.Image = nextImg;
+
+            prevButton.Image = prevBtnImg;
+            nextButton.Image = nextBtnImg;
+            reloadButton.Image = reloadBtnImg;
 
             ieButton.Image = ieImg;
             ffButton.Image = ffImg;
@@ -361,20 +370,7 @@ namespace BrowserApp
             doBrowseByCombo();
         }
 
-        private void nextItem_Click(object sender, EventArgs e)
-        {
-            doBrowserNext();
-        }
 
-        private void prevItem_Click(object sender, EventArgs e)
-        {
-            doBrowserPrev();
-        }
-
-        private void reloadItem_Click(object sender, EventArgs e)
-        {
-            doReload();
-        }
 
         private void ieButton_Click(object sender, EventArgs e)
         {
@@ -534,6 +530,7 @@ namespace BrowserApp
         private void browserControl_CanGoBackChanged(object sender, EventArgs e)
         {
             bsPrevButton.Enabled = browserControl.CanGoBack;
+            prevBrowseItem.Enabled = browserControl.CanGoBack;
         }
 
         private void bsNextButton_Click(object sender, EventArgs e)
@@ -544,8 +541,32 @@ namespace BrowserApp
         private void browserControl_CanGoForwardChanged(object sendar, EventArgs e)
         {
             bsNextButton.Enabled = browserControl.CanGoForward;
+            nextBrowseItem.Enabled = browserControl.CanGoForward;
         }
 
+        private void nextUrlItem_Click(object sender, EventArgs e)
+        {
+            doBrowserNext();
+        }
 
+        private void prevUrlItem_Click(object sender, EventArgs e)
+        {
+            doBrowserPrev();
+        }
+
+        private void reloadUrlItem_Click(object sender, EventArgs e)
+        {
+            doBrowserPrev();
+        }
+
+        private void nextBrowseItem_Click(object sender, EventArgs e)
+        {
+            browserControl.GoForward();
+        }
+
+        private void prevBrowseItem_Click(object sender, EventArgs e)
+        {
+            browserControl.GoBack();
+        }
     }
 }

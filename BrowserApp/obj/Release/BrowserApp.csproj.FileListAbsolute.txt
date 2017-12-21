@@ -1,21 +1,10 @@
-C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\bin\Release\BrowserApp.exe.config
-C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\bin\Release\BrowserApp.exe
-C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\bin\Release\HtmlAgilityPack.dll
-C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\bin\Release\HtmlAgilityPack.pdb
-C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\bin\Release\HtmlAgilityPack.xml
-C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.Form1.resources
-C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.Properties.Resources.resources
-C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.SettingDialog.resources
-C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.csproj.GenerateResource.Cache
-C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.exe
-C:\Users\masahiko suzuki\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.csprojResolveAssemblyReference.cache
 C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\bin\Release\BrowserApp.exe.config
 C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\bin\Release\BrowserApp.exe
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\bin\Release\AngleSharp.dll
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\bin\Release\AngleSharp.xml
 C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.csprojResolveAssemblyReference.cache
 C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.Form1.resources
 C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.Properties.Resources.resources
 C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.SettingDialog.resources
 C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.csproj.GenerateResource.Cache
 C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.exe
-C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\bin\Release\AngleSharp.dll
-C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\bin\Release\AngleSharp.xml
