@@ -568,5 +568,17 @@ namespace BrowserApp
         {
             browserControl.GoBack();
         }
+
+        private void hrefAttrItem_Click(object sender, EventArgs e)
+        {
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.tag_href_attr();
+        }
+
+        private void titleAttrItem_Click(object sender, EventArgs e)
+        {
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.tag_title_attr();
+        }
     }
 }

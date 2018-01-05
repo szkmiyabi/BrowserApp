@@ -73,6 +73,8 @@
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
             this.w3cButton = new System.Windows.Forms.Button();
+            this.hrefAttrItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.titleAttrItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -150,38 +152,35 @@
             // nextUrlItem
             // 
             this.nextUrlItem.Name = "nextUrlItem";
-            this.nextUrlItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nextUrlItem.Size = new System.Drawing.Size(175, 22);
+            this.nextUrlItem.Size = new System.Drawing.Size(152, 22);
             this.nextUrlItem.Text = "次のURL(&A)";
             this.nextUrlItem.Click += new System.EventHandler(this.nextUrlItem_Click);
             // 
             // prevUrlItem
             // 
             this.prevUrlItem.Name = "prevUrlItem";
-            this.prevUrlItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.prevUrlItem.Size = new System.Drawing.Size(175, 22);
+            this.prevUrlItem.Size = new System.Drawing.Size(152, 22);
             this.prevUrlItem.Text = "前のURL(&S)";
             this.prevUrlItem.Click += new System.EventHandler(this.prevUrlItem_Click);
             // 
             // reloadUrlItem
             // 
             this.reloadUrlItem.Name = "reloadUrlItem";
-            this.reloadUrlItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.reloadUrlItem.Size = new System.Drawing.Size(175, 22);
+            this.reloadUrlItem.Size = new System.Drawing.Size(152, 22);
             this.reloadUrlItem.Text = "更新(&Z)";
             this.reloadUrlItem.Click += new System.EventHandler(this.reloadUrlItem_Click);
             // 
             // nextBrowseItem
             // 
             this.nextBrowseItem.Name = "nextBrowseItem";
-            this.nextBrowseItem.Size = new System.Drawing.Size(175, 22);
+            this.nextBrowseItem.Size = new System.Drawing.Size(152, 22);
             this.nextBrowseItem.Text = "進む(&N)";
             this.nextBrowseItem.Click += new System.EventHandler(this.nextBrowseItem_Click);
             // 
             // prevBrowseItem
             // 
             this.prevBrowseItem.Name = "prevBrowseItem";
-            this.prevBrowseItem.Size = new System.Drawing.Size(175, 22);
+            this.prevBrowseItem.Size = new System.Drawing.Size(152, 22);
             this.prevBrowseItem.Text = "戻る(&B)";
             this.prevBrowseItem.Click += new System.EventHandler(this.prevBrowseItem_Click);
             // 
@@ -199,33 +198,29 @@
             // ieItem
             // 
             this.ieItem.Name = "ieItem";
-            this.ieItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
-            this.ieItem.Size = new System.Drawing.Size(203, 22);
-            this.ieItem.Text = "IEで開く(&1)";
+            this.ieItem.Size = new System.Drawing.Size(187, 22);
+            this.ieItem.Text = "IEで開く(&A)";
             this.ieItem.Click += new System.EventHandler(this.ieItem_Click);
             // 
             // firefoxItem
             // 
             this.firefoxItem.Name = "firefoxItem";
-            this.firefoxItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
-            this.firefoxItem.Size = new System.Drawing.Size(203, 22);
-            this.firefoxItem.Text = "Firefoxで開く(&2)";
+            this.firefoxItem.Size = new System.Drawing.Size(187, 22);
+            this.firefoxItem.Text = "Firefoxで開く(&S)";
             this.firefoxItem.Click += new System.EventHandler(this.firefoxItem_Click);
             // 
             // chromeItem
             // 
             this.chromeItem.Name = "chromeItem";
-            this.chromeItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
-            this.chromeItem.Size = new System.Drawing.Size(203, 22);
-            this.chromeItem.Text = "Chromeで開く(&3)";
+            this.chromeItem.Size = new System.Drawing.Size(187, 22);
+            this.chromeItem.Text = "Chromeで開く(&D)";
             this.chromeItem.Click += new System.EventHandler(this.chromeItem_Click);
             // 
             // cyberfoxItem
             // 
             this.cyberfoxItem.Name = "cyberfoxItem";
-            this.cyberfoxItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D4)));
-            this.cyberfoxItem.Size = new System.Drawing.Size(203, 22);
-            this.cyberfoxItem.Text = "Cyberfoxで開く(&4)";
+            this.cyberfoxItem.Size = new System.Drawing.Size(187, 22);
+            this.cyberfoxItem.Text = "任意のブラウザで開く(&F)";
             this.cyberfoxItem.Click += new System.EventHandler(this.cyberfoxItem_Click);
             // 
             // preservMenu
@@ -241,7 +236,9 @@
             this.tableItem,
             this.w3cItem,
             this.cssCutItem,
-            this.altattrItem});
+            this.altattrItem,
+            this.hrefAttrItem,
+            this.titleAttrItem});
             this.preservMenu.Name = "preservMenu";
             this.preservMenu.Size = new System.Drawing.Size(101, 20);
             this.preservMenu.Text = "シュミレーション(&S)";
@@ -249,88 +246,77 @@
             // paragraphItem
             // 
             this.paragraphItem.Name = "paragraphItem";
-            this.paragraphItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D5)));
-            this.paragraphItem.Size = new System.Drawing.Size(295, 22);
+            this.paragraphItem.Size = new System.Drawing.Size(229, 22);
             this.paragraphItem.Text = "段落を枠で表示(&Z)";
             this.paragraphItem.Click += new System.EventHandler(this.paragraphItem_Click);
             // 
             // linkImageItem
             // 
             this.linkImageItem.Name = "linkImageItem";
-            this.linkImageItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D6)));
-            this.linkImageItem.Size = new System.Drawing.Size(295, 22);
+            this.linkImageItem.Size = new System.Drawing.Size(229, 22);
             this.linkImageItem.Text = "リンク画像を枠で表示(&X)";
             this.linkImageItem.Click += new System.EventHandler(this.linkImageItem_Click);
             // 
             // listItem
             // 
             this.listItem.Name = "listItem";
-            this.listItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D7)));
-            this.listItem.Size = new System.Drawing.Size(295, 22);
+            this.listItem.Size = new System.Drawing.Size(229, 22);
             this.listItem.Text = "リスト要素を枠で表示(&C)";
             this.listItem.Click += new System.EventHandler(this.listItem_Click);
             // 
             // semanticItem
             // 
             this.semanticItem.Name = "semanticItem";
-            this.semanticItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D8)));
-            this.semanticItem.Size = new System.Drawing.Size(295, 22);
+            this.semanticItem.Size = new System.Drawing.Size(229, 22);
             this.semanticItem.Text = "セマンティック要素を枠で表示(&V)";
             this.semanticItem.Click += new System.EventHandler(this.semanticItem_Click);
             // 
             // headingItem
             // 
             this.headingItem.Name = "headingItem";
-            this.headingItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D9)));
-            this.headingItem.Size = new System.Drawing.Size(295, 22);
+            this.headingItem.Size = new System.Drawing.Size(229, 22);
             this.headingItem.Text = "見出し要素を枠で表示(&A)";
             this.headingItem.Click += new System.EventHandler(this.headingItem_Click);
             // 
             // brItem
             // 
             this.brItem.Name = "brItem";
-            this.brItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D0)));
-            this.brItem.Size = new System.Drawing.Size(295, 22);
+            this.brItem.Size = new System.Drawing.Size(229, 22);
             this.brItem.Text = "br要素を枠で表示(&S)";
             this.brItem.Click += new System.EventHandler(this.brItem_Click);
             // 
             // labelItem
             // 
             this.labelItem.Name = "labelItem";
-            this.labelItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Oemcomma)));
-            this.labelItem.Size = new System.Drawing.Size(295, 22);
+            this.labelItem.Size = new System.Drawing.Size(229, 22);
             this.labelItem.Text = "ラベル要素を枠で表示(&D)";
             this.labelItem.Click += new System.EventHandler(this.labelItem_Click);
             // 
             // tableItem
             // 
             this.tableItem.Name = "tableItem";
-            this.tableItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.OemPeriod)));
-            this.tableItem.Size = new System.Drawing.Size(295, 22);
+            this.tableItem.Size = new System.Drawing.Size(229, 22);
             this.tableItem.Text = "テーブル要素を枠で表示(&F)";
             this.tableItem.Click += new System.EventHandler(this.tableItem_Click);
             // 
             // w3cItem
             // 
             this.w3cItem.Name = "w3cItem";
-            this.w3cItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.w3cItem.Size = new System.Drawing.Size(295, 22);
+            this.w3cItem.Size = new System.Drawing.Size(229, 22);
             this.w3cItem.Text = "W3Cバリデートを実行(&Q)";
             this.w3cItem.Click += new System.EventHandler(this.w3cItem_Click);
             // 
             // cssCutItem
             // 
             this.cssCutItem.Name = "cssCutItem";
-            this.cssCutItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Oemtilde)));
-            this.cssCutItem.Size = new System.Drawing.Size(295, 22);
+            this.cssCutItem.Size = new System.Drawing.Size(229, 22);
             this.cssCutItem.Text = "CSSカットを実行(&W)";
             this.cssCutItem.Click += new System.EventHandler(this.cssCutItem_Click);
             // 
             // altattrItem
             // 
             this.altattrItem.Name = "altattrItem";
-            this.altattrItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.OemBackslash)));
-            this.altattrItem.Size = new System.Drawing.Size(295, 22);
+            this.altattrItem.Size = new System.Drawing.Size(229, 22);
             this.altattrItem.Text = "alt属性値を表示(&E)";
             this.altattrItem.Click += new System.EventHandler(this.altattrItem_Click);
             // 
@@ -495,6 +481,20 @@
             this.w3cButton.UseVisualStyleBackColor = true;
             this.w3cButton.Click += new System.EventHandler(this.w3cButton_Click);
             // 
+            // hrefAttrItem
+            // 
+            this.hrefAttrItem.Name = "hrefAttrItem";
+            this.hrefAttrItem.Size = new System.Drawing.Size(229, 22);
+            this.hrefAttrItem.Text = "href属性値を表示(&H)";
+            this.hrefAttrItem.Click += new System.EventHandler(this.hrefAttrItem_Click);
+            // 
+            // titleAttrItem
+            // 
+            this.titleAttrItem.Name = "titleAttrItem";
+            this.titleAttrItem.Size = new System.Drawing.Size(229, 22);
+            this.titleAttrItem.Text = "title属性値を表示(&T)";
+            this.titleAttrItem.Click += new System.EventHandler(this.titleAttrItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -566,6 +566,8 @@
         private System.Windows.Forms.Button bsPrevButton;
         private System.Windows.Forms.ToolStripMenuItem nextBrowseItem;
         private System.Windows.Forms.ToolStripMenuItem prevBrowseItem;
+        private System.Windows.Forms.ToolStripMenuItem hrefAttrItem;
+        private System.Windows.Forms.ToolStripMenuItem titleAttrItem;
     }
 }
 

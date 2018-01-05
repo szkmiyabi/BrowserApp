@@ -461,6 +461,66 @@ namespace BrowserApp
             return ret;
         }
 
+        //href属性値を明示
+        public void tag_href_attr()
+        {
+            HtmlElementCollection ats = d.GetElementsByTagName("a");
+            int i = 0;
+            foreach(HtmlElement a in ats)
+            {
+                string href_val = a.GetAttribute("href");
+                HtmlElement span = d.CreateElement("span");
+                span.Id = "bkm-href-attr-span-" + i;
+                span.InnerHtml = "[ " + href_val + " ]";
+                span.Style = "padding-right:5px;color:#fff;font-size:14px;padding:1px;background:#600060;";
+                a.InsertAdjacentElement(HtmlElementInsertionOrientation.BeforeBegin, span);
+                i++;
+
+            }
+        }
+
+
+        //title属性値を明示
+        public void tag_title_attr()
+        {
+            string[] tags = { "a", "input" };
+            for(int i=0; i<tags.Length; i++)
+            {
+                string val = tags[i].ToString();
+                _tag_title_attr_func(val);
+            }
+        }
+
+        private void _tag_title_attr_func(string tag)
+        {
+            HtmlElementCollection ts = d.GetElementsByTagName(tag);
+            int i = 0;
+            foreach(HtmlElement t in ts)
+            {
+                if(tag.Equals("input"))
+                {
+                    string tp = t.GetAttribute("type");
+                    if(tp.Equals("text") || tp.Equals("checkbox") || tp.Equals("radio"))
+                    {
+                        string title_val = t.GetAttribute("title");
+                        HtmlElement span = d.CreateElement("span");
+                        span.Id = "bkm-title-attr-span-" + i;
+                        span.InnerHtml = "title: " + title_val;
+                        span.Style = "padding-right:5px;color:#fff;font-size:12px;padding:1px;background:#000080";
+                        t.InsertAdjacentElement(HtmlElementInsertionOrientation.BeforeBegin, span);
+                    }
+                } else
+                {
+                    string title_val = t.GetAttribute("title");
+                    HtmlElement span = d.CreateElement("span");
+                    span.Id = "bkm-title-attr-span-" + i;
+                    span.InnerHtml = "title: " + title_val;
+                    span.Style = "padding-right:5px;color:#fff;font-size:12px;padding:1px;background:#000080;";
+                    t.InsertAdjacentElement(HtmlElementInsertionOrientation.BeforeBegin, span);
+                }
+                i++;
+            }
+        }
 
         //要素名ラベルを表示
         private void add_label(HtmlElement obj, int cnt)
