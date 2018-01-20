@@ -473,10 +473,14 @@ namespace BrowserApp
         private void altattrItem_Click(object sender, EventArgs e)
         {
             PreservUtil pu = new PreservUtil(ref browserControl);
+            Boolean fname_flg;
+            Boolean alt_attr_flg;
             Boolean flag;
-            if (pu_tag_img_fname_flag == "yes") flag = true;
-            else flag = false;
-            pu.tag_img_alt_fname(true, flag);
+            if (pu_tag_img_fname_flag == "yes") fname_flg = true;
+            else fname_flg = false;
+            if (pu_tag_img_alt_attr_flag == "yes") alt_attr_flg = true;
+            else alt_attr_flg = false;
+            pu.tag_img_alt_fname(true, fname_flg, alt_attr_flg);
         }
 
         private void w3cButton_Click(object sender, EventArgs e)

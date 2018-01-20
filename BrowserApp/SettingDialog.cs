@@ -38,6 +38,7 @@ namespace BrowserApp
                 appSettings.etcBrowserPath = etcBrowserText.Text;
                 appSettings.pu_tag_link_img_alt_flag = (linkImgAltCheck.Checked) ? "yes" : "no";
                 appSettings.pu_tag_img_fname_flag = (imgFnameCheck.Checked) ? "yes" : "no";
+                appSettings.pu_tag_img_alt_attr_flag = (imgAltAttrCheck.Checked) ? "yes" : "no";
                 XmlSerializer xsz = new XmlSerializer(typeof(Settings));
                 StreamWriter sw = new StreamWriter(
                     filename,
@@ -75,6 +76,8 @@ namespace BrowserApp
                 else linkImgAltCheck.Checked = false;
                 if (appSettings.pu_tag_img_fname_flag == "yes") imgFnameCheck.Checked = true;
                 else imgFnameCheck.Checked = false;
+                if (appSettings.pu_tag_img_alt_attr_flag == "yes") imgAltAttrCheck.Checked = true;
+                else imgAltAttrCheck.Checked = false;
             }
             catch(Exception ex)
             {
@@ -92,6 +95,7 @@ namespace BrowserApp
                 appSettings.etcBrowserPath = "";
                 appSettings.pu_tag_link_img_alt_flag = "";
                 appSettings.pu_tag_img_fname_flag = "";
+                appSettings.pu_tag_img_alt_attr_flag = "";
                 XmlSerializer xsz = new XmlSerializer(typeof(Settings));
                 StreamWriter sw = new StreamWriter(
                     filename,
@@ -107,6 +111,7 @@ namespace BrowserApp
                 etcBrowserText.Text = "";
                 linkImgAltCheck.Checked = false;
                 imgFnameCheck.Checked = false;
+                imgAltAttrCheck.Checked = false;
                 MessageBox.Show("設定が削除できました。");
             }
             catch(Exception ex)

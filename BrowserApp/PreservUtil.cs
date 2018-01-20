@@ -414,7 +414,7 @@ namespace BrowserApp
         }
 
         //alt属性値と画像名を明示
-        public void tag_img_alt_fname(Boolean alt_flg, Boolean fname_flg)
+        public void tag_img_alt_fname(Boolean alt_flg, Boolean fname_flg, Boolean alt_attr_flg)
         {
             HtmlElementCollection img = d.GetElementsByTagName("img");
             int i = 0;
@@ -445,9 +445,52 @@ namespace BrowserApp
                 span.InnerHtml = html_str;
                 span.Style = "color:#fff;font-size:12px;padding:1px;background:#BF0000;";
                 imgtag.InsertAdjacentElement(HtmlElementInsertionOrientation.BeforeBegin, span);
+
+                //alt属性値の有無判定
+                if(alt_attr_flg)
+                {
+                    if (!_alt_attr_check(span.Id))
+                    {
+                        HtmlElement now_span = d.GetElementById(span.Id);
+                        string now_str = now_span.InnerHtml;
+                        string new_str = now_str.Replace("alt: ", "alt属性がない");
+                        now_span.InnerHtml = new_str;
+                    }
+                }
+
                 i++;
             }
         }
+        private Boolean _alt_attr_check(string tar_id)
+        {
+            string html = "";
+            string tar_text = d.Body.InnerHtml;
+
+            tar_text = _text_clean(tar_text);
+            Console.WriteLine(tar_text);
+            Regex pt1 = new Regex(@"(<span id=""" + tar_id + @""".+?>)(.+?)(</span>)(<img.+?>)");
+            MatchCollection mc = pt1.Matches(tar_text);
+            if(mc.Count > 0)
+            {
+                Match mt = mc[0];
+                html = mt.Groups[4].Value;
+                Console.WriteLine(html);
+
+            }
+            Regex pt2 = new Regex(@"alt="".*""");
+            if (pt2.IsMatch(html)) return true;
+            else return false;
+
+        }
+
+        private string _text_clean(string str)
+        {
+            str = Regex.Replace(str, @"^ +", "", RegexOptions.Multiline);
+            str = Regex.Replace(str, @"\t+", "", RegexOptions.Multiline);
+            str = Regex.Replace(str, @"(\r\n|\r|\n)", "", RegexOptions.Multiline);
+            return str;
+        }
+
         private string _get_img_fname(string str)
         {
             string ret = "";

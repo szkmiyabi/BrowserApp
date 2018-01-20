@@ -29,6 +29,7 @@ namespace BrowserApp
         private string etcBrowserPath;
         private string pu_tag_link_img_alt_flag;
         private string pu_tag_img_fname_flag;
+        private string pu_tag_img_alt_attr_flag;
 
         //webBrowserコントロールをIE11で稼働させる設定
         private void initRegistry()
@@ -66,11 +67,12 @@ namespace BrowserApp
                 etcBrowserPath = appSettings.etcBrowserPath;
                 pu_tag_link_img_alt_flag = appSettings.pu_tag_link_img_alt_flag;
                 pu_tag_img_fname_flag = appSettings.pu_tag_img_fname_flag;
+                pu_tag_img_alt_attr_flag = appSettings.pu_tag_img_alt_attr_flag;
 
-                Debug.WriteLine(iePath);
-                Debug.WriteLine(ffPath);
-                Debug.WriteLine(gcPath);
-                Debug.WriteLine(etcBrowserPath);
+                //Debug.WriteLine(iePath);
+                //Debug.WriteLine(ffPath);
+                //Debug.WriteLine(gcPath);
+                //Debug.WriteLine(etcBrowserPath);
 
             }
             catch(Exception ex)

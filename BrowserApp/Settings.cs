@@ -14,6 +14,7 @@ namespace BrowserApp
         private string _etcBrowserPath;
         private string _pu_tag_link_img_alt_flag;
         private string _pu_tag_img_fname_flag;
+        private string _pu_tag_img_alt_attr_flag;
 
         public string iePath
         {
@@ -45,6 +46,11 @@ namespace BrowserApp
             get { return _pu_tag_img_fname_flag; }
             set { _pu_tag_img_fname_flag = value; }
         }
+        public string pu_tag_img_alt_attr_flag
+        {
+            get { return _pu_tag_img_alt_attr_flag; }
+            set { _pu_tag_img_alt_attr_flag = value; }
+        }
 
         //コンストラクタ
         public Settings()
@@ -55,6 +61,7 @@ namespace BrowserApp
             _etcBrowserPath = "";
             _pu_tag_link_img_alt_flag = "";
             _pu_tag_img_fname_flag = "";
+            _pu_tag_img_alt_attr_flag = "";
         }
     }
 }
