@@ -584,5 +584,22 @@ namespace BrowserApp
             PreservUtil pu = new PreservUtil(ref browserControl);
             pu.tag_title_attr();
         }
+
+        private void pageTopItem_Click(object sender, EventArgs e)
+        {
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.scroll_top_exec();
+        }
+
+        private void pageBottomItem_Click(object sender, EventArgs e)
+        {
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.scroll_bottom_exec();
+        }
+
+        private void pageRefreshItem_Click(object sender, EventArgs e)
+        {
+            browserControl.Refresh();
+        }
     }
 }

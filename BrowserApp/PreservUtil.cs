@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Collections;
+using System.Drawing;
 
 namespace BrowserApp
 {
@@ -478,7 +479,8 @@ namespace BrowserApp
 
             }
             Regex pt2 = new Regex(@"alt="".*""");
-            if (pt2.IsMatch(html)) return true;
+            Regex pt3 = new Regex(@"alt=");
+            if (pt2.IsMatch(html) && pt3.IsMatch(html)) return true;
             else return false;
 
         }
@@ -579,5 +581,20 @@ namespace BrowserApp
             obj.AppendChild(span);
         }
 
+        //ページ最上部ヘスクロール
+        public void scroll_top_exec()
+        {
+            d.Window.ScrollTo(new Point(0, 0));
+        }
+
+        //ページ最下部へスクロール
+        public void scroll_bottom_exec()
+        {
+            int val1 = d.Body.ClientRectangle.Height;
+            int val2 = d.Body.ScrollRectangle.Height;
+            int btm = Math.Max(val1, val2);
+            d.Window.ScrollTo(new Point(0, btm));
+
+        }
     }
 }

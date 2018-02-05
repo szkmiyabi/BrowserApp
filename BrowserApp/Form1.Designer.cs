@@ -41,6 +41,9 @@
             this.reloadUrlItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nextBrowseItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prevBrowseItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pageTopItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pageBottomItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pageRefreshItem = new System.Windows.Forms.ToolStripMenuItem();
             this.browseMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ieItem = new System.Windows.Forms.ToolStripMenuItem();
             this.firefoxItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +61,8 @@
             this.w3cItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cssCutItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altattrItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hrefAttrItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.titleAttrItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.browserControl = new System.Windows.Forms.WebBrowser();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -73,8 +78,6 @@
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
             this.w3cButton = new System.Windows.Forms.Button();
-            this.hrefAttrItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.titleAttrItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -144,7 +147,10 @@
             this.prevUrlItem,
             this.reloadUrlItem,
             this.nextBrowseItem,
-            this.prevBrowseItem});
+            this.prevBrowseItem,
+            this.pageTopItem,
+            this.pageBottomItem,
+            this.pageRefreshItem});
             this.viewMenu.Name = "viewMenu";
             this.viewMenu.Size = new System.Drawing.Size(58, 20);
             this.viewMenu.Text = "表示(&V)";
@@ -152,37 +158,58 @@
             // nextUrlItem
             // 
             this.nextUrlItem.Name = "nextUrlItem";
-            this.nextUrlItem.Size = new System.Drawing.Size(152, 22);
+            this.nextUrlItem.Size = new System.Drawing.Size(186, 22);
             this.nextUrlItem.Text = "次のURL(&A)";
             this.nextUrlItem.Click += new System.EventHandler(this.nextUrlItem_Click);
             // 
             // prevUrlItem
             // 
             this.prevUrlItem.Name = "prevUrlItem";
-            this.prevUrlItem.Size = new System.Drawing.Size(152, 22);
+            this.prevUrlItem.Size = new System.Drawing.Size(186, 22);
             this.prevUrlItem.Text = "前のURL(&S)";
             this.prevUrlItem.Click += new System.EventHandler(this.prevUrlItem_Click);
             // 
             // reloadUrlItem
             // 
             this.reloadUrlItem.Name = "reloadUrlItem";
-            this.reloadUrlItem.Size = new System.Drawing.Size(152, 22);
+            this.reloadUrlItem.Size = new System.Drawing.Size(186, 22);
             this.reloadUrlItem.Text = "更新(&Z)";
             this.reloadUrlItem.Click += new System.EventHandler(this.reloadUrlItem_Click);
             // 
             // nextBrowseItem
             // 
             this.nextBrowseItem.Name = "nextBrowseItem";
-            this.nextBrowseItem.Size = new System.Drawing.Size(152, 22);
+            this.nextBrowseItem.Size = new System.Drawing.Size(186, 22);
             this.nextBrowseItem.Text = "進む(&N)";
             this.nextBrowseItem.Click += new System.EventHandler(this.nextBrowseItem_Click);
             // 
             // prevBrowseItem
             // 
             this.prevBrowseItem.Name = "prevBrowseItem";
-            this.prevBrowseItem.Size = new System.Drawing.Size(152, 22);
+            this.prevBrowseItem.Size = new System.Drawing.Size(186, 22);
             this.prevBrowseItem.Text = "戻る(&B)";
             this.prevBrowseItem.Click += new System.EventHandler(this.prevBrowseItem_Click);
+            // 
+            // pageTopItem
+            // 
+            this.pageTopItem.Name = "pageTopItem";
+            this.pageTopItem.Size = new System.Drawing.Size(186, 22);
+            this.pageTopItem.Text = "ページ最上部に移動(&F)";
+            this.pageTopItem.Click += new System.EventHandler(this.pageTopItem_Click);
+            // 
+            // pageBottomItem
+            // 
+            this.pageBottomItem.Name = "pageBottomItem";
+            this.pageBottomItem.Size = new System.Drawing.Size(186, 22);
+            this.pageBottomItem.Text = "ページ最下部に移動(&V)";
+            this.pageBottomItem.Click += new System.EventHandler(this.pageBottomItem_Click);
+            // 
+            // pageRefreshItem
+            // 
+            this.pageRefreshItem.Name = "pageRefreshItem";
+            this.pageRefreshItem.Size = new System.Drawing.Size(186, 22);
+            this.pageRefreshItem.Text = "リフレッシュ(&W)";
+            this.pageRefreshItem.Click += new System.EventHandler(this.pageRefreshItem_Click);
             // 
             // browseMenu
             // 
@@ -320,6 +347,20 @@
             this.altattrItem.Text = "alt属性値を表示(&E)";
             this.altattrItem.Click += new System.EventHandler(this.altattrItem_Click);
             // 
+            // hrefAttrItem
+            // 
+            this.hrefAttrItem.Name = "hrefAttrItem";
+            this.hrefAttrItem.Size = new System.Drawing.Size(229, 22);
+            this.hrefAttrItem.Text = "href属性値を表示(&H)";
+            this.hrefAttrItem.Click += new System.EventHandler(this.hrefAttrItem_Click);
+            // 
+            // titleAttrItem
+            // 
+            this.titleAttrItem.Name = "titleAttrItem";
+            this.titleAttrItem.Size = new System.Drawing.Size(229, 22);
+            this.titleAttrItem.Text = "title属性値を表示(&T)";
+            this.titleAttrItem.Click += new System.EventHandler(this.titleAttrItem_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.browserControl);
@@ -338,7 +379,6 @@
             this.browserControl.Name = "browserControl";
             this.browserControl.Size = new System.Drawing.Size(1098, 429);
             this.browserControl.TabIndex = 13;
-            this.browserControl.WebBrowserShortcutsEnabled = false;
             this.browserControl.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.browserControl_Navigated);
             // 
             // flowLayoutPanel1
@@ -481,20 +521,6 @@
             this.w3cButton.UseVisualStyleBackColor = true;
             this.w3cButton.Click += new System.EventHandler(this.w3cButton_Click);
             // 
-            // hrefAttrItem
-            // 
-            this.hrefAttrItem.Name = "hrefAttrItem";
-            this.hrefAttrItem.Size = new System.Drawing.Size(229, 22);
-            this.hrefAttrItem.Text = "href属性値を表示(&H)";
-            this.hrefAttrItem.Click += new System.EventHandler(this.hrefAttrItem_Click);
-            // 
-            // titleAttrItem
-            // 
-            this.titleAttrItem.Name = "titleAttrItem";
-            this.titleAttrItem.Size = new System.Drawing.Size(229, 22);
-            this.titleAttrItem.Text = "title属性値を表示(&T)";
-            this.titleAttrItem.Click += new System.EventHandler(this.titleAttrItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -568,6 +594,9 @@
         private System.Windows.Forms.ToolStripMenuItem prevBrowseItem;
         private System.Windows.Forms.ToolStripMenuItem hrefAttrItem;
         private System.Windows.Forms.ToolStripMenuItem titleAttrItem;
+        private System.Windows.Forms.ToolStripMenuItem pageTopItem;
+        private System.Windows.Forms.ToolStripMenuItem pageBottomItem;
+        private System.Windows.Forms.ToolStripMenuItem pageRefreshItem;
     }
 }
 
