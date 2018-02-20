@@ -77,6 +77,13 @@
     <Compile Include="Form1.SysUtil.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LinkListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkListDialog.Designer.cs">
+      <DependentUpon>LinkListDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkUtil.cs" />
     <Compile Include="PreservUtil.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,8 +94,18 @@
       <DependentUpon>SettingDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="ValidatorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValidatorDialog.Designer.cs">
+      <DependentUpon>ValidatorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidatorUtil.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkListDialog.resx">
+      <DependentUpon>LinkListDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -101,6 +118,9 @@
     </Compile>
     <EmbeddedResource Include="SettingDialog.resx">
       <DependentUpon>SettingDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValidatorDialog.resx">
+      <DependentUpon>ValidatorDialog.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

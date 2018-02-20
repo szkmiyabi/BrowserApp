@@ -63,6 +63,9 @@
             this.altattrItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hrefAttrItem = new System.Windows.Forms.ToolStripMenuItem();
             this.titleAttrItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.linkListItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ValidatorErrorReportItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.browserControl = new System.Windows.Forms.WebBrowser();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -78,6 +81,8 @@
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
             this.w3cButton = new System.Windows.Forms.Button();
+            this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.urlNumberCopyItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -131,9 +136,11 @@
             this.menuBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileMenu,
+            this.editMenu,
             this.viewMenu,
             this.browseMenu,
-            this.preservMenu});
+            this.preservMenu,
+            this.reportMenu});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
             this.menuBar.Size = new System.Drawing.Size(1098, 24);
@@ -361,6 +368,29 @@
             this.titleAttrItem.Text = "title属性値を表示(&T)";
             this.titleAttrItem.Click += new System.EventHandler(this.titleAttrItem_Click);
             // 
+            // reportMenu
+            // 
+            this.reportMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.linkListItem,
+            this.ValidatorErrorReportItem});
+            this.reportMenu.Name = "reportMenu";
+            this.reportMenu.Size = new System.Drawing.Size(69, 20);
+            this.reportMenu.Text = "レポート(&R)";
+            // 
+            // linkListItem
+            // 
+            this.linkListItem.Name = "linkListItem";
+            this.linkListItem.Size = new System.Drawing.Size(224, 22);
+            this.linkListItem.Text = "リンク一覧を表示(&X)";
+            this.linkListItem.Click += new System.EventHandler(this.linkListItem_Click);
+            // 
+            // ValidatorErrorReportItem
+            // 
+            this.ValidatorErrorReportItem.Name = "ValidatorErrorReportItem";
+            this.ValidatorErrorReportItem.Size = new System.Drawing.Size(224, 22);
+            this.ValidatorErrorReportItem.Text = "バリデート結果レポートを表示(&V)";
+            this.ValidatorErrorReportItem.Click += new System.EventHandler(this.ValidatorErrorReportItem_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.browserControl);
@@ -521,6 +551,21 @@
             this.w3cButton.UseVisualStyleBackColor = true;
             this.w3cButton.Click += new System.EventHandler(this.w3cButton_Click);
             // 
+            // editMenu
+            // 
+            this.editMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.urlNumberCopyItem});
+            this.editMenu.Name = "editMenu";
+            this.editMenu.Size = new System.Drawing.Size(57, 20);
+            this.editMenu.Text = "編集(&E)";
+            // 
+            // urlNumberCopyItem
+            // 
+            this.urlNumberCopyItem.Name = "urlNumberCopyItem";
+            this.urlNumberCopyItem.Size = new System.Drawing.Size(168, 22);
+            this.urlNumberCopyItem.Text = "URL番号をコピー(&C)";
+            this.urlNumberCopyItem.Click += new System.EventHandler(this.urlNumberCopyItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -597,6 +642,11 @@
         private System.Windows.Forms.ToolStripMenuItem pageTopItem;
         private System.Windows.Forms.ToolStripMenuItem pageBottomItem;
         private System.Windows.Forms.ToolStripMenuItem pageRefreshItem;
+        private System.Windows.Forms.ToolStripMenuItem reportMenu;
+        private System.Windows.Forms.ToolStripMenuItem linkListItem;
+        private System.Windows.Forms.ToolStripMenuItem ValidatorErrorReportItem;
+        private System.Windows.Forms.ToolStripMenuItem editMenu;
+        private System.Windows.Forms.ToolStripMenuItem urlNumberCopyItem;
     }
 }
 

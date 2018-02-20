@@ -365,7 +365,8 @@ namespace BrowserApp
         {
             string wurl = "http://validator.w3.org/check?uri=";
             wurl += burl;
-            wurl += "&charset=%28detect+automatically%29&doctype=Inline&ss=1&group=1&verbose=1";
+            //wurl += "&charset=%28detect+automatically%29&doctype=Inline&ss=1&group=1&verbose=1";
+            wurl += "&charset=%28detect+automatically%29&doctype=Inline&ss=1&verbose=1";
             wurl += "&user-agent=W3C_Validator%2F1.3+http%3A%2F%2Fvalidator.w3.org%2Fservices";
             b.Navigate(wurl);
         }

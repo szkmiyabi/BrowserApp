@@ -10,6 +10,7 @@ using System.Drawing;
 
 using System.Xml.Serialization;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace BrowserApp
 {
@@ -91,6 +92,55 @@ namespace BrowserApp
             //設定を再読込
             loadAppSettings();
         }
+
+        //リンクリストダイアログを表示
+        private void showLinkListDiag()
+        {
+            LinkListDialog lkd = new LinkListDialog();
+            LinkUtil lu = new LinkUtil(ref browserControl);
+            try
+            {
+                //リンクリストを取得
+                string res = lu.get_link_list();
+                int cnt = lu.linkCnt;
+                lkd.LinkListTextArea.Text = res;
+                lkd.linkListStatusLabel.Text = "";
+                lkd.linkListStatusLabel.Text = cnt.ToString() + "件のリンクが見つかりました。";
+                lkd.ShowDialog(this);
+                lkd.Dispose();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("ページを表示していません！");
+            }
+
+        }
+
+        //バリデート結果レポートダイアログを表示
+        private void showValidatorDiag()
+        {
+            ValidatorDialog vd = new ValidatorDialog();
+            ValidatorUtil vu = new ValidatorUtil(ref browserControl);
+            string res = "";
+
+            try
+            {
+                vu.init();
+                if (vu.env.Equals("nu")) res = vu.get_nu_validator_errors();
+                else if (vu.env.Equals("bs")) res = vu.get_bs_validator_errors();
+                vd.validatorReportArea.Text = "";
+                vd.validatorReportArea.Text = res;
+                vd.ShowDialog(this);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("html validatorの結果ページを表示していません！");
+
+            }
+
+        }
+
 
     }
 }

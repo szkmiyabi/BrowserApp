@@ -8,3 +8,5 @@ C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.Prope
 C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.SettingDialog.resources
 C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.csproj.GenerateResource.Cache
 C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.exe
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.LinkListDialog.resources
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Release\BrowserApp.ValidatorDialog.resources

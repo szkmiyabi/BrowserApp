@@ -341,6 +341,28 @@ namespace BrowserApp
             }
         }
 
+        //URL番号をコピー
+        private void copyUrlNumberToClipboard()
+        {
+            try
+            {
+                if (urlCombo.Items.Count > 0)
+                {
+                    Clipboard.SetDataObject(urlCombo.Text);
+                    MessageBox.Show("URL番号をクリップボードにコピーしました！");
+                }
+                else
+                {
+                    MessageBox.Show("URL一覧テキストを開いていません！");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("システムエラーです！");
+            }
+        }
+
         private void openItem_Click(object sender, EventArgs e)
         {
             getOpenFileName();
@@ -600,6 +622,21 @@ namespace BrowserApp
         private void pageRefreshItem_Click(object sender, EventArgs e)
         {
             browserControl.Refresh();
+        }
+
+        private void linkListItem_Click(object sender, EventArgs e)
+        {
+            showLinkListDiag();
+        }
+
+        private void ValidatorErrorReportItem_Click(object sender, EventArgs e)
+        {
+            showValidatorDiag();
+        }
+
+        private void urlNumberCopyItem_Click(object sender, EventArgs e)
+        {
+            copyUrlNumberToClipboard();
         }
     }
 }
