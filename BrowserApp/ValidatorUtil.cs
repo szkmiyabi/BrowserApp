@@ -17,8 +17,8 @@ namespace BrowserApp
         private WebBrowser b;
         private HtmlDocument d;
         private string url;
-        private Regex bvpt = new Regex(@"http.*://validator.w3.org/check\?", RegexOptions.Compiled);
-        private Regex nvpt = new Regex(@"http.*://validator.w3.org/nu/\?", RegexOptions.Compiled);
+        private Regex bvpt = new Regex(@"http.*://validator.w3.org/check\?*", RegexOptions.Compiled);
+        private Regex nvpt = new Regex(@"http.*://validator.w3.org/nu/\?*", RegexOptions.Compiled);
         private HtmlElement rep_wrapper;
         private string _env;
 
