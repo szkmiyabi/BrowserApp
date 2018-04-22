@@ -568,6 +568,79 @@ namespace BrowserApp
             }
         }
 
+        //ドキュメントリンクのファイル名表示
+        public void doclink_filename()
+        {
+            string[] ex_arr = { "pdf", "doc", "docx", "xls", "xlsx", "jtd", "ppt", "pptx", "csv" };
+            Regex path_pat = new Regex(@".*/.*");
+            Regex fn_pat = new Regex(@"(.+\/)(.+)");
+            Regex ex_pat = new Regex(@"(\.)(.+)");
+
+            HtmlElementCollection ats = d.GetElementsByTagName("a");
+            int i = 0;
+
+            foreach(HtmlElement a in ats)
+            {
+                string href = a.GetAttribute("href");
+                string fname = _get_name(href, path_pat, fn_pat);
+                if(_is_doclink(fname, ex_pat, ex_arr))
+                {
+                    HtmlElement span = d.CreateElement("span");
+                    span.Id = "bkm-href-doclink-span-" + i;
+                    span.InnerHtml = "[ " + fname + " ]";
+                    span.Style = "padding-right:5px;color:#fff;font-size:14px;padding:1px;background:#600060;";
+                    a.InsertAdjacentElement(HtmlElementInsertionOrientation.BeforeBegin, span);
+                    i++;
+                }
+            }
+        }
+
+        private Boolean _is_doclink(String fname, Regex ex_pat, string[] ex_arr)
+        {
+            Boolean flg = false;
+            string ext = _get_ext(fname, ex_pat);
+            if (ext.Equals("")) return flg;
+            for(int i=0; i<ex_arr.Length; i++)
+            {
+                string rw = (string)ex_arr[i];
+                if(rw.Equals(ext))
+                {
+                    flg = true;
+                    break;
+                }
+            }
+            return flg;
+        }
+
+        private String _get_ext(String fname, Regex ex_pat)
+        {
+            string ret = "";
+            if (!ex_pat.IsMatch(fname)) return ret;
+            MatchCollection mc = ex_pat.Matches(fname);
+            if(mc.Count > 0)
+            {
+                Match mt = mc[0];
+                ret = mt.Groups[2].Value;
+            }
+            return ret;
+        }
+
+        private String _get_name(String href, Regex path_pat, Regex fn_pat)
+        {
+            string ret = "";
+            if (!path_pat.IsMatch(href)) return href;
+            if(fn_pat.IsMatch(href))
+            {
+                MatchCollection mc = fn_pat.Matches(href);
+                if(mc.Count > 0)
+                {
+                    Match mt = mc[0];
+                    ret = mt.Groups[2].Value;
+                }
+            }
+            return ret;
+        }
+
         //要素名ラベルを表示
         private void add_label(HtmlElement obj, int cnt)
         {

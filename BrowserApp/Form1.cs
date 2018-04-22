@@ -638,5 +638,11 @@ namespace BrowserApp
         {
             copyUrlNumberToClipboard();
         }
+
+        private void docLinkFilenameItem_Click(object sender, EventArgs e)
+        {
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.doclink_filename();
+        }
     }
 }

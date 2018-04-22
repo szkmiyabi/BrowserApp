@@ -35,6 +35,8 @@
             this.openItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar = new System.Windows.Forms.MenuStrip();
+            this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.urlNumberCopyItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.nextUrlItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prevUrlItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,8 +83,7 @@
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
             this.w3cButton = new System.Windows.Forms.Button();
-            this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.urlNumberCopyItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.docLinkFilenameItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -146,6 +147,21 @@
             this.menuBar.Size = new System.Drawing.Size(1098, 24);
             this.menuBar.TabIndex = 3;
             this.menuBar.Text = "menuStrip1";
+            // 
+            // editMenu
+            // 
+            this.editMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.urlNumberCopyItem});
+            this.editMenu.Name = "editMenu";
+            this.editMenu.Size = new System.Drawing.Size(57, 20);
+            this.editMenu.Text = "編集(&E)";
+            // 
+            // urlNumberCopyItem
+            // 
+            this.urlNumberCopyItem.Name = "urlNumberCopyItem";
+            this.urlNumberCopyItem.Size = new System.Drawing.Size(168, 22);
+            this.urlNumberCopyItem.Text = "URL番号をコピー(&C)";
+            this.urlNumberCopyItem.Click += new System.EventHandler(this.urlNumberCopyItem_Click);
             // 
             // viewMenu
             // 
@@ -272,7 +288,8 @@
             this.cssCutItem,
             this.altattrItem,
             this.hrefAttrItem,
-            this.titleAttrItem});
+            this.titleAttrItem,
+            this.docLinkFilenameItem});
             this.preservMenu.Name = "preservMenu";
             this.preservMenu.Size = new System.Drawing.Size(101, 20);
             this.preservMenu.Text = "シュミレーション(&S)";
@@ -551,20 +568,12 @@
             this.w3cButton.UseVisualStyleBackColor = true;
             this.w3cButton.Click += new System.EventHandler(this.w3cButton_Click);
             // 
-            // editMenu
+            // docLinkFilenameItem
             // 
-            this.editMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.urlNumberCopyItem});
-            this.editMenu.Name = "editMenu";
-            this.editMenu.Size = new System.Drawing.Size(57, 20);
-            this.editMenu.Text = "編集(&E)";
-            // 
-            // urlNumberCopyItem
-            // 
-            this.urlNumberCopyItem.Name = "urlNumberCopyItem";
-            this.urlNumberCopyItem.Size = new System.Drawing.Size(168, 22);
-            this.urlNumberCopyItem.Text = "URL番号をコピー(&C)";
-            this.urlNumberCopyItem.Click += new System.EventHandler(this.urlNumberCopyItem_Click);
+            this.docLinkFilenameItem.Name = "docLinkFilenameItem";
+            this.docLinkFilenameItem.Size = new System.Drawing.Size(229, 22);
+            this.docLinkFilenameItem.Text = "ドキュメントファイル名を表示(&I)";
+            this.docLinkFilenameItem.Click += new System.EventHandler(this.docLinkFilenameItem_Click);
             // 
             // Form1
             // 
@@ -647,6 +656,7 @@
         private System.Windows.Forms.ToolStripMenuItem ValidatorErrorReportItem;
         private System.Windows.Forms.ToolStripMenuItem editMenu;
         private System.Windows.Forms.ToolStripMenuItem urlNumberCopyItem;
+        private System.Windows.Forms.ToolStripMenuItem docLinkFilenameItem;
     }
 }
 
