@@ -65,6 +65,7 @@
             this.altattrItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hrefAttrItem = new System.Windows.Forms.ToolStripMenuItem();
             this.titleAttrItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.docLinkFilenameItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.linkListItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ValidatorErrorReportItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,7 +84,6 @@
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
             this.w3cButton = new System.Windows.Forms.Button();
-            this.docLinkFilenameItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -385,6 +385,13 @@
             this.titleAttrItem.Text = "title属性値を表示(&T)";
             this.titleAttrItem.Click += new System.EventHandler(this.titleAttrItem_Click);
             // 
+            // docLinkFilenameItem
+            // 
+            this.docLinkFilenameItem.Name = "docLinkFilenameItem";
+            this.docLinkFilenameItem.Size = new System.Drawing.Size(229, 22);
+            this.docLinkFilenameItem.Text = "ドキュメントファイル名を表示(&I)";
+            this.docLinkFilenameItem.Click += new System.EventHandler(this.docLinkFilenameItem_Click);
+            // 
             // reportMenu
             // 
             this.reportMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -456,7 +463,7 @@
             this.urlCombo.FormattingEnabled = true;
             this.urlCombo.Location = new System.Drawing.Point(3, 13);
             this.urlCombo.Name = "urlCombo";
-            this.urlCombo.Size = new System.Drawing.Size(83, 20);
+            this.urlCombo.Size = new System.Drawing.Size(104, 20);
             this.urlCombo.TabIndex = 1;
             this.urlCombo.SelectedIndexChanged += new System.EventHandler(this.urlCombo_SelectedIndexChanged);
             this.urlCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.urlCombo_KeyPress);
@@ -464,7 +471,7 @@
             // urlText
             // 
             this.urlText.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.urlText.Location = new System.Drawing.Point(92, 13);
+            this.urlText.Location = new System.Drawing.Point(113, 13);
             this.urlText.Name = "urlText";
             this.urlText.Size = new System.Drawing.Size(495, 19);
             this.urlText.TabIndex = 2;
@@ -472,7 +479,7 @@
             // 
             // bsPrevButton
             // 
-            this.bsPrevButton.Location = new System.Drawing.Point(593, 3);
+            this.bsPrevButton.Location = new System.Drawing.Point(614, 3);
             this.bsPrevButton.Name = "bsPrevButton";
             this.bsPrevButton.Size = new System.Drawing.Size(40, 40);
             this.bsPrevButton.TabIndex = 3;
@@ -481,7 +488,7 @@
             // 
             // bsNextButton
             // 
-            this.bsNextButton.Location = new System.Drawing.Point(639, 3);
+            this.bsNextButton.Location = new System.Drawing.Point(660, 3);
             this.bsNextButton.Name = "bsNextButton";
             this.bsNextButton.Size = new System.Drawing.Size(40, 40);
             this.bsNextButton.TabIndex = 4;
@@ -491,7 +498,7 @@
             // prevButton
             // 
             this.prevButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.prevButton.Location = new System.Drawing.Point(685, 3);
+            this.prevButton.Location = new System.Drawing.Point(706, 3);
             this.prevButton.Name = "prevButton";
             this.prevButton.Size = new System.Drawing.Size(40, 40);
             this.prevButton.TabIndex = 5;
@@ -501,7 +508,7 @@
             // nextButton
             // 
             this.nextButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nextButton.Location = new System.Drawing.Point(731, 3);
+            this.nextButton.Location = new System.Drawing.Point(752, 3);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(40, 40);
             this.nextButton.TabIndex = 6;
@@ -511,7 +518,7 @@
             // reloadButton
             // 
             this.reloadButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.reloadButton.Location = new System.Drawing.Point(777, 3);
+            this.reloadButton.Location = new System.Drawing.Point(798, 3);
             this.reloadButton.Name = "reloadButton";
             this.reloadButton.Size = new System.Drawing.Size(40, 40);
             this.reloadButton.TabIndex = 7;
@@ -521,7 +528,7 @@
             // ieButton
             // 
             this.ieButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ieButton.Location = new System.Drawing.Point(823, 3);
+            this.ieButton.Location = new System.Drawing.Point(844, 3);
             this.ieButton.Name = "ieButton";
             this.ieButton.Size = new System.Drawing.Size(40, 40);
             this.ieButton.TabIndex = 8;
@@ -531,7 +538,7 @@
             // ffButton
             // 
             this.ffButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ffButton.Location = new System.Drawing.Point(869, 3);
+            this.ffButton.Location = new System.Drawing.Point(890, 3);
             this.ffButton.Name = "ffButton";
             this.ffButton.Size = new System.Drawing.Size(40, 40);
             this.ffButton.TabIndex = 9;
@@ -541,7 +548,7 @@
             // gcButton
             // 
             this.gcButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.gcButton.Location = new System.Drawing.Point(915, 3);
+            this.gcButton.Location = new System.Drawing.Point(936, 3);
             this.gcButton.Name = "gcButton";
             this.gcButton.Size = new System.Drawing.Size(40, 40);
             this.gcButton.TabIndex = 10;
@@ -551,7 +558,7 @@
             // cfxButton
             // 
             this.cfxButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cfxButton.Location = new System.Drawing.Point(961, 3);
+            this.cfxButton.Location = new System.Drawing.Point(982, 3);
             this.cfxButton.Name = "cfxButton";
             this.cfxButton.Size = new System.Drawing.Size(40, 40);
             this.cfxButton.TabIndex = 11;
@@ -561,19 +568,12 @@
             // w3cButton
             // 
             this.w3cButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.w3cButton.Location = new System.Drawing.Point(1007, 3);
+            this.w3cButton.Location = new System.Drawing.Point(1028, 3);
             this.w3cButton.Name = "w3cButton";
             this.w3cButton.Size = new System.Drawing.Size(60, 40);
             this.w3cButton.TabIndex = 12;
             this.w3cButton.UseVisualStyleBackColor = true;
             this.w3cButton.Click += new System.EventHandler(this.w3cButton_Click);
-            // 
-            // docLinkFilenameItem
-            // 
-            this.docLinkFilenameItem.Name = "docLinkFilenameItem";
-            this.docLinkFilenameItem.Size = new System.Drawing.Size(229, 22);
-            this.docLinkFilenameItem.Text = "ドキュメントファイル名を表示(&I)";
-            this.docLinkFilenameItem.Click += new System.EventHandler(this.docLinkFilenameItem_Click);
             // 
             // Form1
             // 
