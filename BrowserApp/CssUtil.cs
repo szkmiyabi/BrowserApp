@@ -33,17 +33,31 @@ namespace BrowserApp
             string html = "";
             HtmlElementCollection lnks = d.GetElementsByTagName("link");
 
-            foreach(HtmlElement lk in lnks)
+            string tar_text = b.DocumentText; //これで読み込んだHTMLソースは文字化けるので注意
+            tar_text = _text_clean(tar_text);
+
+            Regex pt = new Regex(@"(<link.+?)( */*>)", RegexOptions.IgnoreCase);
+            MatchCollection mc = pt.Matches(tar_text);
+            if (mc.Count > 0)
             {
-                string rel_val = lk.GetAttribute("rel");
-                string type_val = lk.GetAttribute("type");
-                string href_val = lk.GetAttribute("href");
-                Regex pt = new Regex(@"(\.)(css|CSS)");
-                if(rel_val.Equals("stylesheet") || type_val.Equals("text/css") || pt.IsMatch(href_val))
+                foreach (Match mt in mc)
                 {
-                    html += lk.OuterHtml + "\r\n";
+                    string vl = mt.Value;
+                    html += vl + "\r\n";
                 }
             }
+            //foreach (HtmlElement lk in lnks)
+            //{
+            //    MessageBox.Show(lk.OuterHtml);
+            //    string rel_val = lk.GetAttribute("rel");
+            //    string type_val = lk.GetAttribute("type");
+            //    string href_val = lk.GetAttribute("href");
+            //    Regex pt = new Regex(@"(\.css|CSS)$");
+            //    if (rel_val.Equals("stylesheet") || type_val.Equals("text/css") || pt.IsMatch(href_val))
+            //    {
+            //        html += lk.OuterHtml + "\r\n";
+            //    }
+            //}
             return html;
         }
 
