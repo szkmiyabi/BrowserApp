@@ -19,6 +19,7 @@ namespace BrowserApp
         private ArrayList urlArray;
         private int arrIndex;
 
+
         public Form1()
         {
             InitializeComponent();

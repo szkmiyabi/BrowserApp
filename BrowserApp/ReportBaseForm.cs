@@ -10,20 +10,25 @@ using System.Windows.Forms;
 
 namespace BrowserApp
 {
-    public partial class ValidatorDialog : Form
+    public partial class ReportBaseForm : Form
     {
-        public ValidatorDialog()
+        public ReportBaseForm()
         {
             InitializeComponent();
         }
 
-        private void validatorReportArea_KeyDown(object sender, KeyEventArgs e)
+        private void reportBaseFormCloseBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void reportBaseFormText_KeyDown(object sender, KeyEventArgs e)
         {
             //Ctrl + A を実装
             if (e.Control && e.KeyCode == Keys.A)
             {
-                e.SuppressKeyPress = true;    //beep解除
-                validatorReportArea.SelectAll();
+                e.SuppressKeyPress = true; //beep解除
+                reportBaseFormText.SelectAll();
             }
         }
     }

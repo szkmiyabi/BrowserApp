@@ -32,6 +32,9 @@ namespace BrowserApp
         private string pu_tag_img_fname_flag;
         private string pu_tag_img_alt_attr_flag;
 
+        private static ReportBaseForm _rpBaseFrm;
+
+
         //webBrowserコントロールをIE11で稼働させる設定
         private void initRegistry()
         {
@@ -46,6 +49,20 @@ namespace BrowserApp
             Stream stream = assembly.GetManifestResourceStream("BrowserApp.resources." + imgname);
             Bitmap bmp = new Bitmap(stream);
             return bmp;
+        }
+
+
+        //ReportBaseFormのインスタンスの取得
+        public static ReportBaseForm rpBaseFrm
+        {
+            get
+            {
+                if (_rpBaseFrm == null || _rpBaseFrm.IsDisposed)
+                {
+                    _rpBaseFrm = new ReportBaseForm();
+                }
+                return _rpBaseFrm;
+            }
         }
 
         //アプリ設定データを取得
@@ -96,18 +113,18 @@ namespace BrowserApp
         //リンクリストダイアログを表示
         private void showLinkListDiag()
         {
-            LinkListDialog lkd = new LinkListDialog();
+
             LinkUtil lu = new LinkUtil(ref browserControl);
             try
             {
                 //リンクリストを取得
                 string res = lu.get_link_list();
                 int cnt = lu.linkCnt;
-                lkd.LinkListTextArea.Text = res;
-                lkd.linkListStatusLabel.Text = "";
-                lkd.linkListStatusLabel.Text = cnt.ToString() + "件のリンクが見つかりました。";
-                lkd.ShowDialog(this);
-                lkd.Dispose();
+                rpBaseFrm.reportBaseFormText.Text = res;
+                rpBaseFrm.reportBaseStatusBarLabel.Text = "";
+                rpBaseFrm.reportBaseStatusBarLabel.Text = cnt.ToString() + "件のリンクが見つかりました。";
+                rpBaseFrm.ShowDialog(this);
+                //rpBaseFrm.Dispose();
 
             }
             catch(Exception ex)
@@ -120,7 +137,6 @@ namespace BrowserApp
         //バリデート結果レポートダイアログを表示
         private void showValidatorDiag()
         {
-            ValidatorDialog vd = new ValidatorDialog();
             ValidatorUtil vu = new ValidatorUtil(ref browserControl);
             string res = "";
 
@@ -129,9 +145,9 @@ namespace BrowserApp
                 vu.init();
                 if (vu.env.Equals("nu")) res = vu.get_nu_validator_errors();
                 else if (vu.env.Equals("bs")) res = vu.get_bs_validator_errors();
-                vd.validatorReportArea.Text = "";
-                vd.validatorReportArea.Text = res;
-                vd.ShowDialog(this);
+                rpBaseFrm.reportBaseFormText.Text = "";
+                rpBaseFrm.reportBaseFormText.Text = res;
+                rpBaseFrm.ShowDialog(this);
             }
             catch(Exception ex)
             {
