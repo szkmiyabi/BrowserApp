@@ -157,6 +157,27 @@ namespace BrowserApp
 
         }
 
+        //CSS要素レポートダイアログを表示
+        private void showCssDiag()
+        {
+            CssUtil cu = new CssUtil(ref browserControl);
+            string res = "";
+
+            try
+            {
+                res = cu.get_css_tag_report();
+                rpBaseFrm.reportBaseFormText.Text = "";
+                rpBaseFrm.reportBaseFormText.Text = res;
+                rpBaseFrm.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("レポートを表示できません！");
+
+            }
+
+        }
+
 
     }
 }

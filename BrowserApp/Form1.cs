@@ -19,12 +19,15 @@ namespace BrowserApp
         private ArrayList urlArray;
         private int arrIndex;
 
-
         public Form1()
         {
             InitializeComponent();
             appInit();
+
+            //statusバーのイベントハンドラ登録
+            browserControl.StatusTextChanged += new EventHandler(browserControl_StatusTextChanged);
         }
+
 
         //初期化
         private void appInit()
@@ -137,7 +140,6 @@ namespace BrowserApp
             if(urlArray != null)
             {
                 arrIndex = 0;
-                statusBarText.Text = filename;
                 //コンボボックスの生成
                 for(int i=0; i<urlArray.Count; i++)
                 {
@@ -571,6 +573,11 @@ namespace BrowserApp
             nextBrowseItem.Enabled = browserControl.CanGoForward;
         }
 
+        private void browserControl_StatusTextChanged(object sender, EventArgs e)
+        {
+            statusBarText.Text = browserControl.StatusText;
+        }
+
         private void nextUrlItem_Click(object sender, EventArgs e)
         {
             doBrowserNext();
@@ -644,6 +651,26 @@ namespace BrowserApp
         {
             PreservUtil pu = new PreservUtil(ref browserControl);
             pu.doclink_filename();
+        }
+
+        private void cssTagReportItem_Click(object sender, EventArgs e)
+        {
+            showCssDiag();
+        }
+
+        private void targetAttrItem_Click(object sender, EventArgs e)
+        {
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.a_target_attr();
+        }
+
+        private void docStructureShowItem_Click(object sender, EventArgs e)
+        {
+            PreservUtil pu = new PreservUtil(ref browserControl);
+            pu.tag_list();
+            pu.tag_paragraph();
+            pu.tag_heading();
+            pu.tag_table();
         }
     }
 }

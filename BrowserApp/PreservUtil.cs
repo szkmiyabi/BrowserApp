@@ -568,6 +568,36 @@ namespace BrowserApp
             }
         }
 
+
+        //target属性の指定されたa要素を明示
+        public void a_target_attr()
+        {
+            HtmlElementCollection ats = d.GetElementsByTagName("a");
+            int i = 0;
+            foreach(HtmlElement atag in ats)
+            {
+                string ataghtml = atag.OuterHtml;
+                ataghtml = _text_clean(ataghtml);
+                if(_target_attr_check(ataghtml))
+                {
+                    string target_vl = atag.GetAttribute("target");
+                    HtmlElement span = d.CreateElement("span");
+                    span.Id = "bkm-target-attr-span-" + i;
+                    span.InnerHtml = (target_vl.Equals("")) ? "target: 値なし" : "target: " + target_vl;
+                    span.Style = "padding-right:5px;color:#fff;font-size:14px;padding:1px;background:#600060;";
+                    atag.InsertAdjacentElement(HtmlElementInsertionOrientation.BeforeBegin, span);
+                }
+            }
+        }
+
+
+        private Boolean _target_attr_check(string str)
+        {
+            Regex pt = new Regex(@"target="".+?""", RegexOptions.IgnoreCase);
+            if (pt.IsMatch(str)) return true;
+            else return false;
+        }
+
         //ドキュメントリンクのファイル名表示
         public void doclink_filename()
         {

@@ -65,10 +65,13 @@
             this.altattrItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hrefAttrItem = new System.Windows.Forms.ToolStripMenuItem();
             this.titleAttrItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.targetAttrItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docLinkFilenameItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.docStructureShowItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.linkListItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ValidatorErrorReportItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cssTagReportItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.browserControl = new System.Windows.Forms.WebBrowser();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -284,11 +287,13 @@
             this.brItem,
             this.labelItem,
             this.tableItem,
+            this.docStructureShowItem,
             this.w3cItem,
             this.cssCutItem,
             this.altattrItem,
             this.hrefAttrItem,
             this.titleAttrItem,
+            this.targetAttrItem,
             this.docLinkFilenameItem});
             this.preservMenu.Name = "preservMenu";
             this.preservMenu.Size = new System.Drawing.Size(101, 20);
@@ -385,6 +390,13 @@
             this.titleAttrItem.Text = "title属性値を表示(&T)";
             this.titleAttrItem.Click += new System.EventHandler(this.titleAttrItem_Click);
             // 
+            // targetAttrItem
+            // 
+            this.targetAttrItem.Name = "targetAttrItem";
+            this.targetAttrItem.Size = new System.Drawing.Size(229, 22);
+            this.targetAttrItem.Text = "target属性値の確認(&B)";
+            this.targetAttrItem.Click += new System.EventHandler(this.targetAttrItem_Click);
+            // 
             // docLinkFilenameItem
             // 
             this.docLinkFilenameItem.Name = "docLinkFilenameItem";
@@ -392,11 +404,20 @@
             this.docLinkFilenameItem.Text = "ドキュメントファイル名を表示(&I)";
             this.docLinkFilenameItem.Click += new System.EventHandler(this.docLinkFilenameItem_Click);
             // 
+            // docStructureShowItem
+            // 
+            this.docStructureShowItem.MergeIndex = 1;
+            this.docStructureShowItem.Name = "docStructureShowItem";
+            this.docStructureShowItem.Size = new System.Drawing.Size(229, 22);
+            this.docStructureShowItem.Text = "文書構造の一括解析(&R)";
+            this.docStructureShowItem.Click += new System.EventHandler(this.docStructureShowItem_Click);
+            // 
             // reportMenu
             // 
             this.reportMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.linkListItem,
-            this.ValidatorErrorReportItem});
+            this.ValidatorErrorReportItem,
+            this.cssTagReportItem});
             this.reportMenu.Name = "reportMenu";
             this.reportMenu.Size = new System.Drawing.Size(69, 20);
             this.reportMenu.Text = "レポート(&R)";
@@ -414,6 +435,13 @@
             this.ValidatorErrorReportItem.Size = new System.Drawing.Size(224, 22);
             this.ValidatorErrorReportItem.Text = "バリデート結果レポートを表示(&V)";
             this.ValidatorErrorReportItem.Click += new System.EventHandler(this.ValidatorErrorReportItem_Click);
+            // 
+            // cssTagReportItem
+            // 
+            this.cssTagReportItem.Name = "cssTagReportItem";
+            this.cssTagReportItem.Size = new System.Drawing.Size(224, 22);
+            this.cssTagReportItem.Text = "CSSの要素レポートを表示";
+            this.cssTagReportItem.Click += new System.EventHandler(this.cssTagReportItem_Click);
             // 
             // panel1
             // 
@@ -657,6 +685,9 @@
         private System.Windows.Forms.ToolStripMenuItem editMenu;
         private System.Windows.Forms.ToolStripMenuItem urlNumberCopyItem;
         private System.Windows.Forms.ToolStripMenuItem docLinkFilenameItem;
+        private System.Windows.Forms.ToolStripMenuItem cssTagReportItem;
+        private System.Windows.Forms.ToolStripMenuItem targetAttrItem;
+        private System.Windows.Forms.ToolStripMenuItem docStructureShowItem;
     }
 }
 
