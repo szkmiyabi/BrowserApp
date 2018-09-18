@@ -10,3 +10,4 @@ C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.Setting
 C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.csproj.GenerateResource.Cache
 C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.exe
 C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.pdb
+C:\Users\szkmiyabi\vs_project\BrowserApp\BrowserApp\obj\Debug\BrowserApp.ReportBaseForm.resources
