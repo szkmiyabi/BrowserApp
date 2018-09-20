@@ -344,6 +344,19 @@ namespace BrowserApp
             }
         }
 
+        //登録済み全ブラウザで開く
+        private void browseByAll()
+        {
+            Task task = Task.Run(() =>
+            {
+                if (!iePath.Equals("")) browseByIE();
+                if (!ffPath.Equals("")) browseByFirefox();
+                if (!gcPath.Equals("")) browseByChrome();
+                if (!etcBrowserPath.Equals("")) browseByCyberfox();
+
+            });
+        }
+
         //URL番号をコピー
         private void copyUrlNumberToClipboard()
         {
@@ -671,6 +684,11 @@ namespace BrowserApp
             pu.tag_paragraph();
             pu.tag_heading();
             pu.tag_table();
+        }
+
+        private void allBrowserItem_Click(object sender, EventArgs e)
+        {
+            browseByAll();
         }
     }
 }

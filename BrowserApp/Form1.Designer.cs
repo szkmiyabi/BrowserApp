@@ -60,6 +60,7 @@
             this.brItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.docStructureShowItem = new System.Windows.Forms.ToolStripMenuItem();
             this.w3cItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cssCutItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altattrItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,7 +68,6 @@
             this.titleAttrItem = new System.Windows.Forms.ToolStripMenuItem();
             this.targetAttrItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docLinkFilenameItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.docStructureShowItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.linkListItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ValidatorErrorReportItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,6 +87,7 @@
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
             this.w3cButton = new System.Windows.Forms.Button();
+            this.allBrowserItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -243,7 +244,8 @@
             this.ieItem,
             this.firefoxItem,
             this.chromeItem,
-            this.cyberfoxItem});
+            this.cyberfoxItem,
+            this.allBrowserItem});
             this.browseMenu.Name = "browseMenu";
             this.browseMenu.Size = new System.Drawing.Size(69, 20);
             this.browseMenu.Text = "ブラウズ(&B)";
@@ -251,28 +253,28 @@
             // ieItem
             // 
             this.ieItem.Name = "ieItem";
-            this.ieItem.Size = new System.Drawing.Size(187, 22);
+            this.ieItem.Size = new System.Drawing.Size(215, 22);
             this.ieItem.Text = "IEで開く(&A)";
             this.ieItem.Click += new System.EventHandler(this.ieItem_Click);
             // 
             // firefoxItem
             // 
             this.firefoxItem.Name = "firefoxItem";
-            this.firefoxItem.Size = new System.Drawing.Size(187, 22);
+            this.firefoxItem.Size = new System.Drawing.Size(215, 22);
             this.firefoxItem.Text = "Firefoxで開く(&S)";
             this.firefoxItem.Click += new System.EventHandler(this.firefoxItem_Click);
             // 
             // chromeItem
             // 
             this.chromeItem.Name = "chromeItem";
-            this.chromeItem.Size = new System.Drawing.Size(187, 22);
+            this.chromeItem.Size = new System.Drawing.Size(215, 22);
             this.chromeItem.Text = "Chromeで開く(&D)";
             this.chromeItem.Click += new System.EventHandler(this.chromeItem_Click);
             // 
             // cyberfoxItem
             // 
             this.cyberfoxItem.Name = "cyberfoxItem";
-            this.cyberfoxItem.Size = new System.Drawing.Size(187, 22);
+            this.cyberfoxItem.Size = new System.Drawing.Size(215, 22);
             this.cyberfoxItem.Text = "任意のブラウザで開く(&F)";
             this.cyberfoxItem.Click += new System.EventHandler(this.cyberfoxItem_Click);
             // 
@@ -355,6 +357,14 @@
             this.tableItem.Text = "テーブル要素を枠で表示(&F)";
             this.tableItem.Click += new System.EventHandler(this.tableItem_Click);
             // 
+            // docStructureShowItem
+            // 
+            this.docStructureShowItem.MergeIndex = 1;
+            this.docStructureShowItem.Name = "docStructureShowItem";
+            this.docStructureShowItem.Size = new System.Drawing.Size(229, 22);
+            this.docStructureShowItem.Text = "文書構造の一括解析(&R)";
+            this.docStructureShowItem.Click += new System.EventHandler(this.docStructureShowItem_Click);
+            // 
             // w3cItem
             // 
             this.w3cItem.Name = "w3cItem";
@@ -403,14 +413,6 @@
             this.docLinkFilenameItem.Size = new System.Drawing.Size(229, 22);
             this.docLinkFilenameItem.Text = "ドキュメントファイル名を表示(&I)";
             this.docLinkFilenameItem.Click += new System.EventHandler(this.docLinkFilenameItem_Click);
-            // 
-            // docStructureShowItem
-            // 
-            this.docStructureShowItem.MergeIndex = 1;
-            this.docStructureShowItem.Name = "docStructureShowItem";
-            this.docStructureShowItem.Size = new System.Drawing.Size(229, 22);
-            this.docStructureShowItem.Text = "文書構造の一括解析(&R)";
-            this.docStructureShowItem.Click += new System.EventHandler(this.docStructureShowItem_Click);
             // 
             // reportMenu
             // 
@@ -603,6 +605,13 @@
             this.w3cButton.UseVisualStyleBackColor = true;
             this.w3cButton.Click += new System.EventHandler(this.w3cButton_Click);
             // 
+            // allBrowserItem
+            // 
+            this.allBrowserItem.Name = "allBrowserItem";
+            this.allBrowserItem.Size = new System.Drawing.Size(215, 22);
+            this.allBrowserItem.Text = "登録済み全ブラウザで開く(&Q)";
+            this.allBrowserItem.Click += new System.EventHandler(this.allBrowserItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -688,6 +697,7 @@
         private System.Windows.Forms.ToolStripMenuItem cssTagReportItem;
         private System.Windows.Forms.ToolStripMenuItem targetAttrItem;
         private System.Windows.Forms.ToolStripMenuItem docStructureShowItem;
+        private System.Windows.Forms.ToolStripMenuItem allBrowserItem;
     }
 }
 
