@@ -690,5 +690,10 @@ namespace BrowserApp
         {
             browseByAll();
         }
+
+        private void jsTagReportItem_Click(object sender, EventArgs e)
+        {
+            showJsDiag();
+        }
     }
 }

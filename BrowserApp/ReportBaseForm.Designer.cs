@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.reportBaseStatusBar = new System.Windows.Forms.StatusStrip();
+            this.reportBaseStatusBarLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.reportBaseFormText = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.reportBaseFormCloseBtn = new System.Windows.Forms.Button();
-            this.reportBaseStatusBarLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.reportBaseStatusBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -49,6 +49,11 @@
             this.reportBaseStatusBar.Name = "reportBaseStatusBar";
             this.reportBaseStatusBar.Size = new System.Drawing.Size(615, 22);
             this.reportBaseStatusBar.TabIndex = 0;
+            // 
+            // reportBaseStatusBarLabel
+            // 
+            this.reportBaseStatusBarLabel.Name = "reportBaseStatusBarLabel";
+            this.reportBaseStatusBarLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // panel1
             // 
@@ -80,6 +85,7 @@
             this.reportBaseFormText.Location = new System.Drawing.Point(3, 3);
             this.reportBaseFormText.Multiline = true;
             this.reportBaseFormText.Name = "reportBaseFormText";
+            this.reportBaseFormText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.reportBaseFormText.Size = new System.Drawing.Size(609, 326);
             this.reportBaseFormText.TabIndex = 0;
             this.reportBaseFormText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.reportBaseFormText_KeyDown);
@@ -102,11 +108,6 @@
             this.reportBaseFormCloseBtn.Text = "閉じる";
             this.reportBaseFormCloseBtn.UseVisualStyleBackColor = true;
             this.reportBaseFormCloseBtn.Click += new System.EventHandler(this.reportBaseFormCloseBtn_Click);
-            // 
-            // reportBaseStatusBarLabel
-            // 
-            this.reportBaseStatusBarLabel.Name = "reportBaseStatusBarLabel";
-            this.reportBaseStatusBarLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // ReportBaseForm
             // 

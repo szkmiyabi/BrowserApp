@@ -33,8 +33,13 @@ namespace BrowserApp
             string html = "";
             HtmlElementCollection lnks = d.GetElementsByTagName("link");
 
-            string tar_text = b.DocumentText; //これで読み込んだHTMLソースは文字化けるので注意
-            tar_text = _text_clean(tar_text);
+            //string tar_text = b.DocumentText;
+
+            MyWebClientUtil mwcu = new MyWebClientUtil();
+            string tar_text = mwcu.getHTML(url);
+            //System.Diagnostics.Debug.WriteLine(tar_text);
+
+            tar_text = MyWebClientUtil.textClean(tar_text);
 
             Regex pt = new Regex(@"(<link.+?)( */*>)", RegexOptions.IgnoreCase);
             MatchCollection mc = pt.Matches(tar_text);
@@ -46,18 +51,6 @@ namespace BrowserApp
                     html += vl + "\r\n";
                 }
             }
-            //foreach (HtmlElement lk in lnks)
-            //{
-            //    MessageBox.Show(lk.OuterHtml);
-            //    string rel_val = lk.GetAttribute("rel");
-            //    string type_val = lk.GetAttribute("type");
-            //    string href_val = lk.GetAttribute("href");
-            //    Regex pt = new Regex(@"(\.css|CSS)$");
-            //    if (rel_val.Equals("stylesheet") || type_val.Equals("text/css") || pt.IsMatch(href_val))
-            //    {
-            //        html += lk.OuterHtml + "\r\n";
-            //    }
-            //}
             return html;
         }
 
@@ -68,7 +61,9 @@ namespace BrowserApp
             HtmlElementCollection sts = d.GetElementsByTagName("style");
             foreach(HtmlElement st in sts)
             {
-                html += st.OuterHtml + "\r\n";
+                string row = st.OuterHtml;
+                row = MyWebClientUtil.rowClean(row);
+                html += row + "\r\n";
             }
             return html;
         }
@@ -78,7 +73,7 @@ namespace BrowserApp
         {
             string html = "";
             string tar_text = d.Body.InnerHtml;
-            tar_text = _text_clean(tar_text);
+            tar_text = MyWebClientUtil.textClean(tar_text);
 
             Regex pt = new Regex(@"style="".+?""", RegexOptions.IgnoreCase);
             MatchCollection mc = pt.Matches(tar_text);
@@ -103,12 +98,5 @@ namespace BrowserApp
             return ret;
         }
 
-        private string _text_clean(string str)
-        {
-            str = Regex.Replace(str, @"^ +", "", RegexOptions.Multiline);
-            str = Regex.Replace(str, @"\t+", "", RegexOptions.Multiline);
-            str = Regex.Replace(str, @"(\r\n|\r|\n)", "", RegexOptions.Multiline);
-            return str;
-        }
     }
 }

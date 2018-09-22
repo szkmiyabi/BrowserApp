@@ -179,5 +179,27 @@ namespace BrowserApp
         }
 
 
+        //JS要素レポートダイアログを表示
+        private void showJsDiag()
+        {
+            JsUtil ju = new JsUtil(ref browserControl);
+            string res = "";
+
+            try
+            {
+                res = ju.get_js_tag_report();
+                rpBaseFrm.reportBaseFormText.Text = "";
+                rpBaseFrm.reportBaseFormText.Text = res;
+                rpBaseFrm.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("レポートを表示できません！");
+
+            }
+
+        }
+
+
     }
 }

@@ -51,6 +51,7 @@
             this.firefoxItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chromeItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cyberfoxItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allBrowserItem = new System.Windows.Forms.ToolStripMenuItem();
             this.preservMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.paragraphItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linkImageItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,7 +88,7 @@
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
             this.w3cButton = new System.Windows.Forms.Button();
-            this.allBrowserItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jsTagReportItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -278,6 +279,13 @@
             this.cyberfoxItem.Text = "任意のブラウザで開く(&F)";
             this.cyberfoxItem.Click += new System.EventHandler(this.cyberfoxItem_Click);
             // 
+            // allBrowserItem
+            // 
+            this.allBrowserItem.Name = "allBrowserItem";
+            this.allBrowserItem.Size = new System.Drawing.Size(215, 22);
+            this.allBrowserItem.Text = "登録済み全ブラウザで開く(&Q)";
+            this.allBrowserItem.Click += new System.EventHandler(this.allBrowserItem_Click);
+            // 
             // preservMenu
             // 
             this.preservMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -419,7 +427,8 @@
             this.reportMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.linkListItem,
             this.ValidatorErrorReportItem,
-            this.cssTagReportItem});
+            this.cssTagReportItem,
+            this.jsTagReportItem});
             this.reportMenu.Name = "reportMenu";
             this.reportMenu.Size = new System.Drawing.Size(69, 20);
             this.reportMenu.Text = "レポート(&R)";
@@ -427,21 +436,21 @@
             // linkListItem
             // 
             this.linkListItem.Name = "linkListItem";
-            this.linkListItem.Size = new System.Drawing.Size(224, 22);
+            this.linkListItem.Size = new System.Drawing.Size(227, 22);
             this.linkListItem.Text = "リンク一覧を表示(&X)";
             this.linkListItem.Click += new System.EventHandler(this.linkListItem_Click);
             // 
             // ValidatorErrorReportItem
             // 
             this.ValidatorErrorReportItem.Name = "ValidatorErrorReportItem";
-            this.ValidatorErrorReportItem.Size = new System.Drawing.Size(224, 22);
+            this.ValidatorErrorReportItem.Size = new System.Drawing.Size(227, 22);
             this.ValidatorErrorReportItem.Text = "バリデート結果レポートを表示(&V)";
             this.ValidatorErrorReportItem.Click += new System.EventHandler(this.ValidatorErrorReportItem_Click);
             // 
             // cssTagReportItem
             // 
             this.cssTagReportItem.Name = "cssTagReportItem";
-            this.cssTagReportItem.Size = new System.Drawing.Size(224, 22);
+            this.cssTagReportItem.Size = new System.Drawing.Size(227, 22);
             this.cssTagReportItem.Text = "CSSの要素レポートを表示";
             this.cssTagReportItem.Click += new System.EventHandler(this.cssTagReportItem_Click);
             // 
@@ -605,12 +614,12 @@
             this.w3cButton.UseVisualStyleBackColor = true;
             this.w3cButton.Click += new System.EventHandler(this.w3cButton_Click);
             // 
-            // allBrowserItem
+            // jsTagReportItem
             // 
-            this.allBrowserItem.Name = "allBrowserItem";
-            this.allBrowserItem.Size = new System.Drawing.Size(215, 22);
-            this.allBrowserItem.Text = "登録済み全ブラウザで開く(&Q)";
-            this.allBrowserItem.Click += new System.EventHandler(this.allBrowserItem_Click);
+            this.jsTagReportItem.Name = "jsTagReportItem";
+            this.jsTagReportItem.Size = new System.Drawing.Size(227, 22);
+            this.jsTagReportItem.Text = "Javascriptの要素レポートを表示";
+            this.jsTagReportItem.Click += new System.EventHandler(this.jsTagReportItem_Click);
             // 
             // Form1
             // 
@@ -698,6 +707,7 @@
         private System.Windows.Forms.ToolStripMenuItem targetAttrItem;
         private System.Windows.Forms.ToolStripMenuItem docStructureShowItem;
         private System.Windows.Forms.ToolStripMenuItem allBrowserItem;
+        private System.Windows.Forms.ToolStripMenuItem jsTagReportItem;
     }
 }
 

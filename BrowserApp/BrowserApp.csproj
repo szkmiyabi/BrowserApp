@@ -78,7 +78,9 @@
     <Compile Include="Form1.SysUtil.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="JsUtil.cs" />
     <Compile Include="LinkUtil.cs" />
+    <Compile Include="MyWebClientUtil.cs" />
     <Compile Include="PreservUtil.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
