@@ -12,11 +12,15 @@ namespace BrowserApp
         /// アプリケーションのメイン エントリ ポイントです。
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
+            string url_param = "";
+            if (args.Length > 0) url_param = args[0];
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            if (url_param.Equals("")) Application.Run(new Form1());
+            else Application.Run(new Form1(url_param));
         }
     }
 }

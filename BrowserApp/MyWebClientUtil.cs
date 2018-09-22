@@ -65,7 +65,33 @@ namespace BrowserApp
             return str;
         }
 
-        //
+        //DOCTYPE宣言を取得
+        public static string getDocType(string str)
+        {
+            string ret = "";
+            Regex pt1 = new Regex(@".*DTD HTML 4\.01.*");
+            Regex pt2 = new Regex(@"(.*DTD XHTML 1\.0.*|.*DTD XHTML 1\.1.*)");
+            Regex pt3 = new Regex(@".*DOCTYPE html>", RegexOptions.IgnoreCase);
+            Regex xmlpt = new Regex(@"<\?xml .+?>");
+
+
+            if (pt1.IsMatch(str))
+            {
+                ret = "HTML";
+            }
+            else if(pt2.IsMatch(str))
+            {
+                ret = "XHTML";
+            }
+            else if(pt3.IsMatch(str))
+            {
+                if (xmlpt.IsMatch(str)) ret = "XHTML5";
+                else ret = "HTML5";
+            }
+            return ret;
+
+        }
+
         //文字コードを判別する
         private System.Text.Encoding _get_self_encoding(byte[] bytes)
         {

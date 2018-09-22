@@ -45,7 +45,6 @@
             this.prevBrowseItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pageTopItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pageBottomItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pageRefreshItem = new System.Windows.Forms.ToolStripMenuItem();
             this.browseMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ieItem = new System.Windows.Forms.ToolStripMenuItem();
             this.firefoxItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,6 +88,7 @@
             this.cfxButton = new System.Windows.Forms.Button();
             this.w3cButton = new System.Windows.Forms.Button();
             this.jsTagReportItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.docTypeCheckItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -177,8 +177,7 @@
             this.nextBrowseItem,
             this.prevBrowseItem,
             this.pageTopItem,
-            this.pageBottomItem,
-            this.pageRefreshItem});
+            this.pageBottomItem});
             this.viewMenu.Name = "viewMenu";
             this.viewMenu.Size = new System.Drawing.Size(58, 20);
             this.viewMenu.Text = "表示(&V)";
@@ -231,13 +230,6 @@
             this.pageBottomItem.Size = new System.Drawing.Size(186, 22);
             this.pageBottomItem.Text = "ページ最下部に移動(&V)";
             this.pageBottomItem.Click += new System.EventHandler(this.pageBottomItem_Click);
-            // 
-            // pageRefreshItem
-            // 
-            this.pageRefreshItem.Name = "pageRefreshItem";
-            this.pageRefreshItem.Size = new System.Drawing.Size(186, 22);
-            this.pageRefreshItem.Text = "リフレッシュ(&W)";
-            this.pageRefreshItem.Click += new System.EventHandler(this.pageRefreshItem_Click);
             // 
             // browseMenu
             // 
@@ -428,7 +420,8 @@
             this.linkListItem,
             this.ValidatorErrorReportItem,
             this.cssTagReportItem,
-            this.jsTagReportItem});
+            this.jsTagReportItem,
+            this.docTypeCheckItem});
             this.reportMenu.Name = "reportMenu";
             this.reportMenu.Size = new System.Drawing.Size(69, 20);
             this.reportMenu.Text = "レポート(&R)";
@@ -621,6 +614,13 @@
             this.jsTagReportItem.Text = "Javascriptの要素レポートを表示";
             this.jsTagReportItem.Click += new System.EventHandler(this.jsTagReportItem_Click);
             // 
+            // docTypeCheckItem
+            // 
+            this.docTypeCheckItem.Name = "docTypeCheckItem";
+            this.docTypeCheckItem.Size = new System.Drawing.Size(227, 22);
+            this.docTypeCheckItem.Text = "DOCTYPEの確認";
+            this.docTypeCheckItem.Click += new System.EventHandler(this.docTypeCheckItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -696,7 +696,6 @@
         private System.Windows.Forms.ToolStripMenuItem titleAttrItem;
         private System.Windows.Forms.ToolStripMenuItem pageTopItem;
         private System.Windows.Forms.ToolStripMenuItem pageBottomItem;
-        private System.Windows.Forms.ToolStripMenuItem pageRefreshItem;
         private System.Windows.Forms.ToolStripMenuItem reportMenu;
         private System.Windows.Forms.ToolStripMenuItem linkListItem;
         private System.Windows.Forms.ToolStripMenuItem ValidatorErrorReportItem;
@@ -708,6 +707,7 @@
         private System.Windows.Forms.ToolStripMenuItem docStructureShowItem;
         private System.Windows.Forms.ToolStripMenuItem allBrowserItem;
         private System.Windows.Forms.ToolStripMenuItem jsTagReportItem;
+        private System.Windows.Forms.ToolStripMenuItem docTypeCheckItem;
     }
 }
 

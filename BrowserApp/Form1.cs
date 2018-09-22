@@ -28,6 +28,19 @@ namespace BrowserApp
             browserControl.StatusTextChanged += new EventHandler(browserControl_StatusTextChanged);
         }
 
+        //override
+        public Form1(string url_param)
+        {
+            InitializeComponent();
+            appInit();
+
+            //statusバーのイベントハンドラ登録
+            browserControl.StatusTextChanged += new EventHandler(browserControl_StatusTextChanged);
+
+            //コマンドライン引数がある場合の処置
+            withUrlParameterAct(url_param);
+        }
+
 
         //初期化
         private void appInit()
@@ -154,16 +167,34 @@ namespace BrowserApp
             }
         }
 
+
         //更新
         private void doReload()
         {
-            if (urlArray == null) return;
+            string urlTextVal = urlText.Text;
 
-            string[] row = (string[])urlArray[arrIndex];
-            string urlNo = row[0].ToString();
-            string urlStr = row[1].ToString();
-            urlText.Text = urlStr;
-            browserControl.Navigate(urlStr);
+            if (isDirectBrowse(urlTextVal))
+            {
+                if (urlTextVal.Equals("") && !browserControl.Url.ToString().Equals(""))
+                {
+                    urlText.Text = browserControl.Url.ToString();
+                    browserControl.Refresh();
+                }
+                else
+                {
+                    browserControl.Refresh();
+                }
+            }
+            else
+            {
+                if (urlArray == null) return;
+                string[] row = (string[])urlArray[arrIndex];
+                string urlNo = row[0].ToString();
+                string urlStr = row[1].ToString();
+                urlText.Text = urlStr;
+                browserControl.Navigate(urlStr);
+            }
+
         }
 
         //前のURL
@@ -234,15 +265,13 @@ namespace BrowserApp
             try
             {
                 string urlStr = urlText.Text;
-                Regex pt = new Regex(@"http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?");
-                Match mt = pt.Match(urlStr);
-                if(mt.Success)
+                if(is_valid_url(urlStr))
                 {
                     browserControl.Navigate(urlStr);
                 }
                 else
                 {
-                    return;
+                    MessageBox.Show("入力されたURLが正しくありません");
                 }
                 
             }
@@ -694,6 +723,11 @@ namespace BrowserApp
         private void jsTagReportItem_Click(object sender, EventArgs e)
         {
             showJsDiag();
+        }
+
+        private void docTypeCheckItem_Click(object sender, EventArgs e)
+        {
+            showDocType();
         }
     }
 }

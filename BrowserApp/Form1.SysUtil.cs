@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Xml.Serialization;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace BrowserApp
 {
@@ -110,6 +111,25 @@ namespace BrowserApp
             loadAppSettings();
         }
 
+        //url文字列正規表現判定
+        private Boolean is_valid_url(string str)
+        {
+            Regex pt = new Regex(@"http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?");
+            if (pt.IsMatch(str)) return true;
+            else return false;
+
+        }
+
+        //コマンドライン引数からURLを受け取った場合の処理
+        private void withUrlParameterAct(string url_param)
+        {
+            if(is_valid_url(url_param))
+            {
+                urlText.Text = url_param;
+                browserControl.Navigate(url_param);
+            }
+        }
+
         //リンクリストダイアログを表示
         private void showLinkListDiag()
         {
@@ -200,6 +220,43 @@ namespace BrowserApp
 
         }
 
+        //DOCTYPEを確認する
+        private void showDocType()
+        {
+            MyWebClientUtil mwcu = new MyWebClientUtil();
+            string url = urlText.Text;
+            if (url.Equals("")) return;
+
+            string html = mwcu.getHTML(url);
+            html = MyWebClientUtil.textClean(html);
+            //System.Diagnostics.Debug.WriteLine(html);
+            string dtd = MyWebClientUtil.getDocType(html);
+            MessageBox.Show(dtd);
+        }
+
+        //URLをダイレクト参照しているか判定
+        private Boolean isDirectBrowse(string urlTextVal)
+        {
+            Boolean ret_flg = true;
+
+            if (urlArray != null && urlCombo.Items.Count > 0)
+            {
+                if (_exist_url_in_array(urlTextVal)) ret_flg = false;
+            }
+            return ret_flg;
+
+        }
+        private Boolean _exist_url_in_array(string str)
+        {
+            Boolean match_flg = false;
+            for (int i = 0; i < urlArray.Count; i++)
+            {
+                string[] row = (string[])urlArray[i];
+                string urlStr = row[1].ToString();
+                if (urlStr.Equals(str)) match_flg = true;
+            }
+            return match_flg;
+        }
 
     }
 }

@@ -270,7 +270,7 @@ namespace BrowserApp
                 string ip_html = ip.OuterHtml;
                 ip_html = _text_clean(ip_html);
                 string typeattr = ip.GetAttribute("type");
-                if(typeattr == "text" || typeattr == "radio" || typeattr == "check")
+                if(typeattr == "text" || typeattr == "radio" || typeattr == "checkbox")
                 {
                     ip.Style = "border:2px solid blue; position: relative;";
                     if (_id_attr_check(ip_html))
