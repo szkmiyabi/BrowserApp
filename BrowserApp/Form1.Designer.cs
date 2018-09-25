@@ -72,6 +72,8 @@
             this.linkListItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ValidatorErrorReportItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cssTagReportItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jsTagReportItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.docTypeCheckItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.browserControl = new System.Windows.Forms.WebBrowser();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -87,8 +89,6 @@
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
             this.w3cButton = new System.Windows.Forms.Button();
-            this.jsTagReportItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.docTypeCheckItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -97,6 +97,7 @@
             // 
             // statusBar
             // 
+            this.statusBar.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.statusBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusBarText});
@@ -447,6 +448,20 @@
             this.cssTagReportItem.Text = "CSSの要素レポートを表示";
             this.cssTagReportItem.Click += new System.EventHandler(this.cssTagReportItem_Click);
             // 
+            // jsTagReportItem
+            // 
+            this.jsTagReportItem.Name = "jsTagReportItem";
+            this.jsTagReportItem.Size = new System.Drawing.Size(227, 22);
+            this.jsTagReportItem.Text = "Javascriptの要素レポートを表示";
+            this.jsTagReportItem.Click += new System.EventHandler(this.jsTagReportItem_Click);
+            // 
+            // docTypeCheckItem
+            // 
+            this.docTypeCheckItem.Name = "docTypeCheckItem";
+            this.docTypeCheckItem.Size = new System.Drawing.Size(227, 22);
+            this.docTypeCheckItem.Text = "DOCTYPEの確認";
+            this.docTypeCheckItem.Click += new System.EventHandler(this.docTypeCheckItem_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.browserControl);
@@ -606,20 +621,6 @@
             this.w3cButton.TabIndex = 12;
             this.w3cButton.UseVisualStyleBackColor = true;
             this.w3cButton.Click += new System.EventHandler(this.w3cButton_Click);
-            // 
-            // jsTagReportItem
-            // 
-            this.jsTagReportItem.Name = "jsTagReportItem";
-            this.jsTagReportItem.Size = new System.Drawing.Size(227, 22);
-            this.jsTagReportItem.Text = "Javascriptの要素レポートを表示";
-            this.jsTagReportItem.Click += new System.EventHandler(this.jsTagReportItem_Click);
-            // 
-            // docTypeCheckItem
-            // 
-            this.docTypeCheckItem.Name = "docTypeCheckItem";
-            this.docTypeCheckItem.Size = new System.Drawing.Size(227, 22);
-            this.docTypeCheckItem.Text = "DOCTYPEの確認";
-            this.docTypeCheckItem.Click += new System.EventHandler(this.docTypeCheckItem_Click);
             // 
             // Form1
             // 

@@ -626,7 +626,7 @@ namespace BrowserApp
                     HtmlElement span = d.CreateElement("span");
                     span.Id = "bkm-target-attr-span-" + i;
                     span.InnerHtml = (target_vl.Equals("")) ? "target属性有: (空)" : "target属性有: " + target_vl;
-                    span.Style = "padding-right:5px;color:#fff;font-size:13px;padding:1px;background:#C00000;";
+                    span.Style = "padding-right:5px;color:#fff;font-size:13px;padding:1px;background:#008000;";
                     atag.InsertAdjacentElement(HtmlElementInsertionOrientation.BeforeBegin, span);
                 }
             }
