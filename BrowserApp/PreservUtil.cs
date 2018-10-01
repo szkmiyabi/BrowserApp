@@ -167,16 +167,30 @@ namespace BrowserApp
             i = 0;
             foreach(HtmlElement tbl in tbls)
             {
-                string smry = tbl.GetAttribute("summary");
-                HtmlElement span = d.GetElementById("bkm-table-span-" + i);
-                string now_label_text = span.InnerHtml;
-                string new_label_text = (smry == null) ? now_label_text : now_label_text + ", summary:" + smry;
-                span.InnerHtml = new_label_text;
-                string old_css_text = span.Style;
-                string new_css_text = old_css_text.Replace("top: 2px;", "top: -20px;");
-                span.Style = new_css_text;
+                string tbl_tag = tbl.OuterHtml;
+                tbl_tag = _text_clean(tbl_tag);
+                if(_is_exist_summary_attr(tbl_tag))
+                {
+                    string smry = tbl.GetAttribute("summary");
+                    HtmlElement span = d.GetElementById("bkm-table-span-" + i);
+                    string now_label_text = span.InnerHtml;
+                    now_label_text = _html_decode(now_label_text);
+                    string new_label_text = "";
+                    if (smry.Equals("")) new_label_text = now_label_text + ", summary: 空";
+                    else new_label_text = now_label_text + ", summary: " + smry;
+                    span.InnerText = new_label_text;
+                    string old_css_text = span.Style;
+                    string new_css_text = old_css_text.Replace("top: 2px;", "top: -20px;");
+                    span.Style = new_css_text;
+                }                
                 i++;
             }
+        }
+        private Boolean _is_exist_summary_attr(string str)
+        {
+            Regex pt = new Regex(@"summary="".*?""", RegexOptions.IgnoreCase);
+            if (pt.IsMatch(str)) return true;
+            else return false;
         }
         private void _tag_table_caption()
         {
@@ -212,13 +226,28 @@ namespace BrowserApp
             i = 0;
             foreach(HtmlElement th in ths)
             {
-                string scope = th.GetAttribute("scope");
-                HtmlElement span = d.GetElementById("bkm-th-span-" + i);
-                string now_label_text = span.InnerHtml;
-                string new_label_text = (scope == null) ? now_label_text : now_label_text + ", scope:" + scope;
-                span.InnerHtml = new_label_text;
+                string th_tag = th.OuterHtml;
+                th_tag = _text_clean(th_tag);
+
+                string new_label_text = "";
+
+                if (_is_exist_scope_attr(th_tag))
+                {
+                    string scope = th.GetAttribute("scope");
+                    HtmlElement span = d.GetElementById("bkm-th-span-" + i);
+                    string now_label_text = span.InnerHtml;
+                    if (scope.Equals("")) new_label_text = now_label_text + ", scope: 空";
+                    else new_label_text = now_label_text + ", scope: " + scope;
+                    span.InnerHtml = new_label_text;
+                }
                 i++;
             }
+        }
+        private Boolean _is_exist_scope_attr(string str)
+        {
+            Regex pt = new Regex(@"scope="".*?""", RegexOptions.IgnoreCase);
+            if (pt.IsMatch(str)) return true;
+            else return false;
         }
 
         //ラベル要素を枠で表示する
@@ -509,6 +538,20 @@ namespace BrowserApp
             str = Regex.Replace(str, @"^ +", "", RegexOptions.Multiline);
             str = Regex.Replace(str, @"\t+", "", RegexOptions.Multiline);
             str = Regex.Replace(str, @"(\r\n|\r|\n)", "", RegexOptions.Multiline);
+            return str;
+        }
+
+        private string _html_decode(string str)
+        {
+            str = Regex.Replace(str, @"&lt;", "<");
+            str = Regex.Replace(str, @"&gt;", ">");
+            return str;
+        }
+
+        private string _html_encode(string str)
+        {
+            str = Regex.Replace(str, @"<", "&lt;");
+            str = Regex.Replace(str, @">", "&gt;");
             return str;
         }
 
