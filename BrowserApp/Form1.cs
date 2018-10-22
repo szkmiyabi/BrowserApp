@@ -729,5 +729,10 @@ namespace BrowserApp
         {
             showDocType();
         }
+
+        private void HTagReportItem_Click(object sender, EventArgs e)
+        {
+            showHTagDiag();
+        }
     }
 }

@@ -89,6 +89,7 @@
             this.gcButton = new System.Windows.Forms.Button();
             this.cfxButton = new System.Windows.Forms.Button();
             this.w3cButton = new System.Windows.Forms.Button();
+            this.HTagReportItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -422,6 +423,7 @@
             this.ValidatorErrorReportItem,
             this.cssTagReportItem,
             this.jsTagReportItem,
+            this.HTagReportItem,
             this.docTypeCheckItem});
             this.reportMenu.Name = "reportMenu";
             this.reportMenu.Size = new System.Drawing.Size(69, 20);
@@ -430,35 +432,35 @@
             // linkListItem
             // 
             this.linkListItem.Name = "linkListItem";
-            this.linkListItem.Size = new System.Drawing.Size(227, 22);
-            this.linkListItem.Text = "リンク一覧を表示(&X)";
+            this.linkListItem.Size = new System.Drawing.Size(242, 22);
+            this.linkListItem.Text = "リンク一覧を表示(&A)";
             this.linkListItem.Click += new System.EventHandler(this.linkListItem_Click);
             // 
             // ValidatorErrorReportItem
             // 
             this.ValidatorErrorReportItem.Name = "ValidatorErrorReportItem";
-            this.ValidatorErrorReportItem.Size = new System.Drawing.Size(227, 22);
+            this.ValidatorErrorReportItem.Size = new System.Drawing.Size(242, 22);
             this.ValidatorErrorReportItem.Text = "バリデート結果レポートを表示(&V)";
             this.ValidatorErrorReportItem.Click += new System.EventHandler(this.ValidatorErrorReportItem_Click);
             // 
             // cssTagReportItem
             // 
             this.cssTagReportItem.Name = "cssTagReportItem";
-            this.cssTagReportItem.Size = new System.Drawing.Size(227, 22);
-            this.cssTagReportItem.Text = "CSSの要素レポートを表示";
+            this.cssTagReportItem.Size = new System.Drawing.Size(242, 22);
+            this.cssTagReportItem.Text = "CSSの要素レポートを表示(&C)";
             this.cssTagReportItem.Click += new System.EventHandler(this.cssTagReportItem_Click);
             // 
             // jsTagReportItem
             // 
             this.jsTagReportItem.Name = "jsTagReportItem";
-            this.jsTagReportItem.Size = new System.Drawing.Size(227, 22);
-            this.jsTagReportItem.Text = "Javascriptの要素レポートを表示";
+            this.jsTagReportItem.Size = new System.Drawing.Size(242, 22);
+            this.jsTagReportItem.Text = "Javascriptの要素レポートを表示(&X)";
             this.jsTagReportItem.Click += new System.EventHandler(this.jsTagReportItem_Click);
             // 
             // docTypeCheckItem
             // 
             this.docTypeCheckItem.Name = "docTypeCheckItem";
-            this.docTypeCheckItem.Size = new System.Drawing.Size(227, 22);
+            this.docTypeCheckItem.Size = new System.Drawing.Size(242, 22);
             this.docTypeCheckItem.Text = "DOCTYPEの確認";
             this.docTypeCheckItem.Click += new System.EventHandler(this.docTypeCheckItem_Click);
             // 
@@ -622,6 +624,13 @@
             this.w3cButton.UseVisualStyleBackColor = true;
             this.w3cButton.Click += new System.EventHandler(this.w3cButton_Click);
             // 
+            // HTagReportItem
+            // 
+            this.HTagReportItem.Name = "HTagReportItem";
+            this.HTagReportItem.Size = new System.Drawing.Size(242, 22);
+            this.HTagReportItem.Text = "見出し要素レポートを表示(&Z)";
+            this.HTagReportItem.Click += new System.EventHandler(this.HTagReportItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -709,6 +718,7 @@
         private System.Windows.Forms.ToolStripMenuItem allBrowserItem;
         private System.Windows.Forms.ToolStripMenuItem jsTagReportItem;
         private System.Windows.Forms.ToolStripMenuItem docTypeCheckItem;
+        private System.Windows.Forms.ToolStripMenuItem HTagReportItem;
     }
 }
 
